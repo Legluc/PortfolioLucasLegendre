@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+// Définition des variables de police
+$font-body: 'Montserrat Alternates', sans-serif;
+$font-title: 'Bowlby One', cursive;
+
+// Variables pour les tailles 
+$font-size-h1: 100px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-nav: 18px;
+$font-size-base: 14px;
+
+
+@mixin title-style($size, $weight:400, $line-height:1.2, $color:$orange) {
+  font-family: $font-title;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  margin: 0 0 1rem;
+  color: $color;
+}
+
+@mixin body-style($size:$font-size-base, $weight:400, $line-height:1.2, $color:$vert) {
+  font-family: $font-body;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  margin: 0 0 1rem;
+  color: $color;
+}
+
+@mixin button-style($size:$font-size-base, $weight:600, $line-height:1.5, $color:$vert) {
+  font-family: $font-body;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+

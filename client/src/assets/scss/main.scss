@@ -1,0 +1,22 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/functions' as *;
+@use 'abstracts/typography' as *;
+@use 'base/reset';
+@use 'components/nav';
+@use 'components/buttons';
+@use 'components/cards';
+
+
+body {
+  @include body-style($font-size-base);
+  background-color: $creme;
+}
+
+h1 {
+  @include title-style($font-size-h1);
+}
+
+h2 {
+  @include title-style($font-size-h2);
+}

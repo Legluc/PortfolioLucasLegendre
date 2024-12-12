@@ -1,0 +1,11 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.Bouton{
+    @include button-style;
+    background-color: $lime;
+    padding: $space-xs $space-m;
+    border-radius: 35px;
+    cursor: pointer;
+}

@@ -1,0 +1,84 @@
+// Mixin pour les responsive breakpoints
+// Usage : 
+// .selector {
+//   font-size: 16px;
+//   @include respond($breakpoint-tablet) {
+//     font-size: 18px;
+//   }
+//   @include respond($breakpoint-desktop) {
+//     font-size: 20px;
+//   }
+// }
+@mixin respond($breakpoint) {
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+  }
+  
+  // Mixin flex basique
+  // Permet de définir rapidement un container flex
+  // Paramètres par défaut : direction row, align-items center, justify-content center
+  @mixin flex($direction: row, $align: center, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }
+  
+  // Mixin centrer dans un container (horizontal/vertical)
+  @mixin flex-center {
+    @include flex(row, center, center);
+  }
+  
+  // Mixin pour appliquer du spacing cohérent en margin/padding
+  // Usage exemple:
+  // .element {
+  //   @include spacing($top: $space-s, $right: $space-m);
+  // }
+  @mixin spacing($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  }
+  
+  // Ou bien un raccourci plus simple si besoin
+  // @include m($s) appliquera margin : $s; 
+  @mixin m($value) {
+    margin: $value;
+  }
+  
+  // Idem pour padding
+  @mixin p($value) {
+    padding: $value;
+  }
+  
+  // Mixin pour une largeur max de container
+  // Utile si tu veux un container centré avec une largeur max
+  // Usage:
+  // .container {
+  //   @include container;
+  // }
+  @mixin container($max-width: 1200px) {
+    width: 100%;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $space-s;
+    padding-right: $space-s;
+  }
+  
+  // Exemples de tailles responsive pour polices ou autre
+  // en utilisant la mixin respond
+  // h1 {
+  //   font-size: $font-size-h1;
+  //   @include respond($breakpoint-mobile) {
+  //     font-size: 80px;
+  //   }
+  //   @include respond($breakpoint-tablet) {
+  //     font-size: 90px;
+  //   }
+  //   @include respond($breakpoint-desktop) {
+  //     font-size: 100px;
+  //   }
+  // }

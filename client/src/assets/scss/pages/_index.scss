@@ -1,0 +1,48 @@
+ @use '@/assets/scss/abstracts/variables' as *;
+ @use '@/assets/scss/abstracts/typography' as *;
+ @use '@/assets/scss/abstracts/mixins' as *;
+
+#LucasLegendre {
+  @include p (0 $space-xxl);
+  padding-top: 200px;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url('@/assets/image/esperance-52.jpg');
+  background-size: cover;
+  background-position-y: 80%;
+  background-repeat: no-repeat;
+}
+
+#LucasLegendre h1{
+  color: $creme;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.CarteVerte{
+  @include flex($direction: column, $align: center, $justify: space-around);
+  width: 560px;
+  height: 315px;
+  padding: $space-l;
+  margin-top: $space-xxl;
+  border-radius: 35px;
+  background-color: $vert;
+  color: $creme;
+  
+}
+
+.CarteVerte h2{
+  @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+  align-self: flex-start;
+}
+
+.CarteVerte button{
+  align-self: flex-end;
+}
+
+#MesPassions{
+  height: 100vh;
+  width: 100%;
+}
