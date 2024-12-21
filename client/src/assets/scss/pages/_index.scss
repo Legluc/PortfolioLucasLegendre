@@ -1,6 +1,9 @@
  @use '@/assets/scss/abstracts/variables' as *;
  @use '@/assets/scss/abstracts/typography' as *;
  @use '@/assets/scss/abstracts/mixins' as *;
+ @use '@/assets/scss/components/cards' as *;
+ @use '@/assets/scss/components/contact' as *;
+
 
 #LucasLegendre {
   @include p (0 $space-xxl);
@@ -21,28 +24,187 @@
   line-height: 1;
 }
 
-.CarteVerte{
-  @include flex($direction: column, $align: center, $justify: space-around);
+
+#LucasLegendre .CarteVerte{
+  margin-top: $space-xxl;
   width: 560px;
   height: 315px;
-  padding: $space-l;
-  margin-top: $space-xxl;
-  border-radius: 35px;
-  background-color: $vert;
-  color: $creme;
-  
 }
 
-.CarteVerte h2{
+#LucasLegendre .CarteVerte h2{
   @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
   align-self: flex-start;
 }
 
-.CarteVerte button{
+#LucasLegendre .CarteVerte button{
   align-self: flex-end;
+}
+
+#MonParcours{
+  height: 100vh;
+  width: 100%;
+  margin-top: 84vh; 
+  // a revoir avec du js pour décalé la hauteur de la nav
+  @include flex($direction: column,  $align: center, $justify: center);
+}
+
+#MonParcours img{
+  width: 580px;
+  height: 580px
 }
 
 #MesPassions{
   height: 100vh;
   width: 100%;
+  display: flex;
+}
+
+.ImagePassion{
+  width: 33.33%;
+}
+
+.ImagePassion img{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.TextePassion{
+  @include flex-center;
+  width: 33.33%;
+  position: absolute;
+  transform: translate(0%, -500%);
+}
+
+.TextePassion p{
+  @include title-style($size:$font-size-base, $weight:400, $line-height:1, $color:$creme);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: $space-xs $space-m;
+}
+
+.ImagePassion:hover{
+  cursor: pointer;
+  width: 66.66%;
+}
+.ImagePassion:hover .TextePassion{
+  width: 50%;
+}
+
+.ImagePassion:hover p{
+  color: $vert;
+  background-color: $lime;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+#MesProjets{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.DivProjets{
+  @include flex($direction: column,  $align: center, $justify: end);
+  width: 50%;
+}
+
+.DivProjets h2{
+  @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$creme);
+  text-transform: uppercase;
+}
+
+.DivProjets p{
+  @include body-style($size:$font-size-h3, $weight:600, $line-height:1, $color:$creme);
+}
+
+#ProjetsPro{
+  background-color: $orange;
+}
+
+
+#ProjetPerso h2{
+  color: $vert;
+}
+
+#MesProjets .CarteVerte,#MesProjets .CarteOrange{
+  width: 560px;
+  height: 315px;
+  margin: $space-xl 0;
+}
+
+.CarteVerte h3 , .CarteOrange h3{
+  @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+}
+
+.ContactAccueil{
+  @include flex($direction: column,  $align: center, $justify: space-evenly);
+  height: 70vh;
+}
+
+.ContactAccueil form{
+  @include flex($direction: column,  $align: center, $justify: center);
+  
+}
+
+.ContactAccueil form input, .ContactAccueil form textarea{
+  @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
+  background-color: $orange;
+  border-radius: 35px;
+  width: 80%;
+  padding: $space-xs $space-s;
+}
+
+#FooterAccueil{
+  @include flex($direction: row,  $align: center, $justify: space-around);
+  height: 30vh;
+  background-color: $vert;
+  @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
+}
+
+.LogoFooter{
+  fill: $creme;
+  height: 200px;
+}
+
+.NavFooter{
+  @include flex($direction: column,  $align: center, $justify: space-evenly);
+  height: 100%;
+}
+
+.NavFooter li{
+  @include body-style($size: $font-size-nav, $weight:600, $line-height:1.5, $color: $creme);
+}
+
+.NavFooter li:hover{
+  color: $orange;
+}
+
+.ContenueFooter{
+  @include flex($direction: column,  $align: center, $justify: space-between);
+  width: 45%;
+  height: 100%;
+}
+
+.ReseauFooter{
+  @include flex($direction: row,  $align: center, $justify: end);
+  width: 100%;
+  margin-top: $space-xxl;
+}
+
+.ReseauFooter img{
+  width: 80px;
+  height: 80px;
+  margin-left: $space-xxl;
+}
+
+.MentionsFooter{
+  @include flex($direction: row,  $align: center, $justify: space-evenly);
+  width: 100%;
+  margin-bottom: $space-s;
+}
+
+#FooterAccueil img[alt="illustration footer"]{
+  width: 200px;
+  height: 200px;
 }

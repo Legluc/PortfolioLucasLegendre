@@ -1,0 +1,81 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+#FooterGlobal{
+    @include flex($direction: column,  $align: center, $justify: space-evenly);
+    height: 70vh;
+    background-color: $vert;
+}
+
+#CorpsFooter{
+    @include flex($direction: row, $align: center, $justify: space-evenly);
+    width: 100%;
+}
+
+#FooterGauche{
+    @include flex($direction: row, $align: start, $justify: space-between);
+    width: 35%;
+    height: 100%;
+}
+
+#LogoReseau{
+    @include flex($direction: column,  $align: center, $justify: space-evenly);
+    height: 100%;
+}
+
+#LogoReseau img{
+    width: 80px;
+    height: 80px;
+}
+
+#NavImage{
+    @include flex($direction: column,  $align: start, $justify: space-evenly);
+    height: 100%;
+}
+
+#NavImage .NavFooter{
+    justify-content: center;
+    height: auto;
+}
+
+#NavImage .NavFooter li{
+    margin-right: $space-l ;
+}
+
+#NavImage img[alt="illustration footer"]{
+    width: 200px;
+    height: 200px;
+  }
+
+#FooterGlobal .NavFooter{
+    flex-direction: row;
+}
+
+#FooterGlobal .ReseauFooter{
+    flex-direction: column;
+}
+
+#CorpsFooter .ContactTitre {
+    width: 70%;
+}
+
+#CorpsFooter .Formulaire {
+    width: 90%;
+}
+#CorpsFooter .ContactTitre h2, #CorpsFooter .ContactTitre p{
+    color: $creme;
+}
+
+#CorpsFooter .ContactAccueil{
+    height: 65vh;
+}
+
+#FooterGlobal .MentionsFooter{
+    color: $creme;
+    justify-content: center;
+}
+
+#FooterGlobal .MentionsFooter p{
+    margin: 0 $space-m;
+}

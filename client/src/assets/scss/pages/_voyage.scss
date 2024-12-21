@@ -1,0 +1,84 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+@use '@/assets/scss/components/cards' as *;
+@use '@/assets/scss/components/contact' as *;
+
+#EnteteVoyage {
+    @include p (0 $space-xxl);
+    padding-top: 200px;
+    height: 100vh;
+    width: 100%;
+    background-image: url('@/assets/image/IMG_CC_LUCAS.jpg');
+    background-size: cover;
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+}
+   
+#EnteteVoyage h1{
+    color: $creme;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+#EnteteVoyage .CarteVerte{
+    width: 560px;
+    margin-top: $space-xxl;
+}
+
+#Brick{
+    @include flex($direction: row,  $align: center, $justify: center);
+    margin-top: $space-xxxl;
+    height: 80vh;
+    margin-bottom: $space-xxxl;
+
+}
+
+#Brick h2{
+    @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$vert);
+    text-transform: uppercase;
+}
+
+#Brick img{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 35px;
+    margin-left: $space-xl;
+}
+
+.ContenueVoyage{
+    width: 30%;
+    height: 100%;
+    @include flex($direction: column, $align: start, $justify: space-between);
+    margin-right: $space-xl;
+}
+
+#RoadMap{
+    @include flex($direction: column, $align: center, $justify: center);
+
+}
+
+.RoadMapTitre{
+    width: 100%;
+    background-color: $vert;
+    color: $creme;
+}
+
+.RoadMapTitre h2{
+    @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$creme);
+    text-transform: uppercase;
+}
+
+.RoadMapContenue{
+    background-color: $orange;
+    @include flex($direction: row, $align: start, $justify: space-between);
+    height: 70vh;
+}
+
+.RoadMapContenue img{
+    height: 40%;
+    width: 60%;
+    margin: $space-xl;
+}

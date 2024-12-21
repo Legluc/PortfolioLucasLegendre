@@ -5,18 +5,23 @@
 @use 'base/reset';
 @use 'components/nav';
 @use 'components/buttons';
-@use 'components/cards';
+@use 'components/cards' as *;
+@use 'components/contact' as *;
+@use 'components/galerie' as *;
 
 
 body {
   @include body-style($font-size-base);
-  background-color: $creme;
 }
 
 h1 {
   @include title-style($font-size-h1);
 }
 
-h2 {
-  @include title-style($font-size-h2);
+.CarteOrange{
+  @include carte-style(0, $orange, $creme);
+}
+
+.CarteVerte{
+  @include carte-style(0, $vert, $creme);
 }

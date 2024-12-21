@@ -1,0 +1,20 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+@mixin carte-style($margin, $bg-color, $text-color) {
+  @include flex($direction: column, $align: center, $justify: space-around);
+  padding: $space-l;
+  margin: $margin;
+  border-radius: 35px;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.CartePassion {
+  justify-content: flex-start;
+}
+
+.CartePassion h3{
+  align-self: flex-start;
+  margin-bottom: $space-m;
+}

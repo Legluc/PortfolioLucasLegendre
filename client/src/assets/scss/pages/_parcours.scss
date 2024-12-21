@@ -1,0 +1,66 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+@use '@/assets/scss/components/cards' as *;
+@use '@/assets/scss/components/contact' as *;
+
+.Marge{
+    margin: 0 $space-xxxl;
+}
+
+#MesCompetences h1{
+    color: $vert;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+#SectionParcours h2{
+    @include title-style($size:$font-size-h1, $weight:400, $line-height:1, $color:$vert);
+    text-transform: uppercase;
+}
+
+.Vert{
+    background-color: $vert;
+}
+
+.Orange{
+    background-color: $orange;
+}
+
+.CartesParcours{
+    @include flex($direction: row,  $align: start, $justify: space-between);
+    margin: $space-xxl 0;
+}
+
+.CartesParcours img{
+    width: 200px;
+    height: 200px;
+}
+
+.CorpsCartesParcours{
+    @include flex($direction: column,  $align: start, $justify: center);
+    color: $creme;
+    padding: $space-l $space-l 0 $space-l;
+    width: 80%;
+    border-radius: 35px;
+}
+
+.CorpsCartesParcours h3{
+    @include title-style($size:$font-size-h2, $weight:400, $color:$creme);
+    margin-bottom: $space-l;
+}
+
+.DatesCartesParcours{
+    @include flex($direction: row,  $align: start, $justify: space-between);
+    @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+}
+.TexteCartesParcours{
+    width: 75%;
+}
+
+
+.TexteCartesParcours p{
+    @include body-style($size:$font-size-base, $color:$creme);
+    width: 100%;
+    margin: $space-l 0;
+}

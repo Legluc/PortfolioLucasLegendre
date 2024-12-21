@@ -1,0 +1,64 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.Contact{
+    @include flex($direction: column,  $align: center, $justify: space-evenly);
+}
+  
+.ContactTitre h2{
+    @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$vert);
+    text-transform: uppercase;
+    margin-bottom: $space-l;
+}
+  
+.ContactTitre{
+    @include flex($direction: column,  $align: center, $justify: center);
+    width: 30%;
+}
+  
+.ContactTitre p{
+    @include body-style($size:$font-size-h3, $weight:600, $line-height:1.2, $color:$orange);
+    text-align: center;
+}
+  
+.Formulaire{
+    width: 33%;
+}
+  
+.ContactAccueil form{
+    @include flex($direction: column,  $align: center, $justify: center);
+    
+}
+  
+.InputForm{
+    @include flex($direction: row, $justify: space-between);
+    width: 100%;
+    height: 150px;
+    margin-bottom: $space-xl;
+  
+    textarea[label="message"] {
+      width: 100%;
+      height: 100%;
+      padding: $space-s;
+      border-radius: 25px;
+      resize: none; 
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+}
+  
+.InputInfo{
+    @include flex($direction: column,  $align: start, $justify: space-between);
+    width: 100%;
+    height: 100%;
+}
+  
+.Contact form input, .Contact form textarea{
+    @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
+    background-color: $orange;
+    border-radius: 35px;
+    width: 80%;
+    padding: $space-xs $space-s;
+}

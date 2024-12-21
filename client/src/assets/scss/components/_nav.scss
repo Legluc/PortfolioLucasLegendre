@@ -5,11 +5,25 @@
 
 #Nav{
   @include flex($direction: row, $align: center, $justify: space-between);
-  @include spacing($left: $space-l, $right: $space-l);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  @include p(0 $space-l);
   height: 145px;
+  border-radius: 35px 35px 0 0;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+}
+
+.NavAcceuil{
+  position: sticky;
+}
+
+.NavParcours{
+  background-color: $vert;
+  position: unset;
+}
+
+.NavPassions{
+  position: absolute;
 }
 
 #LienNav{
@@ -17,13 +31,21 @@
   width: 30%;
 }
 
-#LienNav li a{
-  @include body-style($size: $font-size-nav, $weight:600, $line-height:1.5);
+#LienNav li{
+  @include body-style($size: $font-size-nav, $weight:600, $line-height:1.5, $color: $orange);
   text-decoration: none;
 }
 
-#logo{
-  fill: $creme;
+#LienNav li:hover{
+  color: $lime;
+}
+
+#LogoNav{
+  fill: $orange;
   height: 110px;
   @include spacing($top: $space-xs)
+}
+
+#LogoNav:hover{
+  fill: $lime;
 }

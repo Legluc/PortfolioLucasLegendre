@@ -1,0 +1,21 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.Galerie{
+    @include flex($direction: column,  $align: center, $justify: center);
+    margin-bottom: $space-xxxl;
+}
+
+.GaleriePack{
+    @include flex($direction: row,  $align: center, $justify: space-evenly);
+    width: 100%;
+    margin-bottom: $space-xxl;
+}
+
+.GaleriePack img{
+    object-fit: cover;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 35px;
+}
