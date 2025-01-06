@@ -1,0 +1,71 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+@use '@/assets/scss/components/cards' as *;
+@use '@/assets/scss/components/contact' as *;
+
+.Carousel {
+    position: relative; // Pour positionner les boutons de navigation
+    overflow: hidden;   // Masque les éléments hors du cadre
+    width: 100%;        // S'adapte à la largeur de son conteneur
+    height: 100%;
+    max-width: 45vw;   // Limite la taille du carousel
+    max-height: 35vw;
+    margin: auto;       // Centre horizontalement
+    border-radius: 35px;
+    cursor: grab;
+}
+
+.Carousel:active {
+    cursor: grabbing;
+}
+  
+.CarouselContainer {
+    display: flex;           // Permet l'affichage des slides côte à côte
+    transition: transform 0.5s ease-in-out; // Transition fluide entre les slides
+    width: 100%;        // S'adapte à la largeur de son conteneur
+    height: 100%;
+}
+  
+.CarouselSlide {
+    @include flex-center;
+    flex: 0 0 100%;          // Chaque slide occupe 100% de la largeur du carousel
+    box-sizing: border-box;  // Inclut les marges/paddings dans les dimensions
+    height: 100%;
+}
+  
+.CarouselSlide img {
+    display: block;          // Supprime les marges par défaut des images
+    width: 100%;             // L'image occupe toute la largeur du slide
+    height: 100%;            // Respecte les proportions
+    object-fit: cover;
+}
+
+.Indicators {
+    display: flex;
+    justify-content: center; // Centre les indicateurs
+    gap: $space-xs;              // Espace entre les indicateurs
+    position: absolute;      // Positionne les indicateurs par-dessus le carousel
+    bottom: $space-s;            // Marges depuis le bas
+    left: 50%;
+    transform: translateX(-50%); // Centre horizontalement
+    z-index: 10;             // Au-dessus des slides
+    padding: $space-xxs $space-s;
+    border: 2px solid $creme;
+    border-radius: 35px;
+}
+  
+.Indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;      // Forme ronde
+    background-color: rgba(255, 255, 255, 0.5); // Indicateur inactif
+    cursor: pointer;         // Ajoute un curseur interactif
+    transition: background-color 0.3s ease; // Transition douce
+}
+  
+.Indicator.active {
+    background-color: $creme;
+}
+  
+  

@@ -30,10 +30,12 @@
       </router-link>
       </div>
       <div class="ImagePassion">
-        <img :src="images.Geek" alt="Le geek">
-        <div class="TextePassion">
-          <p>Le geek</p>
-        </div>
+        <router-link to="/PassionJeuxVideo">
+          <img :src="images.Geek" alt="Le geek">
+          <div class="TextePassion">
+            <p>Le geek</p>
+          </div>
+        </router-link>
       </div>
     </section>
     <section id="MesProjets">
@@ -101,7 +103,7 @@
 </template>
 
 <script>
-import images from '@/data/images';
+import { images } from '@/data/images';
 
 export default {
   name: "IndexPage",

@@ -1,7 +1,7 @@
 <template>
     <nav id="Nav" :class="{ NavAcceuil: $route.name === 'IndexPage',
       NavParcours: $route.name === 'MonParcours',
-      NavPassions: $route.name === 'PassionRando' || $route.name === 'PassionVoyage'
+      NavPassions: $route.name === 'PassionRando' || $route.name === 'PassionVoyage' || $route.name === 'PassionJeuxVideo'
     }">
       <router-link to="/">
         <svg id="LogoNav" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 235.3 290.8">

@@ -23,7 +23,7 @@
         </div>
         <div class="RoadMapContenue">
             <img :src="images.MontCharvin" alt="La map">
-            <div>
+            <div class="RoadMapContenueTexte">
                 <h3>Notre Itinéraire</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -31,16 +31,22 @@
         </div>
       </section>
       <section id="BichecoAventure">
-        <div>
+        <div class="BichecoAventureContenue">
             <h2>Le projet <br>Bicheco <br>Aventure</h2>
             <div class="CarteVerte CartePassion">
             <h3>Une aventure partagée</h3>
             <p> Ma passion pour la randonnée m’es apparue en lors de notre séjour en Provence. Lors de l'ascension de la Sainte Victoire, une rando que l'on a fait et refait par des chemins différents. Le massif des Alpilles et le Lubéron sont devenus notre terrain de jeu pour les mois d'hiver qui nous préparais a celui que l'on voit de partout, le colosse Provençal, le mont Ventoux. Au terme de notre séjour une aventures incroyable pour clôturer ce chapitre de notre vue que vous retrouverez compté plus bas. Surtout une passion et un sport ancré pour la vie qui nous a mené ici dans les Alpes pour vivre chaque jour une aventure de plus.</p>
-            <button>Visité la chaine</button>
+            <button class="Bouton">Visité la chaine</button>
             </div>
         </div>
-        <div>
-            <p>L’épisode 1 Le départ</p>
+        <div class="BichecoAventureEpisode">
+          <iframe
+            src="https://www.youtube.com/embed/9GWgLgEsTDI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
 
       </section>
@@ -60,7 +66,7 @@
     <Footer />
   </template>
 <script>
-import images from '@/data/images';
+import {images} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
@@ -71,7 +77,7 @@ export default {
   },
   data() {
     return {
-      images
+      images,
     };
   }
 };

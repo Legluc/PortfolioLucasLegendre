@@ -1,0 +1,86 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+@use '@/assets/scss/components/cards' as *;
+@use '@/assets/scss/components/contact' as *;
+
+#MonPotfolio{
+    @include flex($direction: row,  $align: center, $justify: center);
+    margin:$space-xl 0 $space-xxxl 0;
+    height: 70vh;
+}
+
+.MonPotfolioContenue{
+    @include flex($direction: column,  $align: start, $justify: space-between);
+    width: 33%;
+    height: 100%
+}
+
+.MonPotfolioContenue h1{
+    text-transform: uppercase;
+}
+
+.MonPotfolioContenue .CarteVerte{
+    width: 80%;
+}
+
+.MonPotfolioIllustrations{
+    @include flex($direction: row,  $align: start, $justify: end);
+    width: 33%;
+    height: 100%;
+}
+
+.MonPotfolioIllustrations img{
+    object-fit: cover;
+    width: 80%;
+}
+
+#MesProjetsPro{
+    margin-bottom: $space-xxxl;
+
+}
+
+.MesProjetsProContenue{
+    @include flex($direction: row,  $align: center, $justify: space-between);
+    height: 80vh;
+    width: 100%;
+    margin-bottom: $space-xxxl;
+    padding: 0 $space-xxl;
+    background-color: $vert;
+}
+
+.MesProjetsProTexte{
+    @include flex($direction: column,  $align: start, $justify: space-between);
+    height: 100%;
+    width: 40%;
+    margin-left: $space-xl;
+    color: $creme;
+}
+
+.MesProjetsProTexte h2{
+    @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$creme);
+    margin-top: $space-xxl;
+}
+
+.MesProjetsProTexte h3{
+    @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+}
+
+.MesProjetsProTexte p{
+    width: 70%;
+}
+
+.CartoucheLogo{
+    @include flex($direction: row,  $align: center, $justify: start);
+    height: 100px;
+    width: 100%;
+    margin-bottom: $space-xl;
+}
+
+.LogoTechno{
+    background-color: $creme;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-right: $space-l;
+}

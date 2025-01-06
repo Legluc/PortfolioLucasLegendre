@@ -53,7 +53,7 @@
     <Footer />
   </template>
 <script>
-import images from '@/data/images';
+import {images} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
