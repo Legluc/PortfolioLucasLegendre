@@ -68,53 +68,52 @@ export default {
     },
 
     startSwipe(event) {
-      // Gestion du tactile
-      if (event.type === "touchstart") {
-        this.isSwiping = true;
-        this.startX = event.touches[0].clientX;
-        this.deltaX = 0;
-        this.stopAutoSlide();
-        return;
-      }
+  // Empêche le comportement par défaut (sélection de texte par exemple).
+  event.preventDefault();
 
-      // Gestion de la souris : vérifie que le bouton est bien le bouton gauche
-      if (event.type === "mousedown" && event.button === 0) {
-        this.isSwiping = true;
-        this.startX = event.clientX;
-        this.deltaX = 0;
-        this.stopAutoSlide();
-        console.log("start")
-      }
-    },
+  this.isSwiping = true;
+  this.startX = event.type === 'touchstart'
+    ? event.touches[0].clientX
+    : event.clientX;
+  this.deltaX = 0;
 
-    onSwipe(event) {
-      if (!this.isSwiping) return; // Ignore si aucun swipe n'est en cours
+  // On écoute le mouvement de la souris et le relâchement sur le window,
+  // comme ça on ne perd pas les events quand on sort du composant.
+  window.addEventListener('mousemove', this.onSwipe);
+  window.addEventListener('mouseup', this.endSwipe);
 
-      const currentX = event.type === "touchmove"
-        ? event.touches[0].clientX
-        : event.clientX;
+  this.stopAutoSlide();
+},
+onSwipe(event) {
+  if (!this.isSwiping) return;
 
-      this.deltaX = currentX - this.startX;
-      console.log("onSwipe")
-    },
+  const currentX = event.type === 'touchmove'
+    ? event.touches[0].clientX
+    : event.clientX;
 
-    endSwipe() {
-      if (!this.isSwiping) return;
+  this.deltaX = currentX - this.startX;
+},
+endSwipe() {
+  if (!this.isSwiping) return;
 
-      const threshold = 200; // Distance minimale pour changer de slide
-      if (Math.abs(this.deltaX) > threshold) {
-        if (this.deltaX > 0) {
-          this.prevSlide();
-        } else {
-          this.nextSlide();
-        }
-      }
+  window.removeEventListener('mousemove', this.onSwipe);
+  window.removeEventListener('mouseup', this.endSwipe);
 
-      this.isSwiping = false;
-      this.deltaX = 0;
-      this.startAutoSlide(); // Redémarre l'autoplay
-      console.log("endSwipe")
-    },
+  const threshold = 100;
+  if (Math.abs(this.deltaX) > threshold) {
+    if (this.deltaX > 0) {
+      this.prevSlide();
+    } else {
+      this.nextSlide();
+    }
+  }
+
+  this.isSwiping = false;
+  this.deltaX = 0;
+  this.startAutoSlide();
+}
+
+
   },
   components: { CarouselSlide },
   mounted() {
@@ -126,7 +125,7 @@ export default {
 };
 </script>
   
-  <style lang="scss">
+<style lang="scss">
   @use '@/assets/scss/components/carousel' as *;
 
 </style>  

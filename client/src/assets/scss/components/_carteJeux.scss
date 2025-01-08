@@ -1,0 +1,88 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.CarteJeux {
+    width: 20%;
+    height: 550px;
+    perspective: 1000px; /* Donne un effet 3D */
+    cursor: pointer;
+}
+.CardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.CardInner.flipped {
+    transform: rotateY(180deg);
+}
+.CarteJeuxRecto,
+.CarteJeuxVerso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: $space-m;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 35px;
+}
+
+.CarteJeuxRecto{
+    @include flex($direction: column, $align: center, $justify: start);
+    background-color: $orange;
+}
+
+.CarteJeuxVerso {
+    @include flex($direction: column, $align: center, $justify: space-between);
+    background-color: $orange;
+    transform: rotateY(180deg); /* Verso est retourné par défaut */
+    height: 100%;
+}
+
+.CadreTitreCarte{
+    background-color: $creme;
+    border-radius: 35px;
+    width: 100%;
+    padding: $space-xs $space-s;
+}
+
+.CadreTitreCarte p{
+    @include body-style($size:$font-size-base, $weight:600, $color:$vert);
+}
+
+.CarteJeuxRecto img{
+    width: 91%;
+    height: 40%;
+}
+
+.CarteContenueRecto,
+.CarteContenueVerso,
+.CarteBas {
+    @include body-style($size:$font-size-base, $weight:400, $color:$creme);
+    width: 90%;
+}
+
+.CarteContenueRecto,
+.CarteContenueVerso {
+    margin-top: $space-m;
+}
+
+.CarteContenueTitre{
+    font-size: $font-size-nav;
+    font-weight: 600;
+    margin-bottom: $space-xs;
+}
+
+.CarteHistoire{
+    @include flex($direction: column, $align: center, $justify: flex-start);
+    width: 100%;
+    min-height: 35%;
+}
+
+.CarteBas{
+    @include flex($direction: row, $align: center, $justify: space-between);
+    margin-top: auto;
+}

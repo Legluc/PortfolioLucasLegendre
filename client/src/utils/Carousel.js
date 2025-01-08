@@ -27,7 +27,7 @@ export const carouselProps = {
     startAutoSlide() {
       this.interval = setInterval(() => {
         this.nextSlide();
-      }, 4000); // Change toutes les 3 secondes
+      }, 4000);
     },
     stopAutoSlide() {
       clearInterval(this.interval);

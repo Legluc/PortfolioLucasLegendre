@@ -11,7 +11,7 @@
         <h2>L'aventure virtuel</h2>
         <h3>Mes aventures favorites</h3>
         <div>
-
+          <CarouselCarteJeux />
         </div>
       </section>
       <section id="MonSteam">
@@ -29,10 +29,13 @@ import images from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
+import CarouselCarteJeux from '@/components/CarouselCarteJeux.vue';
+
 export default {
 name: "PassionJeuxVideo",
 components: {
   Footer,
+  CarouselCarteJeux,
 },
 data() {
   return {

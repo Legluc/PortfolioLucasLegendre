@@ -1,0 +1,7 @@
+@use '@/assets/scss/abstracts/variables' as *;
+@use '@/assets/scss/abstracts/typography' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.CarouselJeuContainer{
+    @include flex($direction: row, $align: center, $justify: space-evenly);
+}
