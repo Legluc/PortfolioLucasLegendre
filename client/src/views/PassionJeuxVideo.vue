@@ -10,7 +10,7 @@
       <section id="AventureVirtuel">
         <h2>L'aventure virtuel</h2>
         <h3>Mes aventures favorites</h3>
-        <div>
+        <div id="CarouselCarte">
           <CarouselCarteJeux />
         </div>
       </section>

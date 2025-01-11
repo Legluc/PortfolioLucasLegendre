@@ -3,11 +3,17 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 .CarteJeux {
-    width: 20%;
+    flex: 0 0 20%; 
+    margin-right: 10%;
     height: 550px;
     perspective: 1000px; /* Donne un effet 3D */
     cursor: pointer;
 }
+
+.CarteJeux:last-child {
+    margin-right: 10%; /* Pour correspondre à 4 marges en total */
+  }
+
 .CardInner {
     position: relative;
     width: 100%;
@@ -15,9 +21,11 @@
     transform-style: preserve-3d;
     transition: transform 0.6s;
 }
+
 .CardInner.flipped {
     transform: rotateY(180deg);
 }
+
 .CarteJeuxRecto,
 .CarteJeuxVerso {
     position: absolute;

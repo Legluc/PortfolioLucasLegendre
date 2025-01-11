@@ -34,6 +34,17 @@ export const carouselProps = {
     },
   };
 
+  export const carouselCarteMethods = {
+    startAutoSlide() {
+      this.interval = setInterval(() => {
+        this.nextSlide();
+      }, 3000);
+    },
+    stopAutoSlide() {
+      clearInterval(this.interval);
+    },
+  };
+
 
 
 
