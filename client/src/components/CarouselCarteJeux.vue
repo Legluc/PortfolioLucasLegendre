@@ -146,8 +146,9 @@
       const firstClone = this.CartesJeux[this.CartesJeux.length - 1];
       // Clone la première carte en fin
       const lastClone = this.CartesJeux[0];
+      const lastClone2 = this.CartesJeux[1];
 
-      return [firstClone, ...this.CartesJeux, lastClone];
+      return [firstClone, ...this.CartesJeux, lastClone, lastClone2];
     },
   },
 
@@ -185,17 +186,19 @@
           if (this.currentSlide === this.CartesJeux.length - 1 ) {
 
             // slide n-1 = le clone de la 1ere carte
-            this.currentSlide = 1;
+            this.currentSlide = -1;
+            console.log(this.currentSlide);
             
             // On enlève la transition pour “sauter” discrètement à la slide 1
-            gsap.set(this.$refs.carouselContainer, { x: '10%' });
+            gsap.set(this.$refs.carouselContainer, { x: `10%` });
           }
+
           // Vérifie si on est au tout début (0) → on saute à la fin
-          if (this.currentSlide === 0) {
-            this.currentSlide = this.CartesJeux.length;
-            // x = this.CartesJeux.length * 20 => la “vraie” dernière carte
-            gsap.set(this.$refs.carouselContainer, { x: `-${20 * this.CartesJeux.length}%` });
-          }
+          // if (this.currentSlide === 0) {
+          //   this.currentSlide = this.CartesJeux.length;
+          //   // x = this.CartesJeux.length * 20 => la “vraie” dernière carte
+          //   gsap.set(this.$refs.carouselContainer, { x: `-${20 * this.CartesJeux.length}%` });
+          // }
         },
       });
     },
