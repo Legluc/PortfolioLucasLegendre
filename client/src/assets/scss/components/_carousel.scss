@@ -7,8 +7,9 @@
     overflow: hidden;   // Masque les éléments hors du cadre
     width: 100%;        // S'adapte à la largeur de son conteneur
     height: 100%;
-    max-width: 45vw;   // Limite la taille du carousel
-    max-height: 35vw;
+    max-width: 47vw;   // Limite la taille du carousel
+    max-height: 40vw;
+    transform: translateY(15%);
     margin: auto;       // Centre horizontalement
     border-radius: 35px;
     cursor: grab;

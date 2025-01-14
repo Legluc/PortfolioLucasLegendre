@@ -1,5 +1,5 @@
 <template>
-    <div class="CarteJeux" @click="toggleFlip">
+    <div class="CarteJeux" @click="$emit('flip-card')">
       <div class="CardInner" :class="{ flipped: isFlipped }">
         <!-- Face avant -->
         <div class="CarteJeuxRecto">
@@ -51,17 +51,18 @@
       personnage: { type: String, required: true },
       histoire: { type: String, required: true },
       backgroundImage: { type: String, required: false },
+      isFlipped: { type: Boolean, required: true },
     },
-    data() {
-      return {
-        isFlipped: false, // Indique si la carte est retournée
-      };
-    },
-    methods: {
-      toggleFlip() {
-        this.isFlipped = !this.isFlipped; // Alterne l'état de retournement
-      },
-    },
+    // data() {
+    //   return {
+    //     isFlipped: false, // Indique si la carte est retournée
+    //   };
+    // },
+    // methods: {
+    //   toggleFlip() {
+    //     this.isFlipped = !this.isFlipped; // Alterne l'état de retournement
+    //   },
+    // },
   };
   </script>
   

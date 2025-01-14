@@ -32,10 +32,12 @@
     @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$vert);
     text-transform: uppercase;
     margin-bottom: $space-l;
+    @include p (0 $space-xxl);
 }
 
 #AventureVirtuel h3, #MonSteam h3{
     @include body-style($size:$font-size-h3, $weight:600, $color:$orange);
+    @include p (0 $space-xxl);
 }
 
 #AventureVirtuel{

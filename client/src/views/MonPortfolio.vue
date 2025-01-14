@@ -39,6 +39,32 @@
         </div>
         
       </div>
+      <div class="MesProjetsProContenue">
+
+        <Carousel :images="carouselImages1"/>
+
+        <div class="MesProjetsProTexte">
+          <h2>#1</h2>
+          <h3>Nom du projet</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie varius elementum. Fusce eu ornare sem. Aenean venenatis pellentesque dolor sed posuere. </p>
+          <button class="Bouton">Voir le site</button>
+          <div class="CartoucheLogo">
+            <div class="LogoTechno">
+            </div>
+            <div class="LogoTechno">
+            </div>
+            <div class="LogoTechno">
+            </div>
+            <div class="LogoTechno">
+            </div>
+            <div class="LogoTechno">
+            </div>
+            <div class="LogoTechno">
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </section>
   </div>
   <Footer />

@@ -8,11 +8,12 @@
     @touchmove="onSwipe"
     @touchend="endSwipe"
     >
-      <div class="CarouselContainer" :style="{ transform: getTransformStyle }">
+      <div class="CarouselContainer" ref="carouselContainer">
         <CarouselSlide
-        v-for="(image, index) in images"
+        v-for="(image, index) in extendedImages"
         :key="index"
         :slide="image"
+        :class="{ active: index === currentSlide }"
       />
       </div>
       <div class="Indicators">
@@ -29,98 +30,160 @@
   </template>
 
 <script>
+import { gsap } from "gsap";
 import {
-    carouselProps,
-    carouselData,
-    carouselComputed,
-    carouselMethods,
+  carouselProps,
+  carouselData,
+  carouselComputed,
+  carouselMethods,
 } from '@/utils/Carousel.js';
 
 import CarouselSlide from './CarouselSlide.vue';
+
 export default {
   name: 'CarouselGlobal',
   props: carouselProps,
+
   data() {
     return {
       ...carouselData(),
-      startX: 0, // Position de départ du swipe
-      deltaX: 0, // Distance parcourue par le swipe
-      isSwiping: false, // Indique si un swipe est en cours
+
+      // Variables pour le swipe
+      startX: 0,
+      deltaX: 0,
+      isSwiping: false,
     };
   },
+
   computed: {
     ...carouselComputed,
-    getSwipeTransformStyle() {
-      // Si en train de swiper, applique le déplacement relatif
-      if (this.isSwiping) {
-        const offset = -this.currentSlide * 100 + (this.deltaX / this.$el.offsetWidth) * 100;
-        return `translateX(${offset}%)`;
-      }
-      return this.getTransformStyle;
+
+    // Clonage des images pour l'effet infini
+    extendedImages() {
+      return [
+        this.images[this.images.length - 1],
+        ...this.images,
+        this.images[0],
+      ];
     },
   },
+
   methods: {
     ...carouselMethods,
+
+    // Changement de slide via les indicateurs
     changeSlide(index) {
-      this.stopAutoSlide();    // Stoppe l'auto-slide en cours
-      this.currentSlide = index; // Met à jour la slide active
-      this.startAutoSlide();   // Redémarre l'auto-slide
+      this.stopAutoSlide();
+      this.animateSlideTo(index);
+      this.currentSlide = index;
+      this.startAutoSlide();
     },
 
+    // Gestion du swipe
     startSwipe(event) {
-  // Empêche le comportement par défaut (sélection de texte par exemple).
-  event.preventDefault();
+      event.preventDefault();
+      this.isSwiping = true;
+      this.startX = event.type === 'touchstart'
+        ? event.touches[0].clientX
+        : event.clientX;
+      this.deltaX = 0;
 
-  this.isSwiping = true;
-  this.startX = event.type === 'touchstart'
-    ? event.touches[0].clientX
-    : event.clientX;
-  this.deltaX = 0;
+      window.addEventListener('mousemove', this.onSwipe);
+      window.addEventListener('mouseup', this.endSwipe);
+      window.addEventListener('touchmove', this.onSwipe);
+      window.addEventListener('touchend', this.endSwipe);
 
-  // On écoute le mouvement de la souris et le relâchement sur le window,
-  // comme ça on ne perd pas les events quand on sort du composant.
-  window.addEventListener('mousemove', this.onSwipe);
-  window.addEventListener('mouseup', this.endSwipe);
+      this.stopAutoSlide();
+    },
 
-  this.stopAutoSlide();
-},
-onSwipe(event) {
-  if (!this.isSwiping) return;
+    onSwipe(event) {
+      if (!this.isSwiping) return;
 
-  const currentX = event.type === 'touchmove'
-    ? event.touches[0].clientX
-    : event.clientX;
+      const currentX =
+        event.type === "touchmove"
+          ? event.touches[0].clientX
+          : event.clientX;
 
-  this.deltaX = currentX - this.startX;
-},
-endSwipe() {
-  if (!this.isSwiping) return;
+      // Calcul du déplacement en pixels
+      this.deltaX = currentX - this.startX;
 
-  window.removeEventListener('mousemove', this.onSwipe);
-  window.removeEventListener('mouseup', this.endSwipe);
+      const containerEl = this.$refs.carouselContainer;
+      if (!containerEl) return;
 
-  const threshold = 100;
-  if (Math.abs(this.deltaX) > threshold) {
-    if (this.deltaX > 0) {
-      this.prevSlide();
-    } else {
-      this.nextSlide();
-    }
-  }
+      // Conversion des pixels en pourcentage
+      const containerWidth = containerEl.offsetWidth;
+      const deltaPercent = (this.deltaX / containerWidth) * 100;
 
-  this.isSwiping = false;
-  this.deltaX = 0;
-  this.startAutoSlide();
-}
+      // Application du déplacement temporaire
+      gsap.to(containerEl, {
+        xPercent: -((this.currentSlide + 1) * 100) + deltaPercent,
+        duration: 0,
+      });
+    },
 
+    endSwipe() {
+      if (!this.isSwiping) return;
 
+      const threshold = 20; // Pourcentage de déplacement nécessaire pour changer de slide
+      const containerEl = this.$refs.carouselContainer;
+      if (!containerEl) {
+        this.isSwiping = false;
+        this.deltaX = 0;
+        this.startAutoSlide();
+        return;
+      }
+
+      // Conversion des pixels en pourcentage
+      const containerWidth = containerEl.offsetWidth;
+      const deltaPercent = (this.deltaX / containerWidth) * 100;
+
+      if (Math.abs(deltaPercent) > threshold) {
+        if (deltaPercent > 0) {
+          this.prevSlide();
+        } else {
+          this.nextSlide();
+        }
+      } else {
+        // Retour à la position initiale
+        this.animateSlideTo(this.currentSlide);
+      }
+
+      this.isSwiping = false;
+      this.deltaX = 0;
+      this.startAutoSlide();
+    },
+
+    // Animation vers une slide spécifique en pourcentage
+    animateSlideTo(index) {
+      const containerEl = this.$refs.carouselContainer;
+      if (!containerEl) return;
+
+      gsap.to(containerEl, {
+        xPercent: -((index + 1) * 100),
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    },
   },
+
   components: { CarouselSlide },
+
   mounted() {
-    this.startAutoSlide(); // Démarre le changement automatique
+    this.$nextTick(() => {
+      // Positionnement initial du container
+      gsap.set(this.$refs.carouselContainer, {
+        xPercent: -100, // Commence sur la première image réelle
+      });
+
+      // Démarrage de l'auto-slide
+      setTimeout(() => {
+        this.startAutoSlide();
+      }, 100);
+    });
   },
+
   beforeUnmount() {
-    this.stopAutoSlide(); // Stoppe l'intervalle lors de la destruction du composant
+    this.stopAutoSlide();
   },
 };
 </script>
