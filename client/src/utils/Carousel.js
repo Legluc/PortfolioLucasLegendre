@@ -75,6 +75,7 @@ export const carouselMethods = {
       this.nextSlide();
     }, 4000);
   },
+  
 
   // Arrêt de l'auto-slide
   stopAutoSlide() {
