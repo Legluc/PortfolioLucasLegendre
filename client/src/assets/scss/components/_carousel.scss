@@ -21,7 +21,6 @@
   
 .CarouselContainer {
     display: flex;           // Permet l'affichage des slides côte à côte
-    transition: transform 0.5s ease-in-out; // Transition fluide entre les slides
     width: 100%;        // S'adapte à la largeur de son conteneur
     height: 100%;
 }

@@ -145,11 +145,6 @@
         ],
         // currentSlide = index “virtuel” dans displayedCards
         currentSlide: 1, 
-        // On désactive ici l’autoSlide pour simplifier, libre à toi de le remettre
-        interval: null, 
-        startX: 0,
-        deltaX: 0,
-        isSwiping: false,
         ...carouselData(),
       };
     },
@@ -225,8 +220,6 @@
     
     animateSlide() {
       const offset = 20 + (this.currentSlide * 30);
-      console.log(this.currentSlide);
-      console.log(offset);
       
       // Animation GSAP sur le container
       gsap.to(this.$refs.carouselContainer, {
@@ -239,7 +232,6 @@
 
             // slide n-1 = le clone de la 1ere carte
             this.currentSlide = -1;
-            console.log(this.currentSlide);
             
             // On enlève la transition pour “sauter” discrètement à la slide 1
             gsap.set(this.$refs.carouselContainer, { x: `10%` });

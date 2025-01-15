@@ -13,37 +13,21 @@ export const carouselData = () => ({
   interval: null,  // ID de l'intervalle pour l'auto-slide
 });
 
-export const carouselComputed = {
-  // Aucun calcul nécessaire ici car nous utilisons xPercent
-};
-
 export const carouselMethods = {
   // Passage à la slide suivante
   nextSlide() {
     this.currentSlide++;
-
-    if (this.currentSlide >= this.images.length) {
-      // Si on dépasse la dernière slide, repositionnement infini
-      this.handleInfiniteScroll(0);
-    } else {
       // Animation normale vers la prochaine slide
       this.animateSlideTo(this.currentSlide);
-    }
   },
 
   // Passage à la slide précédente
   prevSlide() {
     this.currentSlide--;
-
-    if (this.currentSlide < 0) {
-      // Si on est avant la première slide, repositionnement infini
-      this.handleInfiniteScroll(this.images.length - 1);
-    } else {
       // Animation normale vers la slide précédente
       this.animateSlideTo(this.currentSlide);
-    }
   },
-
+  
   // Animation vers une slide spécifique
   animateSlideTo(index) {
     const containerEl = this.$refs.carouselContainer;
@@ -53,6 +37,14 @@ export const carouselMethods = {
       xPercent: -((index + 1) * 100), // +1 à cause du clone initial
       duration: 0.5,
       ease: "power2.out",
+      onComplete: () => {
+        if (this.currentSlide >= this.images.length) {
+          this.handleInfiniteScroll(0);
+        } else if(this.currentSlide < 0) {
+          // Si on est avant la première slide, repositionnement infini
+          this.handleInfiniteScroll(this.images.length - 1);
+        }
+      }
     });
   },
 
@@ -60,6 +52,7 @@ export const carouselMethods = {
   handleInfiniteScroll(targetIndex) {
     const containerEl = this.$refs.carouselContainer;
     if (!containerEl) return;
+
 
     // Position instantanée sans animation
     gsap.set(containerEl, {
@@ -71,6 +64,7 @@ export const carouselMethods = {
 
   // Démarrage de l'auto-slide
   startAutoSlide() {
+    this.stopAutoSlide();
     this.interval = setInterval(() => {
       this.nextSlide();
     }, 4000);
@@ -80,18 +74,21 @@ export const carouselMethods = {
   // Arrêt de l'auto-slide
   stopAutoSlide() {
     clearInterval(this.interval);
+    this.interval = null;
   },
 };
 
 
   export const carouselCarteMethods = {
     startAutoSlide() {
+      this.stopAutoSlide();
       this.interval = setInterval(() => {
         this.nextSlide();
       }, 4000);
     },
     stopAutoSlide() {
       clearInterval(this.interval);
+      this.interval = null;
     },
   };
 

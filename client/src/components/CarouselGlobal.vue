@@ -20,7 +20,7 @@
         <span
           v-for="(image, index) in images"
           :key="index"
-          :class="{ active: index === currentSlide }"
+          :class="{ active: index === getIndicatorIndex() }"
           class="Indicator"
           @click="changeSlide(index)"
         ></span>
@@ -77,6 +77,13 @@ export default {
       this.animateSlideTo(index);
       this.currentSlide = index;
       this.startAutoSlide();
+    },
+
+    getIndicatorIndex() {
+      if( this.currentSlide === this.images.length ){
+        return 0 ;
+      } 
+      return this.currentSlide;
     },
 
     // Gestion du swipe
@@ -151,18 +158,6 @@ export default {
       this.isSwiping = false;
       this.deltaX = 0;
       this.startAutoSlide();
-    },
-
-    // Animation vers une slide spécifique en pourcentage
-    animateSlideTo(index) {
-      const containerEl = this.$refs.carouselContainer;
-      if (!containerEl) return;
-
-      gsap.to(containerEl, {
-        xPercent: -((index + 1) * 100),
-        duration: 0.5,
-        ease: "power2.out",
-      });
     },
   },
 
