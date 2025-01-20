@@ -3,8 +3,8 @@
         <section id="EnteteJeuxVideo">
         <h1>Ma passion : <br>Les jeux video</h1>
         <div class="CarteOrange CartePassion">
-          <h3>Et pourquoi la rando ?</h3>
-          <p> Ma passion pour la randonnée m’es apparue en lors de notre séjour en Provence. Lors de l'ascension de la Sainte Victoire, une rando que l'on a fait et refait par des chemins différents. Le massif des Alpilles et le Lubéron sont devenus notre terrain de jeu pour les mois d'hiver qui nous préparais a celui que l'on voit de partout, le colosse Provençal, le mont Ventoux. Au terme de notre séjour une aventures incroyable pour clôturer ce chapitre de notre vue que vous retrouverez compté plus bas. Surtout une passion et un sport ancré pour la vie qui nous a mené ici dans les Alpes pour vivre chaque jour une aventure de plus.</p>
+          <h3>Quand la quête debute</h3>
+          <p> Les jeux vidéo représentent pour moi le média parfait pour vivre des aventures grandioses. Grâce à leur interactivité et à leurs possibilités infinies, ils sont une source inépuisable de plaisir et d'évasion. <br> Tout a commencé avec Pokémon Rubis sur GameBoy, une licence qui m'a accompagné sur Nintendo DS avec Pokémon Diamant. Mon parcours s'est poursuivi dans la ville d'Astrub sur Dofus, puis dans les cieux de Flyff, avant de plonger dans l'incontournable World of Warcraft. Aujourd'hui, j'ai survécu à un crash sur une planète océanique dans Subnautica et je lutte pour retrouver ma taille normale sur Grounded. <br> Plongez avec moi dans mes aventures virtuelles préférées !</p>
         </div>
       </section>
       <section id="AventureVirtuel">

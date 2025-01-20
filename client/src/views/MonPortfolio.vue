@@ -5,7 +5,7 @@
         <h1>Mes <br>Projets</h1>
         <div class="CarteVerte CartePassion">
           <h3>Mes projets</h3>
-          <p> Ma passion pour la randonnée m’es apparue en lors de notre séjour en Provence. Lors de l'ascension de la Sainte Victoire, une rando que l'on a fait et refait par des chemins différents. Le massif des Alpilles et le Lubéron sont devenus notre terrain de jeu pour les mois d'hiver qui nous préparais a celui que l'on voit de partout, le colosse Provençal, le mont Ventoux. Au terme de notre séjour une aventures incroyable pour clôturer ce chapitre de notre vue que vous retrouverez compté plus bas. Surtout une passion et un sport ancré pour la vie qui nous a mené ici dans les Alpes pour vivre chaque jour une aventure de plus.</p>
+          <p>Découvrez une sélection de projets variés auxquels j'ai contribué, que ce soit lors de ma formation ou en milieu professionnel. <br>Vous trouverez également mes réalisations personnelles, conçues pour approfondir mes compétences et explorer de nouvelles technologies.</p>        
         </div>
       </div>
       <div class="MonPotfolioIllustrations">

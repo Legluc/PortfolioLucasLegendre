@@ -27,8 +27,8 @@
 
 #LucasLegendre .CarteVerte{
   margin-top: $space-xxl;
-  width: 560px;
-  height: 315px;
+  width: 33%;
+  height: auto;
 }
 
 #LucasLegendre .CarteVerte h2{
@@ -36,8 +36,8 @@
   align-self: flex-start;
 }
 
-#LucasLegendre .CarteVerte button{
-  align-self: flex-end;
+#LucasLegendre .CarteVerte p{
+  margin: $space-s 0;
 }
 
 #MonParcours{
@@ -101,7 +101,7 @@
 #MesProjets{
   height: 100vh;
   width: 100%;
-  display: flex;
+  display: none;
 }
 
 .DivProjets{
@@ -207,4 +207,145 @@
 #FooterAccueil img[alt="illustration footer"]{
   width: 200px;
   height: 200px;
+}
+
+// --- MEDIA QUERIES --
+
+@media (max-width: 1700px){
+
+  #LucasLegendre .CarteVerte{
+    width: 40%;
+  }
+
+}
+
+@media (max-width: 1440px){
+
+  #LucasLegendre{
+    background-size: 110%;
+    background-position-x: 0%;
+  }
+
+  #LucasLegendre .CarteVerte{
+    width: 45%;
+  }
+
+  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+    width: 40%;
+  }
+
+}
+
+@media (max-width: 1200px){
+
+  #LucasLegendre .CarteVerte{
+      width: 55%;
+  }
+
+}
+
+@media (max-width: 1024px){
+
+  #LucasLegendre{
+    padding: 0 $space-xl;
+    padding-top: 200px;
+    background-size: cover;
+    background-position-x: 0%;
+  }
+
+  #LucasLegendre .CarteVerte{
+    width: 70%;
+    background-color: rgba($vert, 0.6);
+  }
+
+  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  #LucasLegendre{
+    height: auto;
+    padding-bottom: $space-xl;
+  }
+
+  #LucasLegendre h1{
+    font-size: 48px;
+  }
+
+  .ContactAccueil{
+    height: auto;
+    padding: $space-xl 0;
+  }
+
+  .ContactAccueil .ContactTitre{
+    margin-bottom: $space-l;
+  }
+
+  .ContactAccueil .ContactTitre h2{
+    font-size: 48px;
+  }
+
+  .Formulaire .InputForm{
+    flex-direction: column;
+    height: auto;
+    margin-bottom: $space-m;
+  }
+
+  .ContactAccueil form input{
+    width: 100%;
+    margin-bottom: $space-m;
+  }
+
+  .InputForm textarea[label=message] {
+    min-height: 20vh;
+  }
+
+}
+
+@media (max-width: 500px){
+
+  #LucasLegendre{
+    background-position-x: 50%;
+  }
+
+  #LucasLegendre .CarteVerte{
+    width: 100%;
+  }
+
+  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+    width: 100%;
+    padding: 0 $space-xl;
+  }
+
+}
+
+@media (max-width: 425px){
+
+  #LucasLegendre{
+    padding: 200px $space-l $space-xl $space-l;
+  }
+
+  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+    padding: 0 $space-l;
+  }
+
+}
+
+@media (max-width: 350px){
+
+  #LucasLegendre h1{
+    font-size: 36px;
+  }
+
+  .ContactAccueil .ContactTitre h2{
+    font-size: 36px;
+  }
+
+  .ContactAccueil .ContactTitre p{
+    font-size: 18px;
+  }
+
 }
