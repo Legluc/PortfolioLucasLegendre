@@ -196,6 +196,7 @@
   width: 80px;
   height: 80px;
   margin-left: $space-xxl;
+  background-color: $orange;
 }
 
 .MentionsFooter{
@@ -207,6 +208,8 @@
 #FooterAccueil img[alt="illustration footer"]{
   width: 200px;
   height: 200px;
+  background-color: $orange;
+
 }
 
 // --- MEDIA QUERIES --
@@ -242,6 +245,10 @@
       width: 55%;
   }
 
+  #FooterAccueil{
+    padding: 0 $space-l;
+  }
+
 }
 
 @media (max-width: 1024px){
@@ -261,6 +268,54 @@
   .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
     width: 60%;
   }
+
+  #FooterAccueil{
+    flex-direction: column;
+    height: auto;
+    margin-top: 100px;
+    padding-top: 100px;
+  }
+
+  .LogoFooter{
+    position: absolute;
+    transform: translate(-50%, -100%);
+    fill: $orange;
+  }
+
+  .NavFooter li{
+    margin: $space-s 0;
+  }
+
+  .ContenueFooter{
+    width: 100%;
+    height: auto;
+  }
+
+  .ReseauFooter{
+    flex-direction: column;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .ReseauFooter img{
+    margin: $space-l 0;
+  }
+
+  .MentionsFooter{
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: unset;
+  }
+
+  .MentionsFooter p{
+    margin: $space-s 0;
+  }
+
+  #FooterAccueil img[alt="illustration footer"]{
+    margin: $space-xl 0;
+
+  }
+
 
 }
 
