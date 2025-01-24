@@ -33,15 +33,17 @@
 }
 
 .CartesParcours img{
-    width: 200px;
-    height: 200px;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 35px;
+    margin-right: $space-xl;
 }
 
 .CorpsCartesParcours{
     @include flex($direction: column,  $align: start, $justify: center);
     color: $creme;
     padding: $space-l $space-l 0 $space-l;
-    width: 80%;
+    width: auto;
     border-radius: 35px;
 }
 
@@ -54,6 +56,11 @@
     @include flex($direction: row,  $align: start, $justify: space-between);
     @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
 }
+
+.DatesCartesParcours p{
+    margin-right: $space-m;
+}
+
 .TexteCartesParcours{
     width: 75%;
 }
@@ -63,4 +70,92 @@
     @include body-style($size:$font-size-base, $color:$creme);
     width: 100%;
     margin: $space-l 0;
+}
+
+@media (max-width: 1440px){
+    .Marge{
+        margin: 0 $space-xl;
+    }
+}
+
+
+@media (max-width: 1024px){
+
+    #MesCompetences h1{
+        font-size: 72px;
+    }
+
+    #SectionParcours h2{
+        font-size: 72px;
+    }
+
+    .CartesParcours img{
+        margin-right: $space-l;
+    }
+
+    .DatesCartesParcours{
+        flex-direction: column;
+    }
+
+    .DatesCartesParcours p{
+        margin-bottom: $space-m;
+    }
+
+    .TexteCartesParcours{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+
+    .Marge{
+        margin: 0 $space-l;
+    }
+
+    #MesCompetences h1{
+        font-size: 48px;
+    }
+
+    #SectionParcours h2{
+        font-size: 48px;
+    }
+
+    .CartesParcours{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .CartesParcours img{
+        margin-right: unset;
+        margin-bottom: $space-xl;
+        min-width: 50vw;
+        height: 50vw;
+    }
+
+
+}
+
+@media (max-width: 500px){
+
+    #MesCompetences h1{
+        font-size: 36px;
+    }
+
+    #SectionParcours h2{
+        font-size: 36px;
+    }
+
+    .CartesParcours img{
+        min-width: 80vw;
+        height: 80vw;
+    }
+
+    .CorpsCartesParcours{
+        width: 100vw;
+        border-radius: unset;
+    }
+    
+    .CartesParcours{
+        margin: $space-xl 0;
+    }
 }
