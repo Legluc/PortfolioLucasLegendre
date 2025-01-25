@@ -17,7 +17,7 @@
         <li><router-link to="/Passions">Passions</router-link></li>
         <li><router-link to="/Contact">Contact</router-link></li>
       </ul>
-      <svg id="LogoBurger" :class="{ Inctive: isMenuOpen }" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 107.1 115.2" @click="toggleMenu">
+      <svg id="LogoBurger" :class="{ Inactive: isMenuOpen }" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 107.1 115.2" @click="toggleMenu">
         <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
         <g>
           <path class="st01" d="M10,88.2l1.3-37.5c.5-14.8,8.6-28.4,21.5-35.5,6.2-3.3,13.2-5.2,20.7-5.2s14.6,1.9,20.7,5.2c13,7,21,20.7,21.5,35.5l1.3,37.5v5c0,6.6-5.4,12-12,12H22c-6.6,0-12-5.4-12-12v-5s0,0,0,0"/>

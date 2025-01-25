@@ -276,13 +276,13 @@
     padding-top: 100px;
   }
 
-  .LogoFooter{
+  #FooterAccueil .LogoFooter{
     position: absolute;
     transform: translate(-50%, -100%);
     fill: $orange;
   }
 
-  .NavFooter li{
+  #FooterAccueil .NavFooter li{
     margin: $space-s 0;
   }
 
@@ -343,7 +343,7 @@
     font-size: 48px;
   }
 
-  .Formulaire .InputForm{
+  #FooterAccueil .Formulaire .InputForm{
     flex-direction: column;
     height: auto;
     margin-bottom: $space-m;
@@ -354,7 +354,7 @@
     margin-bottom: $space-m;
   }
 
-  .InputForm textarea[label=message] {
+  #FooterAccueil .InputForm textarea[label=message] {
     min-height: 20vh;
   }
 

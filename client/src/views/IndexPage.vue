@@ -14,7 +14,7 @@
     <section id="MesPassions">
       <div class="ImagePassion">
         <router-link to="/PassionRando">
-          <img :src="images.Randonneur" alt="Le randonneur">
+          <img :src="ImagesIndex.Randonneur" alt="Le randonneur">
           <div class="TextePassion">
             <p>Le randonneur</p>
           </div>
@@ -22,7 +22,7 @@
       </div>
       <div class="ImagePassion">
         <router-link to="/PassionVoyage">
-        <img :src="images.Voyageur" alt="Le voyageur">
+        <img :src="ImagesIndex.Voyageur" alt="Le voyageur">
         <div class="TextePassion"> 
           <p>Le voyageur</p>
         </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="ImagePassion">
         <router-link to="/PassionJeuxVideo">
-          <img :src="images.Geek" alt="Le geek">
+          <img :src="ImagesIndex.Geek" alt="Le geek">
           <div class="TextePassion">
             <p>Le geek</p>
           </div>
@@ -102,13 +102,13 @@
 </template>
 
 <script>
-import { images } from '@/data/images';
+import { ImagesIndex } from '@/data/images';
 
 export default {
   name: "IndexPage",
   data() {
     return {
-      images
+      ImagesIndex
     };
   }
 };

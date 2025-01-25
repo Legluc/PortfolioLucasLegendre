@@ -4,8 +4,11 @@
 
 #FooterGlobal{
     @include flex($direction: column,  $align: center, $justify: space-evenly);
-    height: 70vh;
     background-color: $vert;
+}
+
+.LogoResponsive{
+    display: none;
 }
 
 #CorpsFooter{
@@ -27,11 +30,14 @@
 #LogoReseau img{
     width: 80px;
     height: 80px;
+    background-color: $orange;
+    margin-top: $space-l;
 }
 
 #NavImage{
     @include flex($direction: column,  $align: start, $justify: space-evenly);
     height: 100%;
+    margin: 0 $space-xl;
 }
 
 #NavImage .NavFooter{
@@ -46,6 +52,8 @@
 #NavImage img[alt="illustration footer"]{
     width: 200px;
     height: 200px;
+    margin-top: $space-xl;
+    background-color: $orange;
   }
 
 #FooterGlobal .NavFooter{
@@ -67,15 +75,85 @@
     color: $creme;
 }
 
-#CorpsFooter .ContactAccueil{
+#CorpsFooter .Contact{
     height: 65vh;
 }
 
 #FooterGlobal .MentionsFooter{
     color: $creme;
     justify-content: center;
+    margin: $space-l 0;
 }
 
 #FooterGlobal .MentionsFooter p{
     margin: 0 $space-m;
+}
+
+@media (max-width: 1440px){
+
+    #FooterGlobal{
+        margin-top: $space-xxxl;
+        padding-top: $space-xl;
+    }
+
+    #CorpsFooter{
+        flex-direction: column-reverse;
+    }
+
+    .Contact{
+        margin: $space-xl 0;
+    }
+
+    .LogoFooter{
+        display: none;
+    }
+
+    .LogoResponsive{
+        display: block;
+        position: absolute;
+        transform: translate(-50%, -80%);
+        fill: $orange;
+    }
+
+    #FooterGauche{
+        width: 80%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    #NavImage{
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #NavImage .NavFooter{
+        margin-bottom: $space-xl;
+    }
+    
+    #NavImage .NavFooter li{
+        margin: 0 $space-xl;
+    }
+    
+    #NavImage img[alt="illustration footer"] {
+        position: absolute;
+        transform: translate(-0%, 190%);
+        margin: unset;
+    }
+
+    #LogoReseau{
+        flex-direction: row;
+    }
+    
+    #LogoReseau img {
+        margin: 0 $space-l;
+    }
+    
+    #FooterGlobal .MentionsFooter {
+        margin-bottom: 350px;
+    }
+
+    #FooterGlobal .MentionsFooter p{
+        margin: $space-xs 0;
+    }
+    
 }

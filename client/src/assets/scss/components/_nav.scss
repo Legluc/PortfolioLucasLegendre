@@ -64,14 +64,14 @@
   fill: $creme;
 }
 
-@media (max-width: 1024px){
+@media (max-width: 768px){
 
   #LogoBurger{
     display: block;
   }
 
   #LogoBurger.Inactive{
-
+    display: none;
   }
 
   #LienNav{
