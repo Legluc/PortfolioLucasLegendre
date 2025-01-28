@@ -87,32 +87,34 @@
         <li><router-link to="/Portfolio">Portfolio</router-link></li>
         <li><router-link to="/Parcours">Parcours</router-link></li>
         <li><router-link to="/Passions">Passions</router-link></li>
+        <li>Mentions Légales</li>
       </ul>
-      <div class="ContenueFooter">
-        <div class="ReseauFooter">
-          <a href="https://github.com/Legluc" class="LienLogoReseau"> 
-            <svg id="LogoGithub" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
-              <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
-              <path class="st0" d="M52,104.7c-.4,1.3-2.3,1.3-3.4,1.1-8.7-1.6-20.1-12.3-24.4-19.9C2.5,47.9,43.3,6.4,82.4,24.4c35,16.1,33.5,67.4-2.4,80.6-2,.7-5.5,2.2-5.9-1.1-.8-6.6,2.1-14.9-2.8-20.3,11.1-.9,18.8-6.1,20.1-17.6s.1-9.3-2.5-13.6-1.8-2.1-1.8-2.3c0-.5.6-2.1.7-2.8.3-2.9,0-5.9-1.1-8.6-4.4-1-8.8,2.2-12.5,4.3-7.2-1.9-15-2-22.2,0-3.7-2.1-7.9-5-12.3-4.4-1.2.8-1.7,6.2-1.5,7.7s.9,3.2.8,3.9-1.4,1.9-1.9,2.6c-5.3,9-2.6,23.2,7,28.2,3.4,1.7,6.5,2.1,10.1,2.8s.6,0,.4.4-1.3,1.4-1.7,2.2-.6,2.3-1.1,3.4c-2.5,1.2-5.9,1.4-8.5.4-4.7-1.9-5.3-8.5-11.3-8.7-5.2-.1.9,3.4,1.8,4.4,2.3,2.4,2.7,5.8,5,8.1,3.6,3.5,8.3,3.3,12.9,2.7-.4,2.1.5,6.4,0,8.3Z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/lucas-legendre-42a95b203/" class="LienLogoReseau">
-              <svg id="LogoLinkedin" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
-                <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
-                <g>
-                  <path class="st0" d="M101,101.1h-16v-29.7c0-.1-.6-1.7-.8-2-2.9-6-11.4-6-14.3,0s-.8,1.9-.8,2v29.7h-16v-47.9h16v6c5.9-7.4,15.1-9.4,23.2-4.2,3.9,2.5,8.6,8.8,8.6,13.7v32.4Z"/>
-                  <rect class="st0" x="26.4" y="53.2" width="16" height="47.9"/>
-                  <path class="st0" d="M33.9,24.9c12.6-.5,13.4,18,1.6,19.1-13.2,1.3-14.3-18.6-1.6-19.1Z"/>
-                </g>
-              </svg>
-            </a>
-        </div>
-        <div class="MentionsFooter">
-          <p>Mentions Légales</p>
-          <p>Lucas Legendre X Studio Aosagi 2025</p>
+      <div class="MentionsFooter">
+        <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
+        <p class="CallToActionFooter">Follow me on my network !</p>
+        <div class="OverlayPrenomFooter">
+          <p class="NomFooter">Lucas Legendre</p>
+          <p class="PrenomFooter">Lucas</p>
         </div>
       </div>
-      <img src="" alt="illustration footer">
+      <div class="ReseauFooter">
+        <a href="https://github.com/Legluc" class="LienLogoReseau"> 
+          <svg id="LogoGithub" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
+            <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
+            <path class="st0" d="M52,104.7c-.4,1.3-2.3,1.3-3.4,1.1-8.7-1.6-20.1-12.3-24.4-19.9C2.5,47.9,43.3,6.4,82.4,24.4c35,16.1,33.5,67.4-2.4,80.6-2,.7-5.5,2.2-5.9-1.1-.8-6.6,2.1-14.9-2.8-20.3,11.1-.9,18.8-6.1,20.1-17.6s.1-9.3-2.5-13.6-1.8-2.1-1.8-2.3c0-.5.6-2.1.7-2.8.3-2.9,0-5.9-1.1-8.6-4.4-1-8.8,2.2-12.5,4.3-7.2-1.9-15-2-22.2,0-3.7-2.1-7.9-5-12.3-4.4-1.2.8-1.7,6.2-1.5,7.7s.9,3.2.8,3.9-1.4,1.9-1.9,2.6c-5.3,9-2.6,23.2,7,28.2,3.4,1.7,6.5,2.1,10.1,2.8s.6,0,.4.4-1.3,1.4-1.7,2.2-.6,2.3-1.1,3.4c-2.5,1.2-5.9,1.4-8.5.4-4.7-1.9-5.3-8.5-11.3-8.7-5.2-.1.9,3.4,1.8,4.4,2.3,2.4,2.7,5.8,5,8.1,3.6,3.5,8.3,3.3,12.9,2.7-.4,2.1.5,6.4,0,8.3Z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lucas-legendre-42a95b203/" class="LienLogoReseau">
+            <svg id="LogoLinkedin" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
+              <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
+              <g>
+                <path class="st0" d="M101,101.1h-16v-29.7c0-.1-.6-1.7-.8-2-2.9-6-11.4-6-14.3,0s-.8,1.9-.8,2v29.7h-16v-47.9h16v6c5.9-7.4,15.1-9.4,23.2-4.2,3.9,2.5,8.6,8.8,8.6,13.7v32.4Z"/>
+                <rect class="st0" x="26.4" y="53.2" width="16" height="47.9"/>
+                <path class="st0" d="M33.9,24.9c12.6-.5,13.4,18,1.6,19.1-13.2,1.3-14.3-18.6-1.6-19.1Z"/>
+              </g>
+            </svg>
+          </a>
+      </div>
     </footer>
   </div>
 </template>

@@ -180,8 +180,8 @@
 
 
 .NavFooter{
-  @include flex($direction: column,  $align: center, $justify: space-evenly);
-  height: 100%;
+  @include flex($direction: column,  $align: start, $justify: space-evenly);
+  height: 70%;
 }
 
 .NavFooter li{
@@ -192,20 +192,13 @@
   color: $lime;
 }
 
-.ContenueFooter{
-  @include flex($direction: column,  $align: center, $justify: space-between);
-  width: 45%;
-  height: 100%;
-}
-
 .ReseauFooter{
   @include flex($direction: row,  $align: center, $justify: end);
-  width: 100%;
-  margin-top: $space-xxl;
+  margin-right: $space-xxl;
 }
 
 .ReseauFooter .LienLogoReseau{
-  margin: 0 $space-l;
+  margin: 0 $space-xs;
   width: 80px;
 }
 
@@ -234,17 +227,33 @@
 }
 
 .MentionsFooter{
-  @include flex($direction: row,  $align: center, $justify: space-evenly);
-  width: 100%;
-  margin-bottom: $space-s;
+  @include flex($direction: column,  $align: center, $justify: space-evenly);
+  position: relative;
+  width: 50%;
+  height: 100%;
 }
 
-#FooterAccueil img[alt="illustration footer"]{
-  width: 200px;
-  height: 200px;
-  background-color: $orange;
-
+.OverlayPrenomFooter{
+  position: absolute;
+  overflow: hidden;
+  width: 90vw;
+  height: 100%;
 }
+
+.NomFooter, .PrenomFooter{
+  @include title-style(140px, $weight:400, $line-height:1.2);
+  color: rgba($creme, 0.2);
+  text-transform: uppercase;
+}
+
+.NomFooter{
+  transform: translate(6%, 105%);
+}
+
+.PrenomFooter{
+  display: none;
+}
+
 
 // --- MEDIA QUERIES --
 
