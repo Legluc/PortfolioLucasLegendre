@@ -27,11 +27,25 @@
     height: 100%;
 }
 
-#LogoReseau img{
-    width: 80px;
-    height: 80px;
-    background-color: $orange;
+#LogoReseau .LienLogoReseau{
     margin-top: $space-l;
+    width: 50%;
+}
+
+#LogoGithub .st0{
+    fill: $vert;
+}
+
+#LogoGithub .st1{
+    fill: $creme;
+}
+  
+#LogoLinkedin .st0{
+    fill: $vert;
+}
+
+#LogoLinkedin .st1{
+    fill: $creme;
 }
 
 #NavImage{
@@ -143,10 +157,11 @@
     #LogoReseau{
         flex-direction: row;
     }
-    
-    #LogoReseau img {
+
+    #LogoGithub, #LogoLinkedin{
         margin: 0 $space-l;
     }
+    
     
     #FooterGlobal .MentionsFooter {
         margin-bottom: 350px;

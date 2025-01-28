@@ -12,7 +12,7 @@
   width: 100%;
   position: absolute;
   top: 0;
-  background-image: url('@/assets/image/esperance-52.jpg');
+  background-image: url('@/assets/image/PAGE_ACCUEIL/bandeau_accueil.webp');
   background-size: cover;
   background-position-y: 80%;
   background-repeat: no-repeat;
@@ -162,10 +162,22 @@
   @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
 }
 
-.LogoFooter{
-  fill: $creme;
+#LogoFooter{
   height: 200px;
 }
+
+#LogoFooter .st0{
+  fill: $creme;
+}
+
+#LogoFooter .st1{
+  fill: $vert;
+}
+
+#LogoFooter:hover .st0{
+  fill: $lime;
+}
+
 
 .NavFooter{
   @include flex($direction: column,  $align: center, $justify: space-evenly);
@@ -177,7 +189,7 @@
 }
 
 .NavFooter li:hover{
-  color: $orange;
+  color: $lime;
 }
 
 .ContenueFooter{
@@ -192,11 +204,33 @@
   margin-top: $space-xxl;
 }
 
-.ReseauFooter img{
+.ReseauFooter .LienLogoReseau{
+  margin: 0 $space-l;
   width: 80px;
-  height: 80px;
-  margin-left: $space-xxl;
-  background-color: $orange;
+}
+
+#LogoGithub .st0{
+  fill: $vert;
+}
+
+#LogoGithub .st1{
+  fill: $creme;
+}
+
+#LogoGithub:hover .st1{
+  fill: $lime;
+}
+
+#LogoLinkedin .st0{
+  fill: $vert;
+}
+
+#LogoLinkedin .st1{
+  fill: $creme;
+}
+
+#LogoLinkedin:hover .st1{
+  fill: $lime;
 }
 
 .MentionsFooter{

@@ -3,7 +3,7 @@
       <section id="MesCompetences">
         <h1>Mes <br>compétences</h1>
         <div>
-
+          <img :src="imageSrc" alt="">
         </div>
       </section>
       <section id="SectionParcours">
@@ -93,7 +93,7 @@
     <Footer />
   </template>
 <script>
-import {images} from '@/data/images';
+import {ImagesParcours} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
@@ -104,10 +104,33 @@ export default {
   },
   data() {
     return {
-      images
+      ImagesParcours,
+      CompetenceDesktop: ImagesParcours.CompetenceDesktop,
+      CompetenceMobile: ImagesParcours.CompetenceMobile,
+      screenWidth: window.innerWidth,
+      imageSrc: window.innerWidth < 450 ? ImagesParcours.CompetenceMobile : ImagesParcours.CompetenceDesktop,
     };
+  },
+  watch: {
+    screenWidth(newWidth) {
+      this.imageSrc = newWidth < 450 ? this.CompetenceMobile : this.CompetenceDesktop;
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", this.updateScreenWidth);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateScreenWidth);
+  },
+  methods: {
+    updateScreenWidth() {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        this.screenWidth = window.innerWidth;
+      }, 200);
+    }
   }
-};
+}
 </script>
 <style lang="scss">
   @use '@/assets/scss/pages/parcours' as *;

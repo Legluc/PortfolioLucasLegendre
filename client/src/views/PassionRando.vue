@@ -9,7 +9,7 @@
       </section>
       <section class="RandoBlog">
         <div class="RandoPost PostGauche">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin01" alt="Paysage du Mont Charvin">
           <div class="RandoContenu">
             <h2>Le Mont <br>Charvin</h2>
             <div class="CarteVerte CartePassion">
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="RandoPost PostDroit">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin01" alt="Paysage du Mont Charvin">
           <div class="RandoContenu">
             <h2>Le Pic <br>Carlit</h2>
             <div class="CarteVerte CartePassion">
@@ -33,14 +33,14 @@
       </section>
       <section class="Galerie">
         <div class="GaleriePack">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin01" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin02" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin03" alt="Paysage du Mont Charvin">
         </div>
         <div class="GaleriePack">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin04" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin05" alt="Paysage du Mont Charvin">
+          <img :src="ImagesRando.MontCharvin06" alt="Paysage du Mont Charvin">
         </div>
 
       </section>
@@ -48,7 +48,7 @@
     <Footer />
   </template>
 <script>
-import {images} from '@/data/images';
+import {ImagesRando} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
@@ -59,7 +59,7 @@ export default {
   },
   data() {
     return {
-      images
+      ImagesRando
     };
   }
 };

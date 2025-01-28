@@ -15,14 +15,14 @@
                 <p> Pour cette grande aventure, nous avons choisi de voyager à bord de notre fidèle camping-car, que nous avons baptisé Brick. Avec Brick, nous avons parcouru la France dans tous les sens, mais surtout réalisé un tour inoubliable de l'Espagne et du Portugal. En longeant la Méditerranée puis la côte Atlantique, nous avons vécu un road trip de 3 mois riche en découvertes et en moments mémorables. Tout au long de ce périple, nous avons documenté notre voyage sur les réseaux sociaux pour partager cette expérience unique.</p>
             </div>
         </div>
-        <img :src="images.LucasBrick" alt="Photo de moi assis sur le marchepied du camping-car">
+        <img :src="ImagesVoyage.IntroVoyage" alt="Photo de moi assis sur le marchepied du camping-car">
       </section>
       <section id="RoadMap">
         <div class="RoadMapTitre">
             <h2>La road map</h2>
         </div>
         <div class="RoadMapContenue">
-            <img :src="images.MontCharvin" alt="La map">
+            <img :src="ImagesVoyage.GalerieVoyage01" alt="La map">
             <div class="RoadMapContenueTexte">
                 <h3>Notre Itinéraire</h3>
                 <p> A REDIGER : Pour cette grande aventure, nous avons choisi de voyager à bord de notre fidèle camping-car, que nous avons baptisé Brick. Avec Brick, nous avons parcouru la France dans tous les sens, mais surtout réalisé un tour inoubliable de l'Espagne et du Portugal. En longeant la Méditerranée puis la côte Atlantique, nous avons vécu un road trip de 3 mois riche en découvertes et en moments mémorables. Tout au long de ce périple, nous avons documenté notre voyage sur les réseaux sociaux pour partager cette expérience unique.</p>
@@ -51,21 +51,21 @@
       </section>
       <section class="Galerie">
         <div class="GaleriePack">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage09" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage02" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage03" alt="Paysage du Mont Charvin">
         </div>
         <div class="GaleriePack">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
-          <img :src="images.MontCharvin" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage04" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage05" alt="Paysage du Mont Charvin">
+          <img :src="ImagesVoyage.GalerieVoyage21" alt="Paysage du Mont Charvin">
         </div>
       </section>
     </div>
     <Footer />
   </template>
 <script>
-import {images} from '@/data/images';
+import {ImagesVoyage} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      images,
+      ImagesVoyage,
     };
   }
 };

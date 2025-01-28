@@ -25,7 +25,7 @@
     <Footer />
 </template>
 <script>
-import images from '@/data/images';
+import ImagesGeek from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 
@@ -39,7 +39,7 @@ components: {
 },
 data() {
   return {
-    images,
+    ImagesGeek,
   };
 }
 };

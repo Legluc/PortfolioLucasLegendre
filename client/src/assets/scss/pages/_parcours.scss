@@ -8,11 +8,16 @@
     margin: 0 $space-xxxl;
 }
 
+#MesCompetences{
+    margin:$space-xl 0 $space-xxxl 0;
+}
+
 #MesCompetences h1{
     color: $vert;
     text-transform: uppercase;
     line-height: 1;
-  }
+    margin-bottom: $space-xl;
+}
 
 #SectionParcours h2{
     @include title-style($size:$font-size-h1, $weight:400, $line-height:1, $color:$vert);

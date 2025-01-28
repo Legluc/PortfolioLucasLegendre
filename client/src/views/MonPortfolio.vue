@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="MonPotfolioIllustrations">
-        <img :src="images.MontCharvin" alt="">
+        <img :src="ImagesRando.MontCharvin01" alt="">
       </div>
     </section>
     <section id="MesProjetsPro">
@@ -70,7 +70,7 @@
   <Footer />
   </template>
 <script>
-import {images, carouselImages} from '@/data/images';
+import {ImagesRando, carouselImages} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 import Carousel from "@/components/CarouselGlobal.vue";
@@ -83,7 +83,7 @@ export default {
   },
   data() {
     return {
-      images,
+      ImagesRando,
       carouselImages1: carouselImages.slice(0, 3),
     };
   }
