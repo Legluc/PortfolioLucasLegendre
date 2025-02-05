@@ -93,13 +93,13 @@
     height: 65vh;
 }
 
-#FooterGlobal .MentionsFooter{
+#FooterGlobal .BaseOverlayPrenomFooter{
     color: $creme;
     justify-content: center;
     margin: $space-l 0;
 }
 
-#FooterGlobal .MentionsFooter p{
+#FooterGlobal .BaseOverlayPrenomFooter p{
     margin: 0 $space-m;
 }
 
@@ -163,11 +163,11 @@
     }
     
     
-    #FooterGlobal .MentionsFooter {
+    #FooterGlobal .BaseOverlayPrenomFooter {
         margin-bottom: 350px;
     }
 
-    #FooterGlobal .MentionsFooter p{
+    #FooterGlobal .BaseOverlayPrenomFooter p{
         margin: $space-xs 0;
     }
     

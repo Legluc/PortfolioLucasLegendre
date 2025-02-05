@@ -181,7 +181,8 @@
 
 .NavFooter{
   @include flex($direction: column,  $align: start, $justify: space-evenly);
-  height: 70%;
+  height: 60%;
+  margin-bottom: $space-xl ;
 }
 
 .NavFooter li{
@@ -190,6 +191,7 @@
 
 .NavFooter li:hover{
   color: $lime;
+  cursor: pointer;
 }
 
 .ReseauFooter{
@@ -227,6 +229,23 @@
 }
 
 .MentionsFooter{
+  @include flex($direction: column,  $align: center, $justify: center);
+  width: 50%;
+  height: 30%;
+  position: absolute;
+}
+
+.CreditFooter{
+  opacity: 0.2;
+  margin: $space-s 0 $space-l 0;
+}
+
+.CallToActionFooter{
+  @include title-style($size:$font-size-h2, $weight:400, $line-height:1.2, $color:$creme);
+  margin-bottom: auto;
+}
+
+.BaseOverlayPrenomFooter{
   @include flex($direction: column,  $align: center, $justify: space-evenly);
   position: relative;
   width: 50%;
@@ -344,13 +363,13 @@
     margin: $space-l 0;
   }
 
-  .MentionsFooter{
+  .BaseOverlayPrenomFooter{
     flex-direction: column;
     justify-content: center;
     margin-bottom: unset;
   }
 
-  .MentionsFooter p{
+  .BaseOverlayPrenomFooter p{
     margin: $space-s 0;
   }
 

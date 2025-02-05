@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="MentionsFooter">
+      <div class="BaseOverlayPrenomFooter">
         <p>Mentions Légales</p>
         <p>Lucas Legendre X Studio Aosagi 2025</p>
       </div>

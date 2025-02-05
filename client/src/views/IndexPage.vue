@@ -92,6 +92,8 @@
       <div class="MentionsFooter">
         <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
         <p class="CallToActionFooter">Follow me on my network !</p>
+      </div>
+      <div class="BaseOverlayPrenomFooter">
         <div class="OverlayPrenomFooter">
           <p class="NomFooter">Lucas Legendre</p>
           <p class="PrenomFooter">Lucas</p>
