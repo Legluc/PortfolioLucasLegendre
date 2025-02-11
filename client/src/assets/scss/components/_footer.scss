@@ -3,172 +3,76 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 #FooterGlobal{
-    @include flex($direction: column,  $align: center, $justify: space-evenly);
+    @include flex($direction: column,  $align: center, $justify: center);
     background-color: $vert;
 }
 
-.LogoResponsive{
-    display: none;
-}
-
-#CorpsFooter{
-    @include flex($direction: row, $align: center, $justify: space-evenly);
+#ConteneurFooter{
+    @include flex($direction: row,  $align: center, $justify: space-evenly);
     width: 100%;
+    height: 65vh;
+    margin-bottom: $space-xl;
 }
 
-#FooterGauche{
-    @include flex($direction: row, $align: start, $justify: space-between);
-    width: 35%;
-    height: 100%;
-}
-
-#LogoReseau{
-    @include flex($direction: column,  $align: center, $justify: space-evenly);
-    height: 100%;
-}
-
-#LogoReseau .LienLogoReseau{
-    margin-top: $space-l;
-    width: 50%;
-}
-
-#LogoGithub .st0{
-    fill: $vert;
-}
-
-#LogoGithub .st1{
-    fill: $creme;
-}
-  
-#LogoLinkedin .st0{
-    fill: $vert;
-}
-
-#LogoLinkedin .st1{
-    fill: $creme;
-}
-
-#NavImage{
+#LogoNavFooter{
     @include flex($direction: column,  $align: start, $justify: space-evenly);
     height: 100%;
-    margin: 0 $space-xl;
+    width: 17%;
+    padding-left: 4rem;
 }
 
-#NavImage .NavFooter{
-    justify-content: center;
-    height: auto;
+#LogoNavFooter .NavFooter{
+    height: 30%;
+    margin-bottom: unset;
 }
 
-#NavImage .NavFooter li{
-    margin-right: $space-l ;
+.Contact{
+    height: 100%;
 }
 
-#NavImage img[alt="illustration footer"]{
-    width: 200px;
-    height: 200px;
-    margin-top: $space-xl;
-    background-color: $orange;
-  }
+.Contact .CreditFooter{
+    color: $creme;
+}
 
-#FooterGlobal .NavFooter{
-    flex-direction: row;
+.Contact .ContactTitre{
+    width: 70%;
+}
+
+.Contact .Formulaire{
+    width: 90%;
+}
+
+.Contact .ContactTitre p, .Contact .ContactTitre h2{
+    color: $creme;
 }
 
 #FooterGlobal .ReseauFooter{
     flex-direction: column;
+    justify-content: start;
+    height: 70%;
+    width: 17%;
+    text-align: center;
+    margin-right: unset;
 }
 
-#CorpsFooter .ContactTitre {
-    width: 70%;
+#FooterGlobal .ReseauFooter .CallToActionFooter{
+    margin-bottom: $space-l;
 }
 
-#CorpsFooter .Formulaire {
-    width: 90%;
-}
-#CorpsFooter .ContactTitre h2, #CorpsFooter .ContactTitre p{
-    color: $creme;
-}
-
-#CorpsFooter .Contact{
-    height: 65vh;
+.LogoReseau{
+    @include flex($direction: row,  $align: center, $justify: center);
+    width: 100%;
 }
 
 #FooterGlobal .BaseOverlayPrenomFooter{
-    color: $creme;
-    justify-content: center;
-    margin: $space-l 0;
+    height: 100px;
+    width: 100%;
 }
 
-#FooterGlobal .BaseOverlayPrenomFooter p{
-    margin: 0 $space-m;
+#FooterGlobal .OverlayPrenomFooter{
+    width: 100%;
 }
 
-@media (max-width: 1440px){
-
-    #FooterGlobal{
-        margin-top: $space-xxxl;
-        padding-top: $space-xl;
-    }
-
-    #CorpsFooter{
-        flex-direction: column-reverse;
-    }
-
-    .Contact{
-        margin: $space-xl 0;
-    }
-
-    .LogoFooter{
-        display: none;
-    }
-
-    .LogoResponsive{
-        display: block;
-        position: absolute;
-        transform: translate(-50%, -80%);
-        fill: $orange;
-    }
-
-    #FooterGauche{
-        width: 80%;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    
-    #NavImage{
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #NavImage .NavFooter{
-        margin-bottom: $space-xl;
-    }
-    
-    #NavImage .NavFooter li{
-        margin: 0 $space-xl;
-    }
-    
-    #NavImage img[alt="illustration footer"] {
-        position: absolute;
-        transform: translate(-0%, 190%);
-        margin: unset;
-    }
-
-    #LogoReseau{
-        flex-direction: row;
-    }
-
-    #LogoGithub, #LogoLinkedin{
-        margin: 0 $space-l;
-    }
-    
-    
-    #FooterGlobal .BaseOverlayPrenomFooter {
-        margin-bottom: 350px;
-    }
-
-    #FooterGlobal .BaseOverlayPrenomFooter p{
-        margin: $space-xs 0;
-    }
-    
+#FooterGlobal .NomFooter {
+    transform: translate(13%, 3%);
 }

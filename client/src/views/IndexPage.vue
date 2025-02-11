@@ -83,6 +83,7 @@
           </g>
         </svg>
       </router-link>
+      
       <ul class="NavFooter">
         <li><router-link to="/Portfolio">Portfolio</router-link></li>
         <li><router-link to="/Parcours">Parcours</router-link></li>
