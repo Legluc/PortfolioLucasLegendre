@@ -2,7 +2,7 @@
     <div id="Parcours" class="Marge">
       <section id="MesCompetences">
         <h1>Mes <br>compétences</h1>
-        <div>
+        <div class="ImageCompetence">
           <img :src="imageSrc" alt="">
         </div>
       </section>
@@ -108,12 +108,12 @@ export default {
       CompetenceDesktop: ImagesParcours.CompetenceDesktop,
       CompetenceMobile: ImagesParcours.CompetenceMobile,
       screenWidth: window.innerWidth,
-      imageSrc: window.innerWidth < 450 ? ImagesParcours.CompetenceMobile : ImagesParcours.CompetenceDesktop,
+      imageSrc: window.innerWidth <= 450 ? ImagesParcours.CompetenceMobile : ImagesParcours.CompetenceDesktop,
     };
   },
   watch: {
     screenWidth(newWidth) {
-      this.imageSrc = newWidth < 450 ? this.CompetenceMobile : this.CompetenceDesktop;
+      this.imageSrc = newWidth <= 450 ? this.CompetenceMobile : this.CompetenceDesktop;
     }
   },
   mounted() {

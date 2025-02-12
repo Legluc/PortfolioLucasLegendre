@@ -162,6 +162,12 @@
   @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
 }
 
+.LogoNavFooterAccueil{
+  @include flex($direction: row,  $align: center, $justify: space-between);
+  width: 20%;
+  height: 100%;
+}
+
 #LogoFooter{
   height: 200px;
 }
@@ -181,8 +187,7 @@
 
 .NavFooter{
   @include flex($direction: column,  $align: start, $justify: space-evenly);
-  height: 60%;
-  margin-bottom: $space-xl ;
+  height: 50%;
 }
 
 .NavFooter li{
@@ -195,8 +200,8 @@
 }
 
 .ReseauFooter{
-  @include flex($direction: row,  $align: center, $justify: end);
-  margin-right: $space-xxl;
+  @include flex($direction: row,  $align: center, $justify: start);
+  width: 20%;
 }
 
 .ReseauFooter .LienLogoReseau{
@@ -255,7 +260,7 @@
 .OverlayPrenomFooter{
   position: absolute;
   overflow: hidden;
-  width: 80vw;
+  width: 98vw;
   height: 100%;
 }
 
@@ -263,10 +268,8 @@
   @include title-style(140px, $weight:400, $line-height:1.2);
   color: rgba($creme, 0.2);
   text-transform: uppercase;
-}
-
-.NomFooter{
-  transform: translate(3%, 105%);
+  margin-top: 20vh;
+  text-align: center;
 }
 
 .PrenomFooter{
@@ -276,10 +279,34 @@
 
 // --- MEDIA QUERIES --
 
+@media (max-width: 1800px){
+  .NomFooter, .PrenomFooter{
+    font-size: 100px;
+    margin-top: 23vh;
+  }
+
+  .LogoNavFooterAccueil, .ReseauFooter{
+    width: 25%;
+  }
+
+  .ReseauFooter{
+    justify-content: center;
+  }
+
+  .BaseOverlayPrenomFooter{
+    width: 40%;
+  }
+}
+
 @media (max-width: 1700px){
 
   #LucasLegendre .CarteVerte{
     width: 40%;
+  }
+
+  .MentionsFooter{
+    width: 30%;
+    text-align: center;
   }
 
 }
@@ -299,6 +326,14 @@
     width: 40%;
   }
 
+  .LogoNavFooterAccueil, .ReseauFooter{
+    width: 30%;
+  }
+
+  .BaseOverlayPrenomFooter{
+    width: 30%;
+  }
+
 }
 
 @media (max-width: 1200px){
@@ -310,6 +345,19 @@
   #FooterAccueil{
     padding: 0 $space-l;
   }
+
+  .LogoNavFooterAccueil, .ReseauFooter{
+    width: 38%;
+  }
+
+  .BaseOverlayPrenomFooter{
+    width: 24%;
+  }
+
+  .NomFooter, .PrenomFooter {
+    font-size: 75px;
+    margin-top: 25vh;
+}
 
 }
 
@@ -336,47 +384,71 @@
     height: auto;
     margin-top: 100px;
     padding-top: 100px;
+    position: relative;
   }
 
-  #FooterAccueil .LogoFooter{
+  .LogoNavFooterAccueil{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: $space-xl;
+  }
+
+  #FooterAccueil .LogoNavFooterAccueil #LogoFooter{
     position: absolute;
     transform: translate(-50%, -100%);
+  }
+
+  #LogoFooter .st1 {
     fill: $orange;
+}
+
+  #FooterAccueil .NavFooter{
+    align-items: center;
+    margin-top: $space-l;
   }
 
   #FooterAccueil .NavFooter li{
-    margin: $space-s 0;
+    margin: $space-xs 0;
   }
 
-  .ContenueFooter{
-    width: 100%;
-    height: auto;
+  .MentionsFooter{
+    position: unset;
+    width: 50%;
+    margin-bottom: $space-l;
+  }
+
+  .CreditFooter{
+    position: absolute;
+    bottom: 0;
   }
 
   .ReseauFooter{
-    flex-direction: column;
-    margin-top: 0;
-    justify-content: center;
-  }
-
-  .ReseauFooter img{
-    margin: $space-l 0;
+    width: 100%;
+    margin-bottom: $space-xl;
   }
 
   .BaseOverlayPrenomFooter{
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: unset;
+    height: 200px;
+    width: 100%;
+    order: 1;
+    margin-bottom: $space-l;
   }
 
-  .BaseOverlayPrenomFooter p{
-    margin: $space-s 0;
+  .OverlayPrenomFooter{
+    width: 100%;
   }
 
-  #FooterAccueil img[alt="illustration footer"]{
-    margin: $space-xl 0;
-
+  .NomFooter{
+    display: none;
   }
+
+  .PrenomFooter {
+    display: block;
+    margin: unset;
+    font-size: 140px;
+  }
+
 
 
 }
@@ -405,7 +477,7 @@
     font-size: 48px;
   }
 
-  #FooterAccueil .Formulaire .InputForm{
+  .ContactAccueil .Formulaire .InputForm{
     flex-direction: column;
     height: auto;
     margin-bottom: $space-m;
@@ -416,8 +488,17 @@
     margin-bottom: $space-m;
   }
 
-  #FooterAccueil .InputForm textarea[label=message] {
-    min-height: 20vh;
+  .ContactAccueil .InputForm textarea[label=message] {
+    min-height: 15vh;
+  }
+
+  .BaseOverlayPrenomFooter{
+    height: 340px;
+    margin-bottom: $space-xl;
+  }
+
+  .MentionsFooter{
+    width: 70%;
   }
 
 }
@@ -437,6 +518,10 @@
     padding: 0 $space-xl;
   }
 
+  .MentionsFooter{
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 425px){
@@ -447,6 +532,14 @@
 
   .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
     padding: 0 $space-l;
+  }
+
+  .BaseOverlayPrenomFooter {
+    height: 240px;
+  }
+
+  .PrenomFooter{
+    font-size: 100px;
   }
 
 }

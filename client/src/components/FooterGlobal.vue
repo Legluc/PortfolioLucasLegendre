@@ -11,14 +11,14 @@
                 <path class="st1" d="M93.3,103c3.1,2.6,2,8.5-2.4,8.9-3.7-2.3-5-7.2-.7-9.8,1-.3,2.3.2,3.1.9Z"/>
               </g>
             </svg>
-        </router-link>
-        <ul class="NavFooter">
-          <li><router-link to="/Portfolio">Portfolio</router-link></li>
-          <li><router-link to="/Parcours">Parcours</router-link></li>
-          <li><router-link to="/Passions">Passions</router-link></li>
-          <li>Mentions Légales</li>
-        </ul>
-      </div>
+          </router-link>
+          <ul class="NavFooter">
+            <li><router-link to="/Portfolio">Portfolio</router-link></li>
+            <li><router-link to="/Parcours">Parcours</router-link></li>
+            <li><router-link to="/Passions">Passions</router-link></li>
+            <li>Mentions Légales</li>
+          </ul>
+        </div>
       
       <div class="Contact">
         <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
