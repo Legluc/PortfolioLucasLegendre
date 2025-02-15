@@ -5,20 +5,20 @@
 #FooterGlobal{
     @include flex($direction: column,  $align: center, $justify: center);
     background-color: $vert;
+    margin-top: $space-xxxl;
 }
 
 #ConteneurFooter{
     @include flex($direction: row,  $align: center, $justify: space-evenly);
     width: 100%;
     height: 65vh;
-    margin-bottom: $space-xl;
+    margin-bottom: $space-l;
 }
 
 #LogoNavFooter{
-    @include flex($direction: column,  $align: start, $justify: space-evenly);
+    @include flex($direction: column,  $align: center, $justify: space-evenly);
     height: 100%;
     width: 17%;
-    padding-left: 4rem;
 }
 
 #LogoNavFooter .NavFooter{
@@ -73,7 +73,207 @@
     width: 100%;
 }
 
-#FooterGlobal .NomFooter {
-    margin-top: 20vh;
-    text-align: center;
+#FooterGlobal .NomFooter, #FooterGlobal .PrenomFooter {
+     margin-top: unset;
 }
+
+@media (max-width: 1700px){
+
+    #FooterGlobal .ReseauFooter, #LogoNavFooter{
+        width: 20%;
+    }
+
+}
+
+@media (max-width: 1500px){
+
+    #ConteneurFooter{
+        margin-bottom: unset;
+    }
+
+    #FooterGlobal .NomFooter {
+        font-size: 100px;
+        margin-top: 3vh;
+    }
+
+}
+
+@media (max-width: 1440px){
+
+    #FooterGlobal{
+        position: relative;
+        padding-top: 100px;
+    }
+
+    #ConteneurFooter{
+        flex-direction: column;
+        height: auto;
+    }
+
+    #FooterGlobal #LogoFooter{
+        position: absolute;
+        transform: translate(-50%, -100%);
+    }
+    
+    #FooterGlobal #LogoFooter .st1 {
+        fill: $orange;
+    }
+
+    #FooterGlobal .ReseauFooter, #LogoNavFooter{
+        width: 30%;
+    }
+
+
+    #FooterGlobal .NavFooter{
+        align-items: center;
+        margin-top: $space-l;
+    }
+    
+    #FooterGlobal .NavFooter li{
+        margin: $space-xs 0;
+    }
+
+    #FooterGlobal .ReseauFooter{
+        margin: $space-xl 0;
+    }
+
+    #FooterGlobal .Contact{
+        order: 1;
+    }
+
+    #FooterGlobal .CreditFooter{
+        position: absolute;
+        bottom: 0;
+    }
+
+    #FooterGlobal .BaseOverlayPrenomFooter{
+        margin: $space-xl 0 $space-xxl 0;
+    }
+
+    #FooterGlobal .OverlayPrenomFooter{
+        @include flex-center;
+    }
+
+    #FooterGlobal .NomFooter {
+        margin-top: unset;
+    }
+
+}
+
+@media (max-width: 1200px){
+
+    #FooterGlobal .NomFooter {
+        font-size: 75px;
+    }
+
+}
+
+@media (max-width: 1024px){
+
+    .Contact .ContactTitre h2{
+        font-size: 72px;
+    }
+
+}
+
+@media (max-width: 850px){
+
+    #FooterGlobal .ReseauFooter, #LogoNavFooter {
+        width: 50%;
+    }
+
+    #FooterGlobal .BaseOverlayPrenomFooter{
+        height: 180px;
+    }
+
+    #FooterGlobal .NomFooter{
+        display: none;
+      }
+    
+    #FooterGlobal .PrenomFooter {
+        display: block;
+        margin: unset;
+        font-size: 140px;
+    }
+
+}
+
+@media (max-width: 768px){
+  
+    .Contact{
+      height: auto;
+    }
+  
+    .Contact .ContactTitre{
+      margin-bottom: $space-l;
+    }
+  
+    .Contact .ContactTitre h2{
+      font-size: 48px;
+    }
+
+    .Contact .Formulaire {
+        width: 60%;
+    }
+  
+    .Contact .Formulaire .InputForm{
+      flex-direction: column;
+      height: auto;
+      margin-bottom: $space-m;
+    }
+  
+    .Contact .InputInfo input{
+      width: 100%;
+      margin-bottom: $space-m;
+    }
+  
+    .Contact .InputForm textarea[label=message] {
+      min-height: 15vh;
+    }
+
+    #FooterGlobal .BaseOverlayPrenomFooter{
+        height: 340px;
+        margin-bottom: $space-xl;
+    }
+}  
+
+@media (max-width: 500px){
+
+
+
+    .Contact .ContactTitre, .Contact .Formulaire, #FooterGlobal .ReseauFooter, #LogoNavFooter{
+        width: 100%;
+        padding: 0 $space-xl;
+    }
+
+}
+
+@media (max-width: 425px){
+
+
+  
+    .Contact .ContactTitre, .Contact .Formulaire, #FooterGlobal .ReseauFooter, #LogoNavFooter{
+        padding: 0 $space-l;
+    }
+  
+    #FooterGlobal .BaseOverlayPrenomFooter {
+      height: 240px;
+    }
+  
+    #FooterGlobal .PrenomFooter{
+      font-size: 100px;
+    }
+  
+  }
+  
+  @media (max-width: 350px){
+  
+    .Contact .ContactTitre h2{
+      font-size: 36px;
+    }
+  
+    .Contact .ContactTitre p{
+      font-size: 18px;
+    }
+  
+  }

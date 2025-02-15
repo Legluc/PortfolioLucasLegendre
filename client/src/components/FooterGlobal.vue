@@ -67,7 +67,7 @@
       <div class="BaseOverlayPrenomFooter">
         <div class="OverlayPrenomFooter">
           <p class="NomFooter">Lucas Legendre</p>
-          <p class="PrenomFooter">Lucas</p>
+          <p class="PrenomFooter">Lu<span v-if="showBreak"><br></span>cas</p>
         </div>
       </div>
 
@@ -76,6 +76,30 @@
 <script>
 export default {
   name: 'FooterGlobal',
+  data() {
+    return {
+      screenWidth: window.innerWidth,
+    };
+  },
+  computed: {
+    showBreak() {
+      return this.screenWidth <= 768;
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.updateScreenWidth);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateScreenWidth);
+  },
+  methods: {
+    updateScreenWidth() {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        this.screenWidth = window.innerWidth;
+      }, 200);
+    }
+  }
 };
 </script>
 <style lang="scss">

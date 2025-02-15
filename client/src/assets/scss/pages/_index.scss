@@ -280,7 +280,7 @@
 // --- MEDIA QUERIES --
 
 @media (max-width: 1800px){
-  .NomFooter, .PrenomFooter{
+  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
     font-size: 100px;
     margin-top: 23vh;
   }
@@ -289,7 +289,7 @@
     width: 25%;
   }
 
-  .ReseauFooter{
+  #FooterAccueil .ReseauFooter{
     justify-content: center;
   }
 
@@ -326,7 +326,7 @@
     width: 40%;
   }
 
-  .LogoNavFooterAccueil, .ReseauFooter{
+  .LogoNavFooterAccueil, #FooterAccueil .ReseauFooter{
     width: 30%;
   }
 
@@ -346,7 +346,7 @@
     padding: 0 $space-l;
   }
 
-  .LogoNavFooterAccueil, .ReseauFooter{
+  .LogoNavFooterAccueil, #FooterAccueil .ReseauFooter{
     width: 38%;
   }
 
@@ -354,7 +354,7 @@
     width: 24%;
   }
 
-  .NomFooter, .PrenomFooter {
+  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter {
     font-size: 75px;
     margin-top: 25vh;
 }
@@ -399,9 +399,9 @@
     transform: translate(-50%, -100%);
   }
 
-  #LogoFooter .st1 {
+  #FooterAccueil #LogoFooter .st1 {
     fill: $orange;
-}
+  }
 
   #FooterAccueil .NavFooter{
     align-items: center;
@@ -418,12 +418,12 @@
     margin-bottom: $space-l;
   }
 
-  .CreditFooter{
+  #FooterAccueil .CreditFooter{
     position: absolute;
     bottom: 0;
   }
 
-  .ReseauFooter{
+  #FooterAccueil .ReseauFooter{
     width: 100%;
     margin-bottom: $space-xl;
   }
@@ -439,11 +439,11 @@
     width: 100%;
   }
 
-  .NomFooter{
+  #FooterAccueil .NomFooter{
     display: none;
   }
 
-  .PrenomFooter {
+  #FooterAccueil .PrenomFooter {
     display: block;
     margin: unset;
     font-size: 140px;
@@ -538,7 +538,7 @@
     height: 240px;
   }
 
-  .PrenomFooter{
+  #FooterAccueil .PrenomFooter{
     font-size: 100px;
   }
 
