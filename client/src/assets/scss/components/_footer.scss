@@ -199,6 +199,10 @@
 }
 
 @media (max-width: 768px){
+
+    #FooterGlobal{
+        margin-top: unset;
+    }
   
     .Contact{
       height: auto;

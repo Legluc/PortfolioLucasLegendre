@@ -9,13 +9,15 @@
       </section>
       <section id="Brick">
         <div class="ContenueVoyage">
-            <h2>À la <br>quête du <br>bonheur</h2>
+            <h2>À la <br> quête du <br>bonheur</h2>
             <div class="CarteVerte CartePassion">
                 <h3>Brick</h3>
                 <p> Pour cette grande aventure, nous avons choisi de voyager à bord de notre fidèle camping-car, que nous avons baptisé Brick. Avec Brick, nous avons parcouru la France dans tous les sens, mais surtout réalisé un tour inoubliable de l'Espagne et du Portugal. En longeant la Méditerranée puis la côte Atlantique, nous avons vécu un road trip de 3 mois riche en découvertes et en moments mémorables. Tout au long de ce périple, nous avons documenté notre voyage sur les réseaux sociaux pour partager cette expérience unique.</p>
             </div>
         </div>
-        <img :src="ImagesVoyage.IntroVoyage" alt="Photo de moi assis sur le marchepied du camping-car">
+        <div class="IntroVoyage">
+          <img :src="ImagesVoyage.IntroVoyage" alt="Photo de moi assis sur le marchepied du camping-car">
+        </div>
       </section>
       <section id="RoadMap">
         <div class="RoadMapTitre">
@@ -31,12 +33,14 @@
       </section>
       <section id="BichecoAventure">
         <div class="BichecoAventureContenue">
+          <div class="TitreBichecoAventure">
             <h2>Le projet <br>Bicheco <br>Aventure</h2>
-            <div class="CarteVerte CartePassion">
+          </div>
+          <div class="CarteVerte CartePassion">
             <h3>Une aventure partagée</h3>
             <p> Partager notre aventure avec nos proches et la faire vivre au-delà des frontières est rapidement devenu une évidence. C’est ainsi qu’est née notre chaîne YouTube. Passionné par la création et le montage vidéo, je me suis lancé dans la réalisation de vlogs hebdomadaires pour capturer chaque instant de notre road trip. Nous avons même adapté le rythme de notre voyage pour proposer un contenu toujours plus authentique et riche. Découvrez dès maintenant le premier épisode de cette incroyable aventure !</p>
             <button class="Bouton">Visité la chaine</button>
-            </div>
+          </div>
         </div>
         <div class="BichecoAventureEpisode">
           <iframe

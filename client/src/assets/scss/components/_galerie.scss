@@ -19,3 +19,10 @@
     height: 25vw;
     border-radius: 35px;
 }
+
+@media (max-width: 768px){
+
+    .Galerie{
+        margin-bottom: $space-xxl;
+    }
+}

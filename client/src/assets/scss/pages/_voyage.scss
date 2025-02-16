@@ -27,10 +27,9 @@
 }
 
 #Brick{
-    @include flex($direction: row,  $align: center, $justify: center);
-    margin-top: $space-xxxl;
+    @include flex($direction: row,  $align: end, $justify: space-evenly);
+    margin: $space-xxxl 0;
     height: 80vh;
-    margin-bottom: $space-xxxl;
 
 }
 
@@ -39,20 +38,27 @@
     text-transform: uppercase;
 }
 
-#Brick img{
+.IntroVoyage{
+    @include flex-center;
     width: auto;
     height: 100%;
+}
+
+#Brick img{
     object-fit: cover;
     aspect-ratio: 1;
     border-radius: 35px;
-    margin-left: $space-xl;
 }
 
 .ContenueVoyage{
-    width: 30%;
+    width: 40%;
     height: 100%;
-    @include flex($direction: column, $align: start, $justify: space-between);
-    margin-right: $space-xl;
+    @include flex($direction: column, $align: start, $justify: start);
+}
+
+.ContenueVoyage .CartePassion{
+    margin-top: 6rem;
+    width: 80%;
 }
 
 #RoadMap{
@@ -64,7 +70,7 @@
     width: 100%;
     background-color: $vert;
     color: $creme;
-    padding: 0 $space-xxl;
+    padding: $space-xs $space-xxl;
 }
 
 .RoadMapTitre h2{
@@ -100,13 +106,13 @@
 
 #BichecoAventure{
     @include flex($direction: row, $align: start, $justify: space-between);
-    height: 80vh;
+    height: 75vh;
     margin-bottom: $space-xxxl;
     padding: 0 $space-xxl;
 }
 
 .BichecoAventureContenue{
-    @include flex($direction: column, $align: center, $justify: space-between);
+    @include flex($direction: column, $align: start, $justify: space-between);
     width: 40%;
     height: 100%;
 
@@ -115,6 +121,7 @@
 .BichecoAventureContenue h2{
     @include title-style($size:$font-size-h1, $weight:400, $line-height:1, $color:$orange);
     text-transform: uppercase;
+    text-wrap-mode: nowrap;
 }
 
 .BichecoAventureContenue .CartePassion{
@@ -136,4 +143,236 @@
     width: 90%;
     height: 520px;
     border-radius: 35px;
+}
+
+
+@media (max-width: 1700px){
+
+    #Brick img{
+        height: 80%;
+    }
+
+    #BichecoAventure{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        position: relative;
+        padding: unset;
+    }
+    
+    .BichecoAventureContenue {
+        width: 80%;
+        align-items: center;
+        order: 1;
+    }
+    
+    .TitreBichecoAventure{
+        @include flex-center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, -50%);
+        width: 100%;
+        }
+
+    .BichecoAventureContenue .CartePassion {
+        align-self: self-start;
+        width: 60%;
+        margin-top: $space-xl;
+    }
+
+    .BichecoAventureEpisode{
+        margin-top: $space-xxxl;
+        width: 80%;
+        align-items: center;
+    }
+
+    .BichecoAventureEpisode iframe{
+        width: 100%;
+        height: 666px;
+    }
+    
+}
+
+@media (max-width: 1440px){
+
+    #Brick{
+        height: 63vh;
+    }
+
+    #Brick h2{
+        font-size: 75px;
+    }
+
+    #Brick img{
+        height: 100%;
+        aspect-ratio: unset;
+    }
+
+    .ContenueVoyage .CartePassion{
+        width: 100%;
+    }
+
+    .RoadMapContenueTexte{
+        margin: $space-xl $space-l 0 $space-l;
+    }
+
+    .BichecoAventureEpisode{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 1200px){
+
+    #Brick{
+        justify-content: center;
+    }
+
+    .ContenueVoyage{
+        width: 50%;
+    }
+
+    .ContenueVoyage .CartePassion{
+        width: 80%;
+    }
+
+    .BichecoAventureContenue .CartePassion {
+        width: 80%;
+    }
+
+    .BichecoAventureEpisode iframe{
+        height: 500px;
+    }
+    
+}
+
+@media (max-width: 1024px){
+    
+    #EnteteVoyage h1{
+        font-size: 75px;
+        text-wrap-mode: nowrap;
+    }
+    
+    #EnteteVoyage .CarteVerte{
+        width: 70%;
+        background-color: rgba($vert, 0.6);
+    }
+
+    #Brick{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        margin-top: unset;
+        margin-bottom: $space-xxl;
+
+    }
+
+    .IntroVoyage{
+        padding-top: $space-xxl;
+        background: linear-gradient(to bottom, $orange 70%, transparent 30%);
+    }
+
+    .ContenueVoyage{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        margin-top: $space-xl;
+    }
+
+    .ContenueVoyage .CartePassion {
+        width: 60%;
+        margin-top: $space-xxl;
+        background-color: $orange;
+    }
+
+    #Brick img{
+        width: 60%;
+        aspect-ratio: 1;
+    }
+
+    .BichecoAventureEpisode iframe {
+        height: 400px;
+    }
+    
+}
+
+@media (max-width: 768px){
+
+    #EnteteVoyage{
+        height: auto;
+        padding: 200px $space-l $space-xl $space-l;
+    }
+
+    #EnteteVoyage h1{
+        font-size: 48px;
+    }
+
+    #Brick img{
+        width: 80%;
+    }
+
+    .ContenueVoyage .CartePassion {
+        width: 80%;
+    }
+
+    #BichecoAventure{
+        margin-bottom: $space-xxl;
+    }
+
+    .BichecoAventureContenue h2 {
+        font-size: 75px;
+    }
+
+    .BichecoAventureContenue .CartePassion {
+        width: 100%;
+    }
+
+    .BichecoAventureEpisode iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 600px){
+    
+    #EnteteVoyage{
+        background-size: cover;
+    }
+    
+    #EnteteVoyage .CarteVerte{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+
+    #EnteteVoyage{
+        background-position-x: 50%;
+    }
+
+    #EnteteVoyage h1{
+        font-size: 32px;
+    }
+
+    #EnteteVoyage .CarteVerte {
+        margin-top: $space-xl;
+    }
+
+    #Brick h2, .BichecoAventureContenue h2 {
+        font-size: 48px;
+    }
+
+    .BichecoAventureEpisode{
+        margin-top: $space-xxl;
+    }
+}
+
+@media (max-width: 425px){
+
+    .IntroVoyage {
+        padding-top: $space-l;
+    }
+
 }

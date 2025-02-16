@@ -21,6 +21,7 @@
     color: $creme;
     text-transform: uppercase;
     line-height: 1;
+    text-wrap-mode: nowrap;
 }
 
 #EnteteRando .CarteVerte{
@@ -122,6 +123,16 @@
 
 @media (max-width: 1024px){
 
+    #EnteteRando {
+        background-size: 186%;
+        background-position-x: 45%;
+    }
+    
+    #EnteteRando .CarteVerte{
+        width: 70%;
+        background-color: rgba($vert, 0.6);
+    }
+
     .RandoPost{
         flex-direction: column;
         align-items: center;
@@ -137,6 +148,8 @@
         left: 0;
         transform: translate(0%, -50%);
         width: 100%;
+        text-align: center;
+        padding: 0 $space-l;
     }
 
     .TitreRando h2{
@@ -161,11 +174,66 @@
 
 }
 
+@media (max-width: 850px){
+
+    #EnteteRando h1{
+        font-size: 48px;
+    }
+
+}
+
 @media (max-width: 768px){
+
+    #EnteteRando{
+        height: auto;
+        padding: 200px $space-l $space-xl $space-l;
+        background-position-y: 0%;
+    }
+
+    .RandoBlog{
+        margin-top: $space-xxl;
+        margin-bottom: unset;
+    }
+
+    .RandoPost{
+        margin-bottom: $space-xxl;
+    }
 
     .RandoPost img {
         height: 80vw;
     }
 
+    .TitreRando h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px){
+    
+    #EnteteRando{
+        background-size: cover;
+    }
+    
+    #EnteteRando h1{
+        font-size: 32px;
+    }
+    
+    #EnteteRando .CarteVerte{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+
+    #EnteteRando .CarteVerte {
+        margin-top: $space-xl;
+    }
+}
+
+@media (max-width: 425px){
+
+    #EnteteRando{
+        background-position-x: 50%;
+    }
 
 }
