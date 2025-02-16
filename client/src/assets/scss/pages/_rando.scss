@@ -48,12 +48,12 @@
 
 .RandoContenu{
     @include flex($direction: column,  $align: start, $justify: center);
-    width: 33%;
+    width: 40%;
 }
 
+
 .RandoContenu .CarteVerte{
-    width: 100%;
-    height: 50vh;
+    width: 75%;
     margin-top: $space-xl;
     justify-content: flex-start;
 }
@@ -67,11 +67,6 @@
     border-radius: 0 35px 35px 0;
 }
 
-.PostGauche .RandoContenu{
-    margin-right: $space-xxxl;
-
-}
-
 .PostDroit img{
     border-radius: 35px 0 0 35px;
 }
@@ -80,7 +75,97 @@
     flex-direction: row-reverse;
 }
 
+.TitreRando{
+    @include flex($direction: column,  $align: start, $justify: center);
+    width: 75%;
+}
+
 .PostDroit .RandoContenu{
-    align-items: start;
-    margin-left: $space-xxxl;
+    align-items: end;
+}
+
+@media (max-width: 1700px){
+
+    .RandoContenu .CarteVerte {
+        width: 80%;
+    }
+    
+}
+
+@media (max-width: 1440px){
+
+    #EnteteRando{
+        background-size: 140%;
+    }
+
+    .RandoContenu {
+        width: 45%;
+    }
+
+    .RandoContenu .CarteVerte {
+        width: 90%;
+    }
+
+    .RandoContenu h2{
+        font-size: 75px;
+    }
+
+}
+
+@media (max-width: 1200px){
+
+    #EnteteRando h1{
+        font-size: 75px;
+    }
+
+}
+
+@media (max-width: 1024px){
+
+    .RandoPost{
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding-top: $space-l;
+        margin-bottom: $space-xxxl;
+    }
+
+    .TitreRando{
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, -50%);
+        width: 100%;
+    }
+
+    .TitreRando h2{
+        font-size: 48px;
+    }
+
+
+    .RandoPost img {
+        border-radius: 35px;
+        width: 80%;
+        margin-top: $space-l;
+    }
+
+    .RandoContenu{
+        width: 80%;
+        align-items: center;
+    }
+
+    .RandoContenu .CarteVerte {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .RandoPost img {
+        height: 80vw;
+    }
+
+
 }
