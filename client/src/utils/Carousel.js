@@ -84,7 +84,7 @@ export const carouselMethods = {
       this.stopAutoSlide();
       this.interval = setInterval(() => {
         this.nextSlide();
-      }, 4000);
+      }, 40000);
     },
     stopAutoSlide() {
       clearInterval(this.interval);

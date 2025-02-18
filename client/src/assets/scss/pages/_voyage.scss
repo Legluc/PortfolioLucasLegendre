@@ -80,22 +80,32 @@
 
 .RoadMapContenue{
     background-color: $orange;
-    @include flex($direction: row, $align: start, $justify: space-between);
-    height: 70vh;
+    @include flex($direction: row, $align: center, $justify: center);
+    height: auto;
+    width: 100%;
     padding: 0 $space-xxl;
-
+    position: relative;
 }
 
-.RoadMapContenue img{
-    height: 80%;
-    width: 100%;
-    object-fit: cover;
-    margin: $space-xl $space-xl $space-xl 0;
+#RoadMapSvg{
+    width: 45%;
+    margin: $space-l 0 $space-l $space-xxxl;
+}
+
+#RoadMapSvg .st1{
+    fill: $creme;
+}
+
+#RoadMapSvg .st0{
+    fill: $vert;
 }
 
 .RoadMapContenueTexte{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 55%);
     width: 30%;
-    margin: $space-xxl $space-xl 0 $space-xl;
     color: $creme;
 }
 
@@ -213,8 +223,14 @@
         width: 100%;
     }
 
+    #RoadMapSvg{
+        width: 60%;
+        margin-left: 30%;
+    }
+
     .RoadMapContenueTexte{
-        margin: $space-xl $space-l 0 $space-l;
+        transform: translate(30%, 35%);
+        width: 33%;
     }
 
     .BichecoAventureEpisode{
@@ -287,6 +303,20 @@
         margin-top: $space-xxl;
         background-color: $orange;
     }
+    .RoadMapContenue{
+        justify-content: end;
+        padding: 0 $space-m;
+    }
+
+    #RoadMapSvg{
+        width: 70%;
+        margin-left: unset;
+    }
+
+    .RoadMapContenueTexte{
+        transform: translate(10%, 15%);
+        width: 35%;
+    }
 
     #Brick img{
         width: 60%;
@@ -322,12 +352,33 @@
         margin-bottom: $space-xxl;
     }
 
-    .BichecoAventureContenue h2 {
+    .BichecoAventureContenue h2, .RoadMapTitre h2{
         font-size: 75px;
     }
 
     .BichecoAventureContenue .CartePassion {
         width: 100%;
+    }
+
+    .RoadMapTitre {
+        padding: $space-xs $space-l
+    }
+
+    .RoadMapContenue{
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+
+    #RoadMapSvg{
+        width: 80%;
+    }
+
+    .RoadMapContenueTexte{
+        position: unset;
+        transform: unset;
+        width: 80%;
+        align-self: self-start;
+        margin: 0 0 $space-xl $space-l;
     }
 
     .BichecoAventureEpisode iframe {
@@ -360,8 +411,12 @@
         margin-top: $space-xl;
     }
 
-    #Brick h2, .BichecoAventureContenue h2 {
+    #Brick h2, .BichecoAventureContenue h2, .RoadMapTitre h2{
         font-size: 48px;
+    }
+
+    #RoadMapSvg{
+        width: 100%;
     }
 
     .BichecoAventureEpisode{
@@ -373,6 +428,10 @@
 
     .IntroVoyage {
         padding-top: $space-l;
+    }
+
+    .RoadMapContenueTexte{
+        margin: 0 0 $space-l $space-m;
     }
 
 }
