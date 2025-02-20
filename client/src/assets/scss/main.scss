@@ -12,6 +12,7 @@
 
 body {
   @include body-style($font-size-base);
+  background-color: $creme;
 }
 
 h1 {

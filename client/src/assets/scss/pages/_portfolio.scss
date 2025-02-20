@@ -5,9 +5,10 @@
 @use '@/assets/scss/components/contact' as *;
 
 #MonPotfolio{
-    @include flex($direction: row,  $align: center, $justify: center);
+    @include flex($direction: row,  $align: start, $justify: space-evenly);
     margin:$space-xl 0 $space-xxxl 0;
-    height: 70vh;
+    padding: 0 $space-xxl;
+    height: 60vh;
 }
 
 .MonPotfolioContenue{
@@ -25,14 +26,14 @@
 }
 
 .MonPotfolioIllustrations{
-    @include flex($direction: row,  $align: start, $justify: end);
-    width: 33%;
+    @include flex($direction: row,  $align: center, $justify: center);
     height: 100%;
 }
 
 .MonPotfolioIllustrations img{
     object-fit: cover;
-    width: 80%;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 #MesProjetsPro{
@@ -40,12 +41,15 @@
 
 }
 
+#MesProjetsPro .Carousel{
+    margin: unset;       
+}
+
 .MesProjetsProContenue{
-    @include flex($direction: row,  $align: center, $justify: space-between);
+    @include flex($direction: row,  $align: center, $justify: space-evenly);
     height: 80vh;
     width: 100%;
     margin-bottom: $space-xxxl;
-    padding: 0 $space-xxl;
     background-color: $vert;
 }
 
@@ -53,7 +57,6 @@
     @include flex($direction: column,  $align: start, $justify: space-between);
     height: 100%;
     width: 40%;
-    margin-left: $space-xl;
     color: $creme;
 }
 
@@ -71,16 +74,214 @@
 }
 
 .CartoucheLogo{
-    @include flex($direction: row,  $align: center, $justify: start);
+    @include flex($direction: row,  $align: center, $justify: space-between);
     height: 100px;
-    width: 100%;
+    width: 70%;
     margin-bottom: $space-xl;
 }
 
 .LogoTechno{
-    background-color: $creme;
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
-    margin-right: $space-l;
+    height: 70%;
+}
+
+.LogoTechno .st1{
+    fill: $creme;
+}
+
+.LogoTechno .st0{
+    fill: $vert;
+}
+
+.LogoBreak{
+    display: none;
+}
+
+@media (max-width: 2100px){
+
+    .CartoucheLogo{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1700px){
+
+    .MonPotfolioContenue{
+        width: 45%;
+    }
+}
+
+@media (max-width: 1440px){
+
+    #MonPotfolio{
+        padding: unset;
+    }
+
+    .MonPotfolioContenue .CarteVerte {
+        width: 100%;
+    }
+
+    .MesProjetsProContenue{
+        align-items: end;
+    }
+
+    #MesProjetsPro .Carousel {
+        margin-bottom: $space-xl;
+        transform: unset;
+    }
+
+    .CartoucheLogo{
+        height: 80px;
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 1200px){
+
+    #MonPotfolio{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .MonPotfolioContenue{
+        width: 80%;
+        margin-bottom: $space-xxl;
+    }
+
+    .MonPotfolioContenue h1{
+        font-size: 75px;
+        margin-bottom: $space-xl;
+    }
+
+    .MonPotfolioContenue .CarteVerte {
+        width: 60%;
+    }
+
+    .MonPotfolioIllustrations{
+        height: unset;
+        width: 50%;
+    }
+
+    .CartoucheLogo{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1024px){
+
+    .MesProjetsProContenue{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    #MesProjetsPro .Carousel{
+        margin: $space-xl 0;
+        max-width: 80%;
+        max-height: none;
+    }
+
+    .MesProjetsProTexte{
+        width: 80%;
+    }
+
+    .MesProjetsProTexte h2 {
+        margin: $space-l 0;
+    }
+
+    .MesProjetsProTexte p {
+        margin: $space-l 0;
+        width: 100%;
+    }
+
+    .CartoucheLogo{
+        margin: $space-xl 0;
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 850px){
+    
+    .CartoucheLogo{
+        width: 70%;
+    }
+    
+}
+
+@media (max-width: 768px){
+
+    .MonPotfolioContenue h1{
+        font-size: 48px;
+    }
+
+    .MonPotfolioContenue .CarteVerte {
+        width: 80%;
+    }
+
+    .MonPotfolioIllustrations{
+        width: 80%;
+    }
+
+    .CartoucheLogo{
+        width: 80%;
+    }
+
+    
+}
+
+@media (max-width: 600px){
+
+    .CartoucheLogo{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .MesProjetsProTexte {
+        width: 90%;
+        align-items: center;
+    }
+
+    .CartoucheLogo {
+        width: 70%;
+        flex-wrap: wrap;
+    }
+
+    .LogoBreak{
+        display: block;
+        flex: 0 0 100%;
+        margin: $space-xs 0;
+    }
+}
+
+@media (max-width: 425px){
+    
+    .MonPotfolioContenue .CarteVerte {
+        width: 100%;
+    }
+
+    .MesProjetsProContenue{
+        margin-bottom: unset;
+        padding-bottom: $space-xxl;
+    }
+
+    #MesProjetsPro .Carousel {
+        max-width: 100%;
+        border-radius: unset;
+        margin-top: unset;
+    }
+
+}
+
+@media (max-width: 375px){
+
+    .CartoucheLogo {
+        width: 80%;
+    }
 }
