@@ -9,9 +9,10 @@
     @touchend="endSwipe"
     >
       <div class="CarouselContainer" ref="carouselContainer">
-        <CarouselSlide
+        <component
         v-for="(image, index) in extendedImages"
         :key="index"
+        :is="resolvedSlideComponent"
         :slide="image"
         :class="{ active: index === currentSlide }"
       />
@@ -40,9 +41,16 @@ import {
 
 import CarouselSlide from './CarouselSlide.vue';
 
+
 export default {
   name: 'CarouselGlobal',
-  props: carouselProps,
+  props: {
+    ...carouselProps,
+    slideComponent: {
+      type: [Object, String],
+      default: null
+    }
+  },
 
   data() {
     return {
@@ -57,6 +65,12 @@ export default {
 
   computed: {
     ...carouselComputed,
+
+    // On renvoie le composant passé en prop, ou par défaut l'ancien "CarouselSlide"
+    resolvedSlideComponent() {
+      const comp = this.slideComponent || CarouselSlide;
+      return comp;
+    },
 
     // Clonage des images pour l'effet infini
     extendedImages() {

@@ -12,45 +12,40 @@
       <button class="Bouton">Mon parcours</button>
     </section>
     <section id="MesPassions">
-      <div class="ImagePassion">
-        <router-link to="/PassionRando">
-          <img :src="ImagesIndex.Randonneur" alt="Le randonneur">
-          <div class="TextePassion">
-            <p>Le randonneur</p>
-          </div>
-        </router-link>
-      </div>
-      <div class="ImagePassion">
-        <router-link to="/PassionVoyage">
-        <img :src="ImagesIndex.Voyageur" alt="Le voyageur">
-        <div class="TextePassion"> 
-          <p>Le voyageur</p>
+
+      <div v-if="screenWidth >= 768" class="MesPassionsDesktop">
+        <div 
+          class="ImagePassion" 
+          v-for="(passion, idx) in imagesPassion" 
+          :key="idx"
+        >
+          <router-link :to="passion.link">
+            <img :src="passion.image" :alt="passion.title" />
+            <div class="TextePassion">
+              <p>{{ passion.title }}</p>
+            </div>
+          </router-link>
         </div>
-      </router-link>
       </div>
-      <div class="ImagePassion">
-        <router-link to="/PassionJeuxVideo">
-          <img :src="ImagesIndex.Geek" alt="Le geek">
-          <div class="TextePassion">
-            <p>Le geek</p>
-          </div>
-        </router-link>
+
+      <div v-else class="MesPassionsCarousel">
+        <CarouselGlobal 
+          :images="imagesPassion"
+          :slide-component="slideCompPassion"
+        />
       </div>
+
     </section>
     <section id="MesProjets">
-      <div id="ProjetsPro" class="DivProjets">
+      <div id="ProjetsPro">
         <h2>Mes <br>projets</h2>
         <div class="CarteVerte">
           <h3>Découvrez ici mes projet professionnel</h3>
           <button class="Bouton">Découvrir</button>
         </div>
       </div>
-      <div id="ProjetPerso" class="DivProjets">
-        <h2>Mes <br>créations</h2>
-        <div class="CarteOrange">
-          <h3>Vous trouverez là mes créations</h3>
-          <button class="Bouton">Découvrir</button>
-        </div>
+      <div class="MockupProjetAccueil">
+
       </div>
     </section>
     <section class="ContactAccueil">
@@ -126,19 +121,47 @@
 
 <script>
 import { ImagesIndex } from '@/data/images';
+import CarouselGlobal from '@/components/CarouselGlobal.vue';
+import CarouselSlidePassion from '@/components/CarouselSlidePassion.vue';
 
 export default {
   name: "IndexPage",
+  components: {
+    CarouselGlobal,
+  },
   data() {
     return {
       ImagesIndex,
       screenWidth: window.innerWidth,
+      imagesPassion: [
+        {
+          link: '/PassionRando',
+          image: ImagesIndex.Randonneur,
+          alt: 'Le randonneur',
+          title: 'Le randonneur'
+        },
+        {
+          link: '/PassionVoyage',
+          image: ImagesIndex.Voyageur,
+          alt: 'Le voyageur',
+          title: 'Le voyageur'
+        },
+        {
+          link: '/PassionJeuxVideo',
+          image: ImagesIndex.Geek,
+          alt: 'Le geek',
+          title: 'Le joueur'
+        },
+      ],
     };
   },
   computed: {
+    slideCompPassion() {
+      return CarouselSlidePassion;
+    },
     showBreak() {
       return this.screenWidth <= 768;
-    }
+    },
   },
   mounted() {
     window.addEventListener('resize', this.updateScreenWidth);

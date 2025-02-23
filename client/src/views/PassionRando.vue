@@ -23,19 +23,7 @@
         </div>
 
       </section>
-      <section class="Galerie">
-        <div class="GaleriePack">
-          <img :src="ImagesRando.MontCharvin01" alt="Paysage du Mont Charvin">
-          <img :src="ImagesRando.MontCharvin02" alt="Paysage du Mont Charvin">
-          <img :src="ImagesRando.MontCharvin03" alt="Paysage du Mont Charvin">
-        </div>
-        <div class="GaleriePack">
-          <img :src="ImagesRando.MontCharvin04" alt="Paysage du Mont Charvin">
-          <img :src="ImagesRando.MontCharvin05" alt="Paysage du Mont Charvin">
-          <img :src="ImagesRando.MontCharvin06" alt="Paysage du Mont Charvin">
-        </div>
-
-      </section>
+      <DynamicGallery :images="ImagesRando" />>
     </div>
     <Footer />
   </template>
@@ -43,11 +31,13 @@
 import {ImagesRando} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
+import DynamicGallery from '@/components/Galerie.vue';
 
 export default {
   name: "PassionRando",
   components: {
     Footer,
+    DynamicGallery,
   },
   data() {
     return {

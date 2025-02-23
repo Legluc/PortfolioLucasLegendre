@@ -1,6 +1,8 @@
 // utils/Carousel.js
 import { gsap } from "gsap";
 
+// CAROUSEL GLOBAL
+
 export const carouselProps = {
   images: {
     type: Array,
@@ -78,6 +80,7 @@ export const carouselMethods = {
   },
 };
 
+// CAROUSEL CARTE
 
   export const carouselCarteMethods = {
     startAutoSlide() {

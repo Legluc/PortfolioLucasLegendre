@@ -118,18 +118,7 @@
         </div>
 
       </section>
-      <section class="Galerie">
-        <div class="GaleriePack">
-          <img :src="ImagesVoyage.GalerieVoyage09" alt="Paysage du Mont Charvin">
-          <img :src="ImagesVoyage.GalerieVoyage02" alt="Paysage du Mont Charvin">
-          <img :src="ImagesVoyage.GalerieVoyage03" alt="Paysage du Mont Charvin">
-        </div>
-        <div class="GaleriePack">
-          <img :src="ImagesVoyage.GalerieVoyage04" alt="Paysage du Mont Charvin">
-          <img :src="ImagesVoyage.GalerieVoyage05" alt="Paysage du Mont Charvin">
-          <img :src="ImagesVoyage.GalerieVoyage21" alt="Paysage du Mont Charvin">
-        </div>
-      </section>
+      <DynamicGallery :images="ImagesVoyage" />>
     </div>
     <Footer />
   </template>
@@ -137,10 +126,13 @@
 import {ImagesVoyage} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
+import DynamicGallery from '@/components/Galerie.vue';
+
 
 export default {
   name: "PassionVoyage",
   components: {
+    DynamicGallery,
     Footer,
   },
   data() {

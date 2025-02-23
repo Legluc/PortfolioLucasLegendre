@@ -144,7 +144,7 @@ export default {
   data() {
     return {
       ImagesRando,
-      carouselImages1: carouselImages.slice(0, 3),
+      carouselImages1: carouselImages.slice(0, 5),
     };
   }
 };

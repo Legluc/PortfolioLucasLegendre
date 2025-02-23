@@ -56,6 +56,9 @@
 #MesPassions{
   height: 100vh;
   width: 100%;
+}
+
+.MesPassionsDesktop{
   display: flex;
 }
 
@@ -98,43 +101,69 @@
   cursor: pointer;
 }
 
+.MesPassionsCarousel{
+  width: 100%;
+  height: 100%;
+}
+
+.MesPassionsCarousel .Carousel{
+  max-width: unset;
+  max-height: unset;
+  border-radius: unset;
+  transform: unset;
+}
+
+.MesPassionsCarousel .ImagePassion{
+    @include flex-center;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.MesPassionsCarousel .TextePassion{
+  width: 100%;
+}
+
+.MesPassionsCarousel .ImagePassion:hover .TextePassion{
+  width: 100%;
+}
+
 #MesProjets{
+  @include flex($direction: row,  $align: center, $justify: space-evenly);
   height: 100vh;
   width: 100%;
-  display: none;
-}
-
-.DivProjets{
-  @include flex($direction: column,  $align: center, $justify: end);
-  width: 50%;
-}
-
-.DivProjets h2{
-  @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$creme);
-  text-transform: uppercase;
-}
-
-.DivProjets p{
-  @include body-style($size:$font-size-h3, $weight:600, $line-height:1, $color:$creme);
-}
-
-#ProjetsPro{
   background-color: $orange;
 }
 
 
-#ProjetPerso h2{
-  color: $vert;
+#ProjetsPro{
+  @include flex($direction: column,  $align: center, $justify: end);
+  width: 50%;
+  height: 100%;
+}
+
+#ProjetsPro h2{
+  @include title-style($size:$font-size-h1, $weight:400, $line-height:1.2, $color:$creme);
+  text-transform: uppercase;
+}
+
+#ProjetsPro p{
+  @include body-style($size:$font-size-h3, $weight:600, $line-height:1, $color:$creme);
 }
 
 #MesProjets .CarteVerte,#MesProjets .CarteOrange{
   width: 560px;
   height: 315px;
-  margin: $space-xl 0;
+  margin: $space-xl;
 }
 
 .CarteVerte h3 , .CarteOrange h3{
   @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+}
+
+.MockupProjetAccueil{
+  @include flex($direction: row,  $align: end, $justify: center);
+  width: 50%;
 }
 
 .ContactAccueil{
@@ -460,7 +489,7 @@
     padding-bottom: $space-xl;
   }
 
-  #LucasLegendre h1{
+  #LucasLegendre h1, #ProjetsPro h2{
     font-size: 48px;
   }
 
@@ -500,7 +529,6 @@
   .MentionsFooter{
     width: 70%;
   }
-
 }
 
 @media (max-width: 500px){

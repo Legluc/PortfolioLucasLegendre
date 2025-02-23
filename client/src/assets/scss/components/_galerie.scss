@@ -2,9 +2,12 @@
 @use '@/assets/scss/abstracts/typography' as *;
 @use '@/assets/scss/abstracts/mixins' as *;
 
+.GalerieGlobal{
+    margin-bottom: $space-xxxl;
+}
+
 .Galerie{
     @include flex($direction: column,  $align: center, $justify: center);
-    margin-bottom: $space-xxxl;
 }
 
 .GaleriePack{
