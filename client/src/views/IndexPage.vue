@@ -13,7 +13,7 @@
     </section>
     <section id="MesPassions">
 
-      <div v-if="screenWidth >= 768" class="MesPassionsDesktop">
+      <div v-if="screenWidth > 768" class="MesPassionsDesktop">
         <div 
           class="ImagePassion" 
           v-for="(passion, idx) in imagesPassion" 
@@ -123,6 +123,7 @@
 import { ImagesIndex } from '@/data/images';
 import CarouselGlobal from '@/components/CarouselGlobal.vue';
 import CarouselSlidePassion from '@/components/CarouselSlidePassion.vue';
+import gsap from 'gsap';
 
 export default {
   name: "IndexPage",
@@ -165,9 +166,16 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.updateScreenWidth);
+    if (this.screenWidth >= 768) {
+      this.initScrollSnap();
+    }
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.updateScreenWidth);
+    if (this.screenWidth >= 768) {
+      window.removeEventListener('wheel', this.throttledScrollHandler);
+      window.removeEventListener('keydown', this.throttledKeyHandler);
+    }
   },
   methods: {
     updateScreenWidth() {
@@ -175,6 +183,70 @@ export default {
       this.resizeTimer = setTimeout(() => {
         this.screenWidth = window.innerWidth;
       }, 200);
+    },
+    initScrollSnap() {
+      // Initialisation de l'index courant
+      this.currentSectionIndex = 0;
+      // Création des versions throttle des gestionnaires
+      this.throttledScrollHandler = this.throttle(this.handleScroll, 600);
+      this.throttledKeyHandler = this.throttle(this.handleKey, 600);
+      window.addEventListener('wheel', this.throttledScrollHandler, { passive: false });
+      window.addEventListener('keydown', this.throttledKeyHandler);
+    },
+    // Implémentation simple d'une fonction throttle
+    throttle(func, limit) {
+      let inThrottle;
+      return (...args) => {
+        if (!inThrottle) {
+          func.apply(this, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      };
+    },
+    // Gestionnaire de l'événement wheel
+    handleScroll(e) {
+      if (this.screenWidth <= 768) return; // désactivation sur mobile/tablette
+      e.preventDefault();
+      if (this.isAnimating) return;
+      
+      const delta = e.deltaY;
+      if (delta > 0) {
+        // Scroll vers le bas
+        this.goToSection(this.currentSectionIndex + 1);
+      } else if (delta < 0) {
+        // Scroll vers le haut
+        this.goToSection(this.currentSectionIndex - 1);
+      }
+    },
+    // Gestionnaire de l'événement keydown pour les flèches
+    handleKey(e) {
+      if (this.screenWidth <= 768) return;
+      if (this.isAnimating) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.goToSection(this.currentSectionIndex + 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        this.goToSection(this.currentSectionIndex - 1);
+      }
+    },
+    // Fonction pour animer le scroll vers la section souhaitée
+    goToSection(index) {
+      const sections = document.querySelectorAll('section');
+      // Vérification des limites
+      if (index < 0 || index >= sections.length) return;
+      this.isAnimating = true;
+      this.currentSectionIndex = index;
+      const targetPosition = sections[index].offsetTop;
+      gsap.to(document.scrollingElement || document.documentElement, {
+        duration: 0.7,
+        scrollTop: targetPosition,
+        ease: "power2.out",
+        onComplete: () => {
+          this.isAnimating = false;
+        }
+      });
     }
   }
 };

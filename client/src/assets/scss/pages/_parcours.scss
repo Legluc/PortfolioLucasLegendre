@@ -9,6 +9,8 @@
 }
 
 #MesCompetences{
+    @include flex($direction: column,  $align: start, $justify: center);
+    height: auto;
     margin:$space-xl 0 $space-xxxl 0;
 }
 
@@ -21,6 +23,8 @@
 
 .ImageCompetence{
     @include flex-center;
+    width: 100%;
+    height: auto;
 }
 
 #SectionParcours h2{

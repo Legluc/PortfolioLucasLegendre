@@ -2,10 +2,6 @@
 @use '@/assets/scss/abstracts/typography' as *;
 @use '@/assets/scss/abstracts/mixins' as *;
 
-.GalerieGlobal{
-    margin-bottom: $space-xxxl;
-}
-
 .Galerie{
     @include flex($direction: column,  $align: center, $justify: center);
 }
@@ -18,14 +14,35 @@
 
 .GaleriePack img{
     object-fit: cover;
+    aspect-ratio: 1;
     width: 25vw;
-    height: 25vw;
     border-radius: 35px;
 }
 
 @media (max-width: 768px){
 
-    .Galerie{
+    .GalerieGlobal{
         margin-bottom: $space-xxl;
+    }
+
+    .Galerie > :nth-child(2) {
+        display: none;
+    }
+
+    .GaleriePack{
+        flex-direction: column;
+        margin-bottom: unset;
+    }
+
+    .GaleriePack img{
+        width: 60vw;
+        margin-bottom: $space-xl;
+    }
+}
+
+@media (max-width: 425px){
+
+    .GaleriePack img{
+        width: 80vw;
     }
 }
