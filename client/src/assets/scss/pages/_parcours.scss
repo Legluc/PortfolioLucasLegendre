@@ -68,10 +68,12 @@
 .DatesCartesParcours{
     @include flex($direction: row,  $align: start, $justify: space-between);
     @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+    width: 100%;
 }
 
 .DatesCartesParcours p{
     margin-right: $space-m;
+    width: 25%;
 }
 
 .TexteCartesParcours{
@@ -112,6 +114,8 @@
 
     .DatesCartesParcours p{
         margin-bottom: $space-m;
+        margin-right: unset;
+        width: 100%;
     }
 
     .TexteCartesParcours{
