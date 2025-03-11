@@ -11,7 +11,6 @@
             <p>{{ typeJeu }}</p>
           </div>
           <div class="CarteContenueRecto">
-            <p class="CarteContenueTitre">{{ effetSpecial }}</p>
             <p >{{ description }}</p>
           </div>
           <div class="CarteBas">
@@ -25,9 +24,6 @@
               <p>{{ personnage }}</p>
             </div>
             <div class="CarteHistoire">
-              <div class="CadreTitreCarte">
-                <p>Histoire</p>
-              </div>
               <div class="CarteContenueVerso">
                 <p>{{ histoire }}</p>
               </div>

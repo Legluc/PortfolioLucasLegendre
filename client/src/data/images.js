@@ -130,10 +130,25 @@ export const ImagesVoyage = {
     GalerieVoyage45: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage45.webp'),
 }
 
+export const FlipCardJeu = {
+    WorldOfWarcraftRecto: require('@/assets/image/PAGE_GEEK/FlipCard/WorldOfWarcraft.webp'),
+    WorldOfWarcraftVerso: require('@/assets/image/PAGE_GEEK/FlipCard/Aeldrin_WoW.webp'),
+    SubnauticaRecto: require('@/assets/image/PAGE_GEEK/FlipCard/Subnautica.webp'),
+    SubnauticaVerso: require('@/assets/image/PAGE_GEEK/FlipCard/Ryley_Robinson.webp'),
+    SkyrimRecto: require('@/assets/image/PAGE_GEEK/FlipCard/Skyrim.webp'),
+    SkyrimVerso: require('@/assets/image/PAGE_GEEK/FlipCard/Ekhelmineon_Skyrim.webp'),
+    GroundedRecto: require('@/assets/image/PAGE_GEEK/FlipCard/Grounded.webp'),
+    GroundedVerso: require('@/assets/image/PAGE_GEEK/FlipCard/Pete_Grounded.webp'),
+    ValheimRecto: require('@/assets/image/PAGE_GEEK/FlipCard/Valheim.webp'),
+    ValheimVerso: require('@/assets/image/PAGE_GEEK/FlipCard/Aeldrin_Vaheim.webp'),
+    PathOfExile2Recto: require('@/assets/image/PAGE_GEEK/FlipCard/PathOfExile2.webp'),
+    PathOfExile2Verso: require('@/assets/image/PAGE_GEEK/FlipCard/Ekhelmineon_Poe2.webp'),
+};
+
 export const carouselImages = [
     { image: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage45.webp'), title: "Image 1" },
     { image: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage44.webp'), title: "Image 2" },
     { image: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage43.webp'), title: "Image 3" },
     { image: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage42.webp'), title: "Image 4" },
     { image: require('@/assets/image/PAGE_VOYAGE/galerie_page_voyage/GalerieVoyage41.webp'), title: "Image 5" },
-  ];
+];

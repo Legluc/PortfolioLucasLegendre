@@ -69,15 +69,12 @@
     @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
 }
 
-.MesProjetsProTexte p{
-    width: 70%;
-}
 
 .CartoucheLogo{
     @include flex($direction: row,  $align: center, $justify: space-between);
     height: 100px;
     width: 70%;
-    margin-bottom: $space-xl;
+    margin-bottom: $space-l;
 }
 
 .LogoTechno{

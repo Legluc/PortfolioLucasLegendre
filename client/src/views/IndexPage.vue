@@ -3,8 +3,8 @@
     <section id="LucasLegendre">
       <h1>Lucas <br>Legendre</h1>
       <div class="CarteVerte">
-        <h2>Développeur web</h2>
-        <p> Je me présente Lucas Legendre, j’ai 27 ans et je suis développeur web, randonneurs, voyageur et un geek. Je suis un développeur web passionné de création numérique, d’exploration et d’aventures. Curieux et toujours en quête de nouveaux défis, je mêle savoir-faire et esprit créatif. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes autres passions. Bienvenue dans mon univers !</p>
+        <h2>Développeur web en alternance</h2>
+        <p>Moi c'est Lucas, j’ai 27 ans et je suis développeur web, randonneurs, voyageur et un joueur. Je suis un développeur web passionné de création numérique, d’exploration et d’aventures. Curieux et toujours en quête de nouveaux défis, je mêle savoir-faire et esprit créatif. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes autres passions. Bienvenue dans mon univers !</p>
       </div>
     </section>
     <section id="MonParcours">

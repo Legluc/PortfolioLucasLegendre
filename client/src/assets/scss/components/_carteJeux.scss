@@ -53,9 +53,9 @@
 
 .CarteJeuxVerso {
     @include flex($direction: column, $align: center, $justify: space-between);
-    background-color: $orange;
     transform: rotateY(180deg); /* Verso est retourné par défaut */
-    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .CadreTitreCarte{
@@ -72,7 +72,9 @@
 .CarteJeuxRecto img{
     width: 91%;
     height: 40%;
+    object-fit: cover;
 }
+
 
 .CarteContenueRecto,
 .CarteContenueVerso,
@@ -81,9 +83,8 @@
     width: 90%;
 }
 
-.CarteContenueRecto,
-.CarteContenueVerso {
-    margin-top: $space-m;
+.CarteContenueRecto{
+    margin: $space-s 0;
 }
 
 .CarteContenueTitre{
@@ -93,7 +94,7 @@
 }
 
 .CarteHistoire{
-    @include flex($direction: column, $align: center, $justify: flex-start);
+    @include flex($direction: column, $align: center, $justify: flex-end);
     width: 100%;
     min-height: 35%;
 }
