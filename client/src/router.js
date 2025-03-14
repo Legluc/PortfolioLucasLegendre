@@ -19,6 +19,27 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    // Si une ancre est présente dans l'URL, on y scroll
+    if (to.hash) {
+      return { selector: to.hash };
+    }
+    // Sinon, on retourne en haut de la page
+    return { x: 0, y: 0 };
+  }
+  
 });
+
+router.afterEach((to) => {
+  if (!to.hash) {
+    window.scrollTo(0, 0);
+  }
+});
+
+
+
 
 export default router;

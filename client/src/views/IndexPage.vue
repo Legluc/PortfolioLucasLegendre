@@ -169,6 +169,16 @@ export default {
     if (this.screenWidth >= 768) {
       this.initScrollSnap();
     }
+    if (this.$route.hash) {
+      this.scrollToHash();
+    }
+  },
+  watch: {
+    '$route.hash'(newHash) {
+      if (newHash) {
+        this.scrollToHash();
+      }
+    }
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.updateScreenWidth);
@@ -178,6 +188,25 @@ export default {
     }
   },
   methods: {
+    handleMesPassionsClick() {
+      // Si le hash est déjà "#MesPassions", on force l'animation
+      console.log(this.$route.hash)
+      if (this.$route.hash === "#MesPassions") {
+        this.scrollToHash();
+      }
+    },
+    scrollToHash() {
+      this.$nextTick(() => {
+        const targetId = this.$route.hash.replace('#', '');
+        const sections = document.querySelectorAll('section');
+        const index = Array.from(sections).findIndex(
+          (section) => section.id === targetId
+        );
+        if (index !== -1) {
+          this.goToSection(index);
+        }
+      });
+    },
     updateScreenWidth() {
       clearTimeout(this.resizeTimer);
       this.resizeTimer = setTimeout(() => {
