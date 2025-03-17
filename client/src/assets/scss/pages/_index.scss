@@ -210,7 +210,11 @@
 }
 
 #LogoFooter:hover .st0{
-  fill: $lime;
+  fill: $vert;
+}
+
+#LogoFooter:hover .st1{
+  fill: $creme;
 }
 
 
@@ -280,7 +284,7 @@
 }
 
 .BaseOverlayPrenomFooter{
-  @include flex($direction: column,  $align: center, $justify: space-evenly);
+  @include flex($direction: column,  $align: center, $justify: end);
   position: relative;
   width: 50%;
   height: 100%;
@@ -290,14 +294,13 @@
   position: absolute;
   overflow: hidden;
   width: 98vw;
-  height: 100%;
+  height: 30%;
 }
 
 .NomFooter, .PrenomFooter{
   @include title-style(140px, $weight:400, $line-height:1.2);
   color: rgba($creme, 0.2);
   text-transform: uppercase;
-  margin-top: 20vh;
   text-align: center;
 }
 
@@ -311,7 +314,7 @@
 @media (max-width: 1800px){
   #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
     font-size: 100px;
-    margin-top: 23vh;
+    margin-top: 3vh;
   }
 
   .LogoNavFooterAccueil, .ReseauFooter{
@@ -361,6 +364,10 @@
 
   .BaseOverlayPrenomFooter{
     width: 30%;
+  }
+
+  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
+    margin-top: unset;
   }
 
 }
@@ -466,6 +473,7 @@
 
   .OverlayPrenomFooter{
     width: 100%;
+    height: 100%;
   }
 
   #FooterAccueil .NomFooter{

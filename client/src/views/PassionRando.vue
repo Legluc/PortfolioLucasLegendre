@@ -44,27 +44,27 @@ export default {
       ImagesRando,
       posts: [
         {
-          image: ImagesRando.MontCharvin01,
+          image: ImagesRando.MontVentoux01,
           title: "Le Mont Ventoux",
-          subtitle: "Un jour au Charvin",
+          subtitle: "Mont Ventoux via le Vallon de Counillon",
           content: "Cette randonnée est la concrétisation de six mois de préparation. Lorsque nous vivions en Provence dans Brick, notre camping-car qui nous emmenait sur d’innombrables sentiers, toujours avec en toile de fond l’imposant colosse provençal. Après l’hiver, nos jambes endurcies par de multiples parcours, une journée idéale s’est présentée pour l’ascension, sans le moindre vent. Nous avons gravi 10 km de nuit afin de savourer un petit-déjeuner au lever du soleil, offrant une vue panoramique sur toute la Provence. Pour couronner cette aventure, une descente ensoleillée avec en vue d’un magnifique bouquetin qui couronna de succès cette aventure."
         },
         {
-          image: ImagesRando.MontCharvin01,
+          image: ImagesRando.PicCarlit07,
           title: "Le Pic Carlit",
-          subtitle: "Un jour au Charvin",
+          subtitle: "La boucle des 12 lacs",
           content: "Le Pic Carlit est sans doute l’une des plus belles randonnées que j’ai vécues. Découvrir les 12 lacs gelés dans les Pyrénées fut un véritable émerveillement. Ce fut aussi ma première vraie expédition dans la neige, ce qui m’a poussé à investir dans des crampons forestiers pour l’occasion. Nous avons divisé l’aventure en deux temps : d’abord, repérer le parcours menant au barrage des Bouillouse, puis réaliser le grand tour des 12 lacs. Parcourir la neige par un temps radieux et des températures clémentes fut un plaisir, et le retour, éclairé par la lueur de la lune et nos frontales, ajouta une touche de piment à cette expédition."
         },
         {
-          image: ImagesRando.MontCharvin01,
+          image: ImagesRando.Parmelan01,
           title: "Le Parmelan",
-          subtitle: "Un jour au Charvin",
+          subtitle: "Tête du Parmelan depart de Aviernoz",
           content: "Arrivé récemment à Annecy, il nous fallait découvrir notre nouveau voisin. Pour l’occasion, j’ai convié deux amis novices en randonnée pour une expédition jusqu’à la tête du Parmelan, en passant par la Grotte de l’Enfer et la Mer de Cailloux. Cette aventure nous a laissé de précieux souvenirs et une vue imprenable sur les environs."
         },
         {
           image: ImagesRando.MontCharvin01,
           title: "Le Mont Charvin",
-          subtitle: "Un jour au Charvin",
+          subtitle: "Tour de ma Tulle par le lac Charvin",
           content: "Dès notre arrivée, nous avons entrepris une randonnée enneigée jusqu’au lac du Charvin sur le Mont Charvin. Ce fut une aventure qui nous a confrontés à notre manque d’expérience et à un équipement insuffisant. Une véritable leçon d’humilité, car ici, les crampons forestiers ne suffisent plus et la lecture du terrain est primordiale. Après avoir rapidement renoncé à atteindre le sommet, nous avons entamé la descente par le refuge en empruntant le passage du Freux, qui nous a fait quelques frayeurs. Ce sommet demeure désormais une promesse d’une prochaine aventure, avec des conditions plus favorables et une expérience enrichie."
         },
       ]

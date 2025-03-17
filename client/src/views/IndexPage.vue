@@ -83,7 +83,7 @@
         <ul class="NavFooter">
           <li><router-link to="/Portfolio">Portfolio</router-link></li>
           <li><router-link to="/Parcours">Parcours</router-link></li>
-          <li><router-link to="/Passions">Passions</router-link></li>
+          <li><router-link to="/#MesPassions" @click="handleClickMesPassions">Passions</router-link></li>
           <li>Mentions Légales</li>
         </ul>
       </div>
@@ -172,6 +172,9 @@ export default {
     if (this.$route.hash) {
       this.scrollToHash();
     }
+    if (this.$route.hash) {
+      this.scrollToHash(this.$route.hash);
+    }
   },
   watch: {
     '$route.hash'(newHash) {
@@ -180,6 +183,14 @@ export default {
       }
     }
   },
+  // watch: {
+  //   // A chaque changement de hash, on scrolle vers la section correspondante
+  //   '$route.hash'(newHash) {
+  //     if (newHash) {
+  //       this.scrollToHash(newHash);
+  //     }
+  //   }
+  // },
   beforeUnmount() {
     window.removeEventListener('resize', this.updateScreenWidth);
     if (this.screenWidth >= 768) {
@@ -207,6 +218,19 @@ export default {
         }
       });
     },
+
+    /**
+     * Scrolle doucement vers l’élément correspondant à l’ancre
+     */
+    //  scrollToHash(hash) {
+    //   this.$nextTick(() => {
+    //     const targetId = hash.replace('#', '');
+    //     const target = document.getElementById(targetId);
+    //     if (target) {
+    //       target.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    //   });
+    // },
     updateScreenWidth() {
       clearTimeout(this.resizeTimer);
       this.resizeTimer = setTimeout(() => {

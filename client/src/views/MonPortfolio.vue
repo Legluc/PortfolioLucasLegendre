@@ -19,7 +19,9 @@
           <h2>#1</h2>
           <h3>Tout pour la Chanson</h3>
           <p>Tout pour la Chanson, fondée en 1970, réunit une centaine de bénévoles – musiciens et choristes – qui se produisent régulièrement en Champagne-Ardenne. L’association met également à disposition un espace membre pour préparer ses concerts et enrichir son répertoire.<br>Le projet visait à moderniser le site en harmonisant son identité visuelle, en améliorant son référencement et en mettant en avant partenariats, dons et recrutement. Face à une maquette statique (format laptop), il a fallu repenser l’ensemble des pages en combinant contenu existant et nouveautés pour répondre aux exigences graphique.<br>Arrivé en début de projet, j’ai contribué majoritairement sur le front-end. Le site a été réalisé sous Joomla 4 avec SP Page Builder, en PHP, avec un CSS écrit manuellement et des éléments dynamiques en jQuery, le tout soutenu par une base de données MySQL. </p>
-          <button class="Bouton">Voir le site</button>
+          <a href="https://www.toutpourlachanson.fr/">
+            <button class="Bouton">Voir le site</button>
+          </a>
           <div class="CartoucheLogo">
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
@@ -190,7 +192,9 @@
           <h2>#3</h2>
           <h3>Provaé</h3>
           <p>Provaé, issue du GISMA fondé en 1945 et transformée en 2023, se spécialise dans la prévention en santé au travail. L'association propose divers services, des visites médicales aux actions de sensibilisation, garantissant un suivi complet tout au long du parcours professionnel des salariés.<br>Le projet actuel est la refonte du site internet pour refléter la nouvelle identité de Provaé et améliorer l'accès à une information dense et utile, que ce soit pour la prévention ou la localisation des centres. Arrivé en fin de projet, j’ai apporté mon soutien en finalisant le style de certaines pages et en participant à une réunion de présentation pour ajuster le parcours utilisateur avant la mise en ligne. Le site, développé sous Joomla 4 avec SP Page Builder, combine une personnalisation en CSS et jQuery pour répondre aux contraintes graphiques et techniques du client.</p>
-          <button class="Bouton">Voir le site</button>
+          <a href="https://www.gisma.fr/">
+            <button class="Bouton">Voir le site</button>
+          </a>
           <div class="CartoucheLogo">
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
@@ -256,7 +260,9 @@
           <h2>#4</h2>
           <h3>Actual Agence Web</h3>
           <p>Actual, fort de 30 ans d’expérience, a évolué de la cartographie vers le web en proposant aujourd’hui des sites vitrines, e-commerce et des services de webmarketing, design, et même des projets éditoriaux (Actual Kids). L’entreprise combine innovation et expertise traditionnelle pour répondre aux besoins techniques et créatifs de ses clients.<br>Pour le site d’Actual Agence Web, j’ai assuré la migration vers un nouveau serveur et la mise à jour vers Joomla 4 et PHP 8. Le projet, structuré en une page unique divisée en plusieurs sections (bandeau, carrousel, récapitulatif, prestations et galerie), a nécessité la custumisation du module OWL Carousel, afin de corriger des problèmes d’animation et de synchronisation. En autonomie, et en collaboration avec mes collègues, j’ai finalisé les sections via du style en CSS, garantissant un rendu moderne et fidèle à l’identité d’Actual.</p>
-          <button class="Bouton">Voir le site</button>
+          <a href="https://agencewebtroyes.actual.tm.fr/">
+            <button class="Bouton">Voir le site</button>
+          </a>
           <div class="CartoucheLogo">
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
@@ -345,7 +351,6 @@
           <h2>#5</h2>
           <h3>Portfolio Lucas Legendre</h3>
           <p>Actuellement, je développe mon portfolio en Vue.js et Node.js, suivant les conseils de ma formatrice pour étendre mes compétences en JavaScript. Pour la stylisation, j'ai adopté SCSS avec enthousiasme, et pour les animations, j'explore GSAP afin d'apporter une touche dynamique à l'ensemble.<br>Haut en couleurs et fidèle à ma personnalité, ce site sert à présenter mes projets et à refléter ma passion pour le développement, tout en me permettant d'apprendre de nouvelles méthodes de création de code.</p>
-          <button class="Bouton">Voir le site</button>
           <div class="CartoucheLogo">
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>

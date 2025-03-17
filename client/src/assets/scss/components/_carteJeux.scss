@@ -103,3 +103,7 @@
     @include flex($direction: row, $align: center, $justify: space-between);
     margin-top: auto;
 }
+
+#Skyrim .CarteJeuxVerso{
+    background-position-x: 39%;
+}

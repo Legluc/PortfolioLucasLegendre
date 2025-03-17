@@ -8,6 +8,7 @@
       v-for="(CarteJeux, index) in displayedCards"
       :key="index"
       :class="{ flipped: CarteJeux.isFlipped }"
+      :id="CarteJeux.id"
       :jeu="CarteJeux.jeu"
       :image="CarteJeux.image"
       :typeJeu="CarteJeux.typeJeu"
@@ -54,6 +55,7 @@
       return {
         CartesJeux: [
           {
+            id: "WoW",
             jeu: "World Of Warcraft",
             image: FlipCardJeu.WorldOfWarcraftRecto,
             typeJeu: "MMORPG",
@@ -66,6 +68,7 @@
             isFlipped: false,
           },
           {
+            id: "Subnautica",
             jeu: "Subnautica",
             image: FlipCardJeu.SubnauticaRecto,
             typeJeu: "Survival-Aventure sous-marine",
@@ -78,6 +81,7 @@
             isFlipped: false,
           },
           {
+            id: "Skyrim",
             jeu: "The Elder Scrolls V: Skyrim",
             image: FlipCardJeu.SkyrimRecto,
             typeJeu: "Action-RPG en monde ouvert",
@@ -91,6 +95,7 @@
             isFlipped: false,
           },
           {
+            id: "Grounded",
             jeu: "Grounded",
             image: FlipCardJeu.GroundedRecto,
             typeJeu: "Survival-Aventure en monde miniature",
@@ -103,6 +108,7 @@
             isFlipped: false,
           },
           {
+            id: "Valheim",
             jeu: "Valheim",
             image: FlipCardJeu.ValheimRecto,
             typeJeu: "Survival-Sandbox en univers nordique",
@@ -115,6 +121,7 @@
             isFlipped: false,
           },
           {
+            id:"Poe2",
             jeu: "Path of Exile 2",
             image: FlipCardJeu.PathOfExile2Recto,
             typeJeu: "Hack'n'slash-RPG",

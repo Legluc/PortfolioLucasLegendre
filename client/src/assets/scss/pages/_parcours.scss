@@ -25,7 +25,7 @@
 .ImageCompetence{
     @include flex-center;
     width: 100%;
-    height: auto;
+    height: 80vh;
 }
 
 #SectionParcours h2{
@@ -103,6 +103,9 @@
 
     #SectionParcours h2{
         font-size: 72px;
+    }
+    .ImageCompetence{
+        height: auto;
     }
 
     .CartesParcours img{

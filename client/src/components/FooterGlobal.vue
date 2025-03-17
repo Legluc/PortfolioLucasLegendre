@@ -15,7 +15,7 @@
           <ul class="NavFooter">
             <li><router-link to="/Portfolio">Portfolio</router-link></li>
             <li><router-link to="/Parcours">Parcours</router-link></li>
-            <li><router-link to="/Passions">Passions</router-link></li>
+            <li><router-link to="/#MesPassions">Passions</router-link></li>
             <li>Mentions Légales</li>
           </ul>
         </div>

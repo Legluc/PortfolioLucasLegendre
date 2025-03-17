@@ -36,13 +36,13 @@
       <ul id="LienNav" :class="{ Active: isMenuOpen }">
         <li><router-link to="/Portfolio">Portfolio</router-link></li>
         <li><router-link to="/Parcours">Parcours</router-link></li>
-        <li><router-link to="/#MesPassions" @click="handleMesPassionsClick">Passions</router-link></li>
+        <li><router-link to="/#MesPassions">Passions</router-link></li>
         <li><a @click.prevent="scrollToContact">Contact</a></li>
       </ul>
     </nav>
 </template>
 <script>
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router';
 import { gsap } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 gsap.registerPlugin(ScrollToPlugin)
@@ -61,22 +61,41 @@ export default {
   },
   setup() {
     const route = useRoute()
+    const router = useRouter();
 
-    const scrollToContact = () => {
-      // Détermine la cible selon la page actuelle
-      const selector = route.name === 'IndexPage' ? '.ContactAccueil' : '.Contact'
-      const target = document.querySelector(selector)
-      if (target) {
-        gsap.to(window, {
-          duration: 1, // durée de l'animation en secondes
-          scrollTo: { y: target, autoKill: true },
-          ease: "power2.out" // effet d'accélération/décélération
-        })
+    function goToMesPassions() {
+      // Sommes-nous déjà sur la page d'accueil ET déjà sur #MesPassions ?
+      if (route.name === 'IndexPage' && route.hash === '#MesPassions') {
+        // Hack : on enlève le hash, puis on le remet pour forcer le watch
+        router.replace({ name: 'IndexPage', hash: '' }).then(() => {
+          router.push({ name: 'IndexPage', hash: '#MesPassions' });
+        });
+      } else {
+        // Sinon on navigue simplement vers /#MesPassions
+        router.push({ name: 'IndexPage', hash: '#MesPassions' });
       }
     }
 
-    return { scrollToContact }
-  }
+    return { goToMesPassions };
+  },
+  // setup() {
+  //   const route = useRoute()
+
+  //   const scrollToContact = () => {
+  //     // Détermine la cible selon la page actuelle
+  //     const selector = route.name === 'IndexPage' ? '.ContactAccueil' : '.Contact'
+  //     const target = document.querySelector(selector)
+  //     if (target) {
+  //       gsap.to(window, {
+  //         duration: 1, // durée de l'animation en secondes
+  //         scrollTo: { y: target, autoKill: true },
+  //         ease: "power2.out" // effet d'accélération/décélération
+  //       })
+  //     }
+  //   }
+
+  //   return { scrollToContact }
+  // }
 };
 </script>
 <style lang="scss">
