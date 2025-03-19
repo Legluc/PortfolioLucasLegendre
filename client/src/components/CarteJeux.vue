@@ -20,6 +20,7 @@
         </div>
         <!-- Face arrière -->
         <div class="CarteJeuxVerso" :style="{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none' }">
+          <div class="FondCarte">
             <div class="CadreTitreCarte">
               <p>{{ personnage }}</p>
             </div>
@@ -28,6 +29,7 @@
                 <p>{{ histoire }}</p>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>

@@ -175,6 +175,42 @@ export default {
     if (this.$route.hash) {
       this.scrollToHash(this.$route.hash);
     }
+
+    const images = this.$el.querySelectorAll('.ImagePassion');
+
+    // Fonction qui met à jour la disposition en fonction de l'image survolée
+    const updateLayout = () => {
+      // On vérifie si une image est survolée
+      const hoveredImage = Array.from(images).find(img => img.matches(':hover'));
+
+        if (hoveredImage) {
+          // Si une image est survolée, on l'agrandit à 50%
+          // et les autres passent à 25%
+          images.forEach(img => {
+            if (img === hoveredImage) {
+              gsap.to(img, { duration: 0.5, width: '50%', ease: "power3.out" , opacity: 1 });
+              gsap.to(img.querySelector('.TextePassion'), { duration: 0.5, width: '50%', ease: "power3.out"});
+            } else {
+              gsap.to(img, { duration: 0.5, width: '25%', ease: "power3.out"  , opacity: 0.7 });
+              gsap.to(img.querySelector('.TextePassion'), { duration: 0.5, width: '25%', ease: "power3.out"});
+            }
+          });
+        } else {
+          // Si aucune image n'est survolée, on rétablit la largeur par défaut (33.33%)
+          images.forEach(img => {
+            gsap.to(img, { duration: 0.5, width: '33.33%', ease: "power3.out" , opacity: 1 });
+            gsap.to(img.querySelector('.TextePassion'), { duration: 0.5, width: '33.33%', ease: "power3.out"});
+          });
+        }
+      };
+      
+    // On ajoute l'événement sur chaque image pour le mouseenter et mouseleave
+    images.forEach(image => {
+      image.addEventListener('mouseenter', updateLayout);
+      image.addEventListener('mouseleave', updateLayout);
+    });
+    
+
   },
   watch: {
     '$route.hash'(newHash) {

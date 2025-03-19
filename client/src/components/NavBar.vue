@@ -60,45 +60,37 @@ export default {
     },
   },
   setup() {
-    const route = useRoute()
+    const route = useRoute();
     const router = useRouter();
 
+    // Fonction pour naviguer vers #MesPassions
     function goToMesPassions() {
-      // Sommes-nous déjà sur la page d'accueil ET déjà sur #MesPassions ?
       if (route.name === 'IndexPage' && route.hash === '#MesPassions') {
         // Hack : on enlève le hash, puis on le remet pour forcer le watch
         router.replace({ name: 'IndexPage', hash: '' }).then(() => {
           router.push({ name: 'IndexPage', hash: '#MesPassions' });
         });
       } else {
-        // Sinon on navigue simplement vers /#MesPassions
         router.push({ name: 'IndexPage', hash: '#MesPassions' });
       }
     }
 
-    return { goToMesPassions };
-  },
-  // setup() {
-  //   const route = useRoute()
-
-  //   const scrollToContact = () => {
-  //     // Détermine la cible selon la page actuelle
-  //     const selector = route.name === 'IndexPage' ? '.ContactAccueil' : '.Contact'
-  //     const target = document.querySelector(selector)
-  //     if (target) {
-  //       gsap.to(window, {
-  //         duration: 1, // durée de l'animation en secondes
-  //         scrollTo: { y: target, autoKill: true },
-  //         ease: "power2.out" // effet d'accélération/décélération
-  //       })
-  //     }
-  //   }
-
-  //   return { scrollToContact }
-  // }
+    // Fonction pour scroller jusqu'au contact
+    const scrollToContact = () => {
+      const selector = route.name === 'IndexPage' ? '.ContactAccueil' : '.Contact';
+      const target = document.querySelector(selector);
+      if (target) {
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: { y: target, autoKill: true },
+          ease: "power2.out"
+        });
+      }
+    };
+    return { goToMesPassions, scrollToContact };
+  }
 };
 </script>
 <style lang="scss">
   @use '@/assets/scss/components/nav' as *;
-
 </style>

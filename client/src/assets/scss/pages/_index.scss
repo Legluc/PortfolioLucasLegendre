@@ -60,6 +60,7 @@
 
 .MesPassionsDesktop{
   display: flex;
+  background-color: black;
 }
 
 .ImagePassion{
@@ -86,19 +87,10 @@
   padding: $space-xs $space-m;
 }
 
-.ImagePassion:hover{
-  cursor: pointer;
-  width: 66.66%;
-}
-.ImagePassion:hover .TextePassion{
-  width: 50%;
-}
-
 .ImagePassion:hover p{
   color: $vert;
   background-color: $lime;
   border-radius: 35px;
-  cursor: pointer;
 }
 
 .MesPassionsCarousel{

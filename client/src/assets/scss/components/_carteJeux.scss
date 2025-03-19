@@ -40,7 +40,6 @@
 
     height: 100%;
     backface-visibility: hidden;
-    padding: $space-m;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 35px;
@@ -49,13 +48,22 @@
 .CarteJeuxRecto{
     @include flex($direction: column, $align: center, $justify: start);
     background-color: $orange;
+    padding: $space-m;
 }
 
 .CarteJeuxVerso {
-    @include flex($direction: column, $align: center, $justify: space-between);
     transform: rotateY(180deg); /* Verso est retourné par défaut */
     background-size: cover;
     background-position: center;
+}
+
+.FondCarte{
+    @include flex($direction: column, $align: center, $justify: space-between);
+    background-color: rgba(20,7,0,0.2);
+    width: 100%;
+    height: 100%;
+    padding: $space-m;
+    border-radius: 35px;
 }
 
 .CadreTitreCarte{

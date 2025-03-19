@@ -62,7 +62,7 @@ export default {
           content: "Arrivé récemment à Annecy, il nous fallait découvrir notre nouveau voisin. Pour l’occasion, j’ai convié deux amis novices en randonnée pour une expédition jusqu’à la tête du Parmelan, en passant par la Grotte de l’Enfer et la Mer de Cailloux. Cette aventure nous a laissé de précieux souvenirs et une vue imprenable sur les environs."
         },
         {
-          image: ImagesRando.MontCharvin01,
+          image: ImagesRando.MontCharvin06,
           title: "Le Mont Charvin",
           subtitle: "Tour de ma Tulle par le lac Charvin",
           content: "Dès notre arrivée, nous avons entrepris une randonnée enneigée jusqu’au lac du Charvin sur le Mont Charvin. Ce fut une aventure qui nous a confrontés à notre manque d’expérience et à un équipement insuffisant. Une véritable leçon d’humilité, car ici, les crampons forestiers ne suffisent plus et la lecture du terrain est primordiale. Après avoir rapidement renoncé à atteindre le sommet, nous avons entamé la descente par le refuge en empruntant le passage du Freux, qui nous a fait quelques frayeurs. Ce sommet demeure désormais une promesse d’une prochaine aventure, avec des conditions plus favorables et une expérience enrichie."
