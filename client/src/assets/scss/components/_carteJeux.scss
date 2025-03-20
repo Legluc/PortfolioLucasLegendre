@@ -3,11 +3,26 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 .CarteJeux {
-    flex: 0 0 20%; 
-    margin-right: 10%;
+    // flex: 0 0 20%; 
+    // margin-right: 10%;
+
+    flex: 0 0 33.3333%; // ~3 cartes par ligne par défaut
+    padding: 0 $space-xs;
+    box-sizing: border-box;
+
     height: 550px;
     perspective: 1000px; /* Donne un effet 3D */
     cursor: pointer;
+
+      // Quand l'écran est inférieur ou égal à 1440px → 2 cartes
+    @media (max-width: 1440px) {
+        flex: 0 0 50%; 
+    }
+
+    // Quand l'écran est inférieur ou égal à 768px → 1 carte
+    @media (max-width: 768px) {
+        flex: 0 0 100%;
+    }
 }
 
 .CarteJeux:last-child {
@@ -15,10 +30,7 @@
   }
 
 .CardInner {
-
-    // Test Responsive
     @include flex-center;
-
     position: relative;
     width: 100%;
     height: 100%;
@@ -33,11 +45,7 @@
 .CarteJeuxRecto,
 .CarteJeuxVerso {
     position: absolute;
-
-    // Test Responsive
     width: 380px;
-    // width: 100%;
-
     height: 100%;
     backface-visibility: hidden;
     box-sizing: border-box;

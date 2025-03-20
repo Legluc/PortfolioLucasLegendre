@@ -67,6 +67,11 @@
   width: 33.33%;
 }
 
+.ImagePassion a{
+  width: 100%;
+  height: 100%;
+}
+
 .ImagePassion img{
   height: 100vh;
   width: 100%;
@@ -491,6 +496,12 @@
 
   #LucasLegendre h1, #ProjetsPro h2{
     font-size: 48px;
+  }
+
+  .ImagePassion p{
+    color: $vert;
+    background-color: $lime;
+    border-radius: 35px;
   }
 
   .ContactAccueil{

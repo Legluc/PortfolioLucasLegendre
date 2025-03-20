@@ -58,8 +58,11 @@ export default {
 
       // Variables pour le swipe
       startX: 0,
+      startY: 0,
       deltaX: 0,
+      deltaY: 0,
       isSwiping: false,
+      swipeDirection: null, // 'horizontal' ou 'vertical'
     };
   },
 
@@ -99,15 +102,94 @@ export default {
       } 
       return this.currentSlide;
     },
-
+    
     // Gestion du swipe
+    // startSwipe(event) {
+      //   event.preventDefault();
+      //   this.isSwiping = true;
+      //   this.startX = event.type === 'touchstart'
+      //     ? event.touches[0].clientX
+      //     : event.clientX;
+      //   this.deltaX = 0;
+      
+      //   window.addEventListener('mousemove', this.onSwipe);
+      //   window.addEventListener('mouseup', this.endSwipe);
+      //   window.addEventListener('touchmove', this.onSwipe);
+      //   window.addEventListener('touchend', this.endSwipe);
+      
+      //   this.stopAutoSlide();
+      // },
+      
+      // onSwipe(event) {
+      //   if (!this.isSwiping) return;
+  
+      //   const currentX =
+      //     event.type === "touchmove"
+      //       ? event.touches[0].clientX
+      //       : event.clientX;
+  
+      //   // Calcul du déplacement en pixels
+      //   this.deltaX = currentX - this.startX;
+  
+      //   const containerEl = this.$refs.carouselContainer;
+      //   if (!containerEl) return;
+  
+      //   // Conversion des pixels en pourcentage
+      //   const containerWidth = containerEl.offsetWidth;
+      //   const deltaPercent = (this.deltaX / containerWidth) * 100;
+  
+      //   // Application du déplacement temporaire
+      //   gsap.to(containerEl, {
+        //     xPercent: -((this.currentSlide + 1) * 100) + deltaPercent,
+        //     duration: 0,
+        //   });
+        // },
+        
+            // endSwipe() {
+            //   if (!this.isSwiping) return;
+        
+            //   const threshold = 20; // Pourcentage de déplacement nécessaire pour changer de slide
+            //   const containerEl = this.$refs.carouselContainer;
+            //   if (!containerEl) {
+            //     this.isSwiping = false;
+            //     this.deltaX = 0;
+            //     this.startAutoSlide();
+            //     return;
+            //   }
+        
+            //   // Conversion des pixels en pourcentage
+            //   const containerWidth = containerEl.offsetWidth;
+            //   const deltaPercent = (this.deltaX / containerWidth) * 100;
+        
+            //   if (Math.abs(deltaPercent) > threshold) {
+            //     if (deltaPercent > 0) {
+            //       this.prevSlide();
+            //     } else {
+            //       this.nextSlide();
+            //     }
+            //   } else {
+            //     // Retour à la position initiale
+            //     this.animateSlideTo(this.currentSlide);
+            //   }
+        
+            //   this.isSwiping = false;
+            //   this.deltaX = 0;
+            //   this.startAutoSlide();
+            // },
+
     startSwipe(event) {
-      event.preventDefault();
+      // On n'empêche pas le comportement par défaut ici
       this.isSwiping = true;
-      this.startX = event.type === 'touchstart'
-        ? event.touches[0].clientX
-        : event.clientX;
+      this.swipeDirection = null;
+      if (event.type === 'touchstart') {
+        this.startX = event.touches[0].clientX;
+        this.startY = event.touches[0].clientY;
+      } else {
+        this.startX = event.clientX;
+        this.startY = event.clientY;
+      }
       this.deltaX = 0;
+      this.deltaY = 0;
 
       window.addEventListener('mousemove', this.onSwipe);
       window.addEventListener('mouseup', this.endSwipe);
@@ -120,59 +202,79 @@ export default {
     onSwipe(event) {
       if (!this.isSwiping) return;
 
-      const currentX =
-        event.type === "touchmove"
-          ? event.touches[0].clientX
-          : event.clientX;
+      let currentX, currentY;
+      if (event.type === 'touchmove') {
+        currentX = event.touches[0].clientX;
+        currentY = event.touches[0].clientY;
+      } else {
+        currentX = event.clientX;
+        currentY = event.clientY;
+      }
 
-      // Calcul du déplacement en pixels
       this.deltaX = currentX - this.startX;
+      this.deltaY = currentY - this.startY;
 
-      const containerEl = this.$refs.carouselContainer;
-      if (!containerEl) return;
+      // Détermination de la direction du swipe (si non déjà définie)
+      if (!this.swipeDirection) {
+        if (Math.abs(this.deltaX) > Math.abs(this.deltaY)) {
+          this.swipeDirection = 'horizontal';
+        } else if (Math.abs(this.deltaY) > Math.abs(this.deltaX)) {
+          this.swipeDirection = 'vertical';
+        }
+      }
 
-      // Conversion des pixels en pourcentage
-      const containerWidth = containerEl.offsetWidth;
-      const deltaPercent = (this.deltaX / containerWidth) * 100;
+      if (this.swipeDirection === 'horizontal') {
+        // Empêche le scroll vertical si c'est un swipe horizontal
+        event.preventDefault();
 
-      // Application du déplacement temporaire
-      gsap.to(containerEl, {
-        xPercent: -((this.currentSlide + 1) * 100) + deltaPercent,
-        duration: 0,
-      });
+        const containerEl = this.$refs.carouselContainer;
+        if (!containerEl) return;
+
+        const containerWidth = containerEl.offsetWidth;
+        const deltaPercent = (this.deltaX / containerWidth) * 100;
+
+        // Application du déplacement temporaire avec GSAP
+        gsap.to(containerEl, {
+          xPercent: -((this.currentSlide + 1) * 100) + deltaPercent,
+          duration: 0,
+        });
+      }
+      // Si c'est vertical, on ne fait rien de particulier et on laisse le navigateur gérer le scroll
     },
 
     endSwipe() {
       if (!this.isSwiping) return;
 
-      const threshold = 20; // Pourcentage de déplacement nécessaire pour changer de slide
-      const containerEl = this.$refs.carouselContainer;
-      if (!containerEl) {
-        this.isSwiping = false;
-        this.deltaX = 0;
-        this.startAutoSlide();
-        return;
-      }
+      // Ne traite le changement de slide que pour un swipe horizontal
+      if (this.swipeDirection === 'horizontal') {
+        const threshold = 20; // Pourcentage de déplacement nécessaire pour changer de slide
+        const containerEl = this.$refs.carouselContainer;
+        if (containerEl) {
+          const containerWidth = containerEl.offsetWidth;
+          const deltaPercent = (this.deltaX / containerWidth) * 100;
 
-      // Conversion des pixels en pourcentage
-      const containerWidth = containerEl.offsetWidth;
-      const deltaPercent = (this.deltaX / containerWidth) * 100;
-
-      if (Math.abs(deltaPercent) > threshold) {
-        if (deltaPercent > 0) {
-          this.prevSlide();
-        } else {
-          this.nextSlide();
+          if (Math.abs(deltaPercent) > threshold) {
+            if (deltaPercent > 0) {
+              this.prevSlide();
+            } else {
+              this.nextSlide();
+            }
+          } else {
+            // Retour à la position initiale si le geste est insuffisant
+            this.animateSlideTo(this.currentSlide);
+          }
         }
-      } else {
-        // Retour à la position initiale
-        this.animateSlideTo(this.currentSlide);
       }
-
+      
+      // Réinitialisation des variables de swipe
       this.isSwiping = false;
+      this.swipeDirection = null;
       this.deltaX = 0;
+      this.deltaY = 0;
       this.startAutoSlide();
     },
+
+
   },
 
   components: { CarouselSlide },

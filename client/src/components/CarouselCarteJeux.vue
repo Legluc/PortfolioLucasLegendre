@@ -53,6 +53,11 @@
 
     data() {
       return {
+
+        cardsToShow: 3,
+        autoSlideTime: 4000,     // Par ex. 4 secondes pour chaque slide
+        flipTimeout: null,       // Gèrera le flip “retardé” quand 1 carte visible
+
         CartesJeux: [
           {
             id: "WoW",
@@ -157,6 +162,17 @@
   methods: {
     ...carouselCarteMethods,
 
+    handleResize() {
+      const w = window.innerWidth;
+      if (w <= 768) {
+        this.cardsToShow = 1;
+      } else if (w <= 1440) {
+        this.cardsToShow = 2;
+      } else {
+        this.cardsToShow = 3;
+      }
+    },
+
     toggleFlip(index) {
     const originalIndex = this.displayedCards[index].originalIndex;
 
@@ -172,15 +188,52 @@
     },
 
     updateFlipState() {
-      const totalCards = this.CartesJeux.length;
-      const centerIndex = (this.currentSlide + 1) % totalCards; // +1 pour viser le centre (ou clone correspondant)
+      // On annule tout flipTimeout pour éviter de cumuler les timers
+      if (this.flipTimeout) {
+        clearTimeout(this.flipTimeout);
+        this.flipTimeout = null;
+      }
 
+      const totalCards = this.CartesJeux.length;
+
+      // Détermine l’offset pour la carte à flipper (quand 2 ou 3 cartes visibles)
+      let offset;
+      if (this.cardsToShow === 3) {
+        offset = 0; // carte du milieu
+      } else{
+        offset = -1; // carte de gauche
+      }
+
+      // Calcule l'index de la carte à flipper (quand 2 ou 3 visibles)
+      const flipIndex = (this.currentSlide + 1 + offset) % totalCards;
+
+      // =========================
+      // 1) Mise à jour du flipped selon le nombre de cartes
+      // =========================
       this.CartesJeux.forEach((card, index) => {
-        card.isFlipped = index === centerIndex;
+        if (this.cardsToShow === 1) {
+          // On force la carte à être "recto" (isFlipped=false) pour l’instant
+          card.isFlipped = false;
+        } else {
+          // On flippe la carte ciblée (flipIndex) quand il y a 2 ou 3 cartes
+          card.isFlipped = (index === flipIndex);
+        }
       });
 
-      this.$forceUpdate(); // Assure une mise à jour visuelle
+      // =========================
+      // 2) Si 1 seule carte visible : on programme un flip à mi-parcours
+      // =========================
+      if (this.cardsToShow === 1) {
+        this.flipTimeout = setTimeout(() => {
+          // Vérifie encore qu’on est toujours sur 1 carte
+          if (this.cardsToShow === 1) {
+            // On flippe la (seule) carte ciblée
+            this.CartesJeux[flipIndex].isFlipped = !this.CartesJeux[flipIndex].isFlipped;
+          }
+        }, this.autoSlideTime);
+      }
     },
+
 
     changeSlide(i) {
       this.stopAutoSlide();    // Stoppe l'auto-slide en cours
@@ -210,7 +263,8 @@
     },
     
     animateSlide() {
-      const offset = 20 + (this.currentSlide * 30);
+
+      const offset = (100 / this.cardsToShow) * (this.currentSlide + 1);
       
       // Animation GSAP sur le container
       gsap.to(this.$refs.carouselContainer, {
@@ -233,10 +287,17 @@
   },
 
   mounted() {
-    // On se place directement sur la slide 1 (car 0 = clone) sans animation
-    gsap.set(this.$refs.carouselContainer, { x: '-20%' });
-    this.startAutoSlide(); // si tu veux l'autoslide
+
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+
+    // Place la position de départ à - (100% / cardsToShow)
+    const startOffset = 100 / this.cardsToShow;
+    gsap.set(this.$refs.carouselContainer, { x: `-${startOffset}%` });
+
+    this.startAutoSlide();
     this.updateFlipState();
+
 
     this.CartesJeux = this.CartesJeux.map((card) => ({
     ...card,
@@ -244,7 +305,10 @@
   }));
   },
   beforeUnmount() {
+
+    window.removeEventListener('resize', this.handleResize);
     this.stopAutoSlide();
+    if (this.flipTimeout) clearTimeout(this.flipTimeout);
   },
 };
 </script>
