@@ -1,39 +1,45 @@
 <template>
   <div class="CarouselJeu"
     @mouseenter="stopAutoSlide"
-    @mouseleave="startAutoSlide"
+    @mouseleave="handleMouseLeave"
+    @mousedown="startSwipe"
+    @mousemove="onSwipe"
+    @mouseup="endSwipe"
+    @touchstart="startSwipe"
+    @touchmove="onSwipe"
+    @touchend="endSwipe"
   >
-  <div class="CarouselJeuContainer" ref="carouselContainer">
-    <CarteJeux
-      v-for="(CarteJeux, index) in displayedCards"
-      :key="index"
-      :class="{ flipped: CarteJeux.isFlipped }"
-      :id="CarteJeux.id"
-      :jeu="CarteJeux.jeu"
-      :image="CarteJeux.image"
-      :typeJeu="CarteJeux.typeJeu"
-      :effetSpecial="CarteJeux.effetSpecial"
-      :description="CarteJeux.description"
-      :studio="CarteJeux.studio"
-      :dateSortie="CarteJeux.dateSortie"
-      :personnage="CarteJeux.personnage"
-      :histoire="CarteJeux.histoire"
-      :backgroundImage="CarteJeux.backgroundImage"
-      :isFlipped="CarteJeux.isFlipped"
-      @flip-card="toggleFlip(index)"
-    >
-    </CarteJeux>
+    <div class="CarouselJeuContainer" ref="carouselContainer">
+      <CarteJeux
+        v-for="(CarteJeux, index) in displayedCards"
+        :key="index"
+        :class="{ flipped: CarteJeux.isFlipped }"
+        :id="CarteJeux.id"
+        :jeu="CarteJeux.jeu"
+        :image="CarteJeux.image"
+        :typeJeu="CarteJeux.typeJeu"
+        :effetSpecial="CarteJeux.effetSpecial"
+        :description="CarteJeux.description"
+        :studio="CarteJeux.studio"
+        :dateSortie="CarteJeux.dateSortie"
+        :personnage="CarteJeux.personnage"
+        :histoire="CarteJeux.histoire"
+        :backgroundImage="CarteJeux.backgroundImage"
+        :isFlipped="CarteJeux.isFlipped"
+        @flip-card="toggleFlip(index)"
+      >
+      </CarteJeux>
     </div>
-      <div class="IndicatorsJeu">
-        <span
-          v-for="(CarteJeux, i) in CartesJeux"
-          :key="i"
-          :class="{ active: i === getIndicatorIndex() }"
-          class="IndicatorJeu"
-          @click="changeSlide(i)"
-        ></span>
-      </div>
+    <div class="IndicatorsJeu">
+      <span
+        v-for="(CarteJeux, i) in CartesJeux"
+        :key="i"
+        :class="{ active: i === getIndicatorIndex() }"
+        class="IndicatorJeu"
+        @click="changeSlide(i)"
+      ></span>
     </div>
+  </div>
 </template>
   
 <script>
@@ -57,6 +63,13 @@
         cardsToShow: 3,
         autoSlideTime: 4000,     // Par ex. 4 secondes pour chaque slide
         flipTimeout: null,       // Gèrera le flip “retardé” quand 1 carte visible
+        // Variables swipe
+        startX: 0,
+        startY: 0,
+        deltaX: 0,
+        deltaY: 0,
+        isSwiping: false,
+        swipeDirection: null, // 'horizontal' ou 'vertical'
 
         CartesJeux: [
           {
@@ -117,7 +130,7 @@
             jeu: "Valheim",
             image: FlipCardJeu.ValheimRecto,
             typeJeu: "Survival-Sandbox en univers nordique",
-            description: "Valheim plonge le joueur dans un univers de survie inspiré de la mythologie nordique. Vous incarnez un guerrier viking tombé au combat, envoyé dans le dixième monde d’Yggdrasil. Pour prouver votre valeur et gagner votre place au Valhalla, il vous faudra explorer, bâtir des forteresses, combattre des créatures légendaires et vaincre les anciens ennemis des dieux. Dans ce royaume hostile, seuls les plus courageux survivent.",
+            description: "Valheim plonge le joueur dans un univers de survie inspiré de la mythologie nordique. Vous incarnez un guerrier viking tombé au combat, envoyé dans le dixième monde d’Yggdrasil. Pour prouver votre valeur et gagner votre place au Valhalla, il vous faudra explorer, bâtir des forteresses, combattre des créatures légendaires et vaincre les anciens ennemis des dieux.",
             studio: "Iron Gate AB",
             dateSortie: "2021",
             personnage: "Aeldrin",
@@ -161,6 +174,111 @@
 
   methods: {
     ...carouselCarteMethods,
+
+    handleMouseLeave() {
+      if (this.isSwiping) {
+        this.endSwipe();
+      } else {
+        this.startAutoSlide();
+      }
+    },
+
+    startSwipe(event) {
+      this.isSwiping = true;
+      this.swipeDirection = null;
+      if (event.type.startsWith('touch')) {
+        this.startX = event.touches[0].clientX;
+        this.startY = event.touches[0].clientY;
+      } else {
+        this.startX = event.clientX;
+        this.startY = event.clientY;
+      }
+      this.deltaX = 0;
+      this.deltaY = 0;
+
+      // Arrête l'auto slide pendant le swipe
+      this.stopAutoSlide();
+
+      window.addEventListener('mousemove', this.onSwipe);
+      window.addEventListener('mouseup', this.endSwipe);
+      window.addEventListener('touchmove', this.onSwipe);
+      window.addEventListener('touchend', this.endSwipe);
+    },
+
+    onSwipe(event) {
+      if (!this.isSwiping) return;
+
+      let currentX, currentY;
+      if (event.type.startsWith('touch')) {
+        currentX = event.touches[0].clientX;
+        currentY = event.touches[0].clientY;
+      } else {
+        currentX = event.clientX;
+        currentY = event.clientY;
+      }
+
+      this.deltaX = currentX - this.startX;
+      this.deltaY = currentY - this.startY;
+
+      if (!this.swipeDirection) {
+        if (Math.abs(this.deltaX) > Math.abs(this.deltaY)) {
+          this.swipeDirection = 'horizontal';
+        } else if (Math.abs(this.deltaY) > Math.abs(this.deltaX)) {
+          this.swipeDirection = 'vertical';
+        }
+      }
+
+      if (this.swipeDirection === 'horizontal') {
+        // On empêche le scroll vertical
+        event.preventDefault();
+        const containerEl = this.$refs.carouselContainer;
+        if (!containerEl) return;
+        const containerWidth = containerEl.offsetWidth;
+        const deltaPercent = (this.deltaX / containerWidth) * 100;
+        // Calcul de l'offset de base en fonction du slide courant
+        const baseOffset = (100 / this.cardsToShow) * (this.currentSlide + 1);
+        // On ajuste l'offset en fonction du swipe (attention aux proportions)
+        const deltaOffset = deltaPercent / this.cardsToShow;
+        gsap.to(containerEl, {
+          x: `-${baseOffset - deltaOffset}%`,
+          duration: 0,
+        });
+      }
+    },
+
+    endSwipe() {
+      if (!this.isSwiping) return;
+
+      if (this.swipeDirection === 'horizontal') {
+        const containerEl = this.$refs.carouselContainer;
+        const containerWidth = containerEl ? containerEl.offsetWidth : 0;
+        const deltaPercent = (this.deltaX / containerWidth) * 100;
+        const threshold = 10; // Pourcentage minimum pour changer de slide
+
+        if (Math.abs(deltaPercent) > threshold) {
+          if (deltaPercent > 0) {
+            this.prevSlide();
+          } else {
+            this.nextSlide();
+          }
+        } else {
+          // Retour à la position initiale en cas de swipe insuffisant
+          this.animateSlide();
+        }
+      }
+
+      // Réinitialisation
+      this.isSwiping = false;
+      this.swipeDirection = null;
+      this.deltaX = 0;
+      this.deltaY = 0;
+      this.startAutoSlide();
+
+      window.removeEventListener('mousemove', this.onSwipe);
+      window.removeEventListener('mouseup', this.endSwipe);
+      window.removeEventListener('touchmove', this.onSwipe);
+      window.removeEventListener('touchend', this.endSwipe);
+    },
 
     handleResize() {
       const w = window.innerWidth;
@@ -279,7 +397,7 @@
             this.currentSlide = -1;
             
             // On enlève la transition pour “sauter” discrètement à la slide 1
-            gsap.set(this.$refs.carouselContainer, { x: `10%` });
+            gsap.set(this.$refs.carouselContainer, { x: `0%` });
           }
         },
       });

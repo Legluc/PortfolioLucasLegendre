@@ -3,10 +3,8 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 .CarteJeux {
-    // flex: 0 0 20%; 
-    // margin-right: 10%;
 
-    flex: 0 0 33.3333%; // ~3 cartes par ligne par défaut
+    flex: 0 0 33.3333%; //
     padding: 0 $space-xs;
     box-sizing: border-box;
 
@@ -14,15 +12,6 @@
     perspective: 1000px; /* Donne un effet 3D */
     cursor: pointer;
 
-      // Quand l'écran est inférieur ou égal à 1440px → 2 cartes
-    @media (max-width: 1440px) {
-        flex: 0 0 50%; 
-    }
-
-    // Quand l'écran est inférieur ou égal à 768px → 1 carte
-    @media (max-width: 768px) {
-        flex: 0 0 100%;
-    }
 }
 
 .CarteJeux:last-child {
@@ -122,4 +111,29 @@
 
 #Skyrim .CarteJeuxVerso{
     background-position-x: 39%;
+}
+
+
+@media (max-width: 1440px) {
+    .CarteJeux {
+        flex: 0 0 50%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .CarteJeux {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 425px){
+
+    .CarteJeux {
+        height: 505px;
+    }
+
+    .CarteJeuxRecto,
+    .CarteJeuxVerso {
+        width: 350px;
+    }
 }
