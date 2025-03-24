@@ -6,10 +6,79 @@ export const ImagesIndex = {
 };
 
 export const ImagesParcours = {
-    CompetenceDesktop: require('@/assets/image/PAGE_PARCOURS/competences_lucas.png'),
-    CompetenceMobile: require('@/assets/image/PAGE_PARCOURS/competences_lucas_mobile.png'),
+    CompetenceDesktop: require('@/assets/image/PAGE_PARCOURS/competences_lucas.webp'),
+    CompetenceMobile: require('@/assets/image/PAGE_PARCOURS/competences_lucas_mobile.webp'),
     CompetenceWallpaper: require('@/assets/image/PAGE_PARCOURS/parcours_competences_laptop.webp'),
 };
+
+export const ImagesPortfolio = {
+    MockupMobile: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre_mock01.webp'),
+};
+
+export const ImagesPortfolioTPLC = {
+    TPLC01: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC01.webp'),
+    TPLC02: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC02.webp'),
+    TPLC03: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC_mock01.webp'),
+    TPLC04: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC_mock02.webp'),
+};
+
+export const ImagesPortfolioActual = {
+    Actual01: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock01.webp'),
+    Actual02: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock02.webp'),
+    Actual03: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock03.webp'),
+    Actual04: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock04.webp'),
+    Actual05: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual01.webp'),
+};
+
+export const ImagesPortfolioNexusGathering = {
+    NexusGathering01: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering01.webp'),
+    NexusGathering02: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock01.webp'),
+    NexusGathering03: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock02.webp'),
+    NexusGathering04: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock03.webp'),
+    NexusGathering05: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock04.webp'),
+};
+
+export const ImagesPortfolioProvae = {
+    Provae01: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock01.webp'),
+    Provae02: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock02.webp'),
+    Provae03: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock03.webp'),
+}
+
+export const carouselPortfolioTPLC = [
+    { image: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC01.webp'), title: "Page d'entrainement par pupitre du site ToutPourLaChanson" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC02.webp'), title: "Page d'accueil du site ToutPourLaChanson" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC_mock01.webp'), title: "Mockup desktop du site ToutPourLaChanson" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/TPLC/TPLC_mock02.webp'), title: "Mockup mobile du site ToutPourLaChanson" },
+];
+
+export const carouselPortfolioActual = [
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock01.webp'), title: "Mockup desktop du site Acutal Agence Web" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock02.webp'), title: "Mockup mobile du site Acutal Agence Web" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock03.webp'), title: "Mockup mobile du site Acutal Agence Web" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual_mock04.webp'), title: "Mockup mobile du site Acutal Agence Web" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Actual/Actual01.webp'), title: "Carrousel d'accueil du site Acutal Agence Web" },
+];
+
+export const carouselPortfolioNexusGathering = [
+    { image: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock01.webp'), title: "Mockup desktop du projet Nexus Gathering" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock02.webp'), title: "Mockup de la page de messagerie" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock03.webp'), title: "Mockup de la page de recherche de joueur" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering_mock04.webp'), title: "Mockup de la page création d'annonce" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/NexusGathering/NexusGathering01.webp'), title: "Ensemble de la maquette graphique" },
+];
+
+export const carouselPortfolioLucasLegendre = [
+    { image: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre/LucasLegendre_mock01.webp'), title: "Mockup mobile du menu burger" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre/LucasLegendre_mock02.webp'), title: "Mockup desktop de la section passion" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre/LucasLegendre_mock03.webp'), title: "Mockup desktop du footer de la page d'accueil" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre/LucasLegendre_mock04.webp'), title: "Mockup mobile de la page rando" },
+];
+
+export const carouselPortfolioProvae = [
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock01.webp'), title: "Mockup desktop du site de provae" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock02.webp'), title: "Mockup mobile du site de provae" },
+    { image: require('@/assets/image/PAGE_PORTFOLIO/Provae/Provae_mock03.webp'), title: "Mockup mobile du site de provae" },
+];
 
 export const ImagesGeek = {
     BandeauGeek: require('@/assets/image/PAGE_ACCUEIL/accueil_le_geek.webp'),

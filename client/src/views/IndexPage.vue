@@ -54,14 +54,14 @@
         <p>Vous souhaitez échanger et en savoir plus sur mon parcours ? </p>
       </div>
         <div class="Formulaire">
-          <form action="">
+          <form id="contact-form" method="POST" action="/send-mail">
             <div class="InputForm">
               <div class="InputInfo">
-                <input type="text" label="nom" placeholder="Nom">
-                <input type="text" label="prenom" placeholder="Prénom">
-                <input type="text" label="mail" placeholder="Mail">
+                <input type="text" label="nom" placeholder="Nom" required>
+                <input type="text" label="prenom" placeholder="Prénom" required>
+                <input type="text" label="mail" placeholder="Mail" required>
               </div>
-              <textarea  label="message" placeholder="Message"></textarea>
+              <textarea  label="message" placeholder="Message" required></textarea>
             </div>
             <button type="submit" class="Bouton">Envoyé</button>
           </form>

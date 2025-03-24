@@ -34,6 +34,7 @@
     object-fit: cover;
     width: 100%;
     aspect-ratio: 1;
+    border-radius: 35px;
 }
 
 #MesProjetsPro{
@@ -181,6 +182,10 @@
         max-height: none;
     }
 
+    .CarouselContainer{
+        height: 60vh;
+    }
+
     .MesProjetsProTexte{
         width: 80%;
     }
@@ -196,7 +201,7 @@
 
     .CartoucheLogo{
         margin: $space-xl 0;
-        width: 60%;
+        width: 65%;
     }
 
 }
@@ -204,7 +209,7 @@
 @media (max-width: 850px){
     
     .CartoucheLogo{
-        width: 70%;
+        width: 75%;
     }
     
 }
@@ -224,7 +229,7 @@
     }
 
     .CartoucheLogo{
-        width: 80%;
+        width: 85%;
     }
 
     

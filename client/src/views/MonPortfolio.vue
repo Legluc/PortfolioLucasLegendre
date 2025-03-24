@@ -9,12 +9,12 @@
         </div>
       </div>
       <div class="MonPotfolioIllustrations">
-        <img :src="ImagesRando.MontCharvin01" alt="">
+        <img :src="ImagesPortfolio.MockupMobile" alt="Mockup page d'accueil du site">
       </div>
     </section>
     <section id="MesProjetsPro">
       <div class="MesProjetsProContenue">
-        <Carousel :images="carouselImages1"/>
+        <Carousel :images="carouselTPLC"/>
         <div class="MesProjetsProTexte">
           <h2>#1</h2>
           <h3>Tout pour la Chanson</h3>
@@ -89,6 +89,27 @@
               </g>
             </svg>
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
+              <rect class="st1" y="0" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
+              <g class="st2">
+                <g>
+                  <g>
+                    <path class="st0" d="M60,41.1c-4.5,9.7-16.6,12-25.4,6.7s-14.3-18.8-5.8-27.3c-.3,1-.7,2-.9,3-1.5,8.9,4.3,17.4,12.3,20.8s15,2.2,19.9-3.3Z"/>
+                    <path class="st0" d="M60.9,31.8c-1.4,3.6-4.8,6.2-8.7,6.8s-6.7.2-9.7-1.6c-7-4-10.3-13.4-4.3-19.8-4.9,12.8,13.1,25,22.7,14.5Z"/>
+                    <path class="st0" d="M59.5,25.3c0,.1-.2.5-.3.6-3.9,5.2-12.3,2.4-14.4-3.2s-.6-5.2,1.1-7.5c.2,0,0,.3,0,.4,0,.4-.3.9-.3,1.3-.6,6.9,8.1,12.6,13.9,8.4Z"/>
+                  </g>
+                  <g>
+                    <path class="st0" d="M14.2,69.5l.6-1.9c.2-.3,1,0,1.4-.3s.6-.8.7-1c.8-2,.7-4.9,1.7-6.9h2.6c-.6,2.3-.9,4.8-1.6,7.2s-2.1,3.7-5.3,3.2v-.3Z"/>
+                    <path class="st0" d="M32.2,63.6h1.3c0,0-.4,2.4-.8,2.4-2.6-.3-7.8.9-9.7-1.3s-.4-7.7,1.7-9.5,8-2,8.9,1.9c.5,2.2-.8,4.4-1.4,6.4ZM27.8,56.4c-2,.3-2.8,2.9-2.9,4.6-.2,3.2,2.3,2.4,4.5,2.5.2,0,.2-.2.2-.3.2-.5,1-3.4,1.1-4,.3-2.1-.8-3.2-2.9-2.8Z"/>
+                    <path class="st0" d="M46.7,62.1c-.1.4-.2.9.1,1.2s1.1.4,1.2.4h4.1s.1-.2.3,0l-.6,2.2c-2.1-.3-6.9.9-7.8-1.8s.4-5.4,1.7-6.6,4.6-1.8,6.3-.9,1.4,3.8.7,5.4h-6.1ZM47.3,60.2h3.2c.5-.5.1-1.2-.4-1.5-1.1-.5-2.6,0-2.9,1.2l.2.3Z"/>
+                    <path class="st0" d="M44.1,56.5l-1.9,9.4c-1.7-.1-3.7.2-5.4,0s-2.2-1.4-2.2-2.7c0-2,1-4.7,1.3-6.7,0,0,.3-.2.3-.2h2l.2.3c-.2,1.8-1.1,4-1.1,5.8s0,.9.4,1.1,2.3.2,2.5,0l1.7-7h2.4Z"/>
+                    <path class="st0" d="M71.2,55.1l-6.4,8.5c-.3.4-.4,2.5-1,2.5h-2.3c-.5,0,.3-2.1.3-2.5,0-1.2-1.1-2.9-1.1-4.2h2.8c.1.4.2.9.3,1.3s0,.4.2.2l4-5.8h3.1Z"/>
+                    <path class="st0" d="M63.5,58.8h-5.7c0,0-.3.2-.3.4l-1.5,6.8h-2.2s0,.2-.2,0v-.2c-.1,0,1.9-9.2,1.9-9.2h6.5c1.1.3,1.2,1.3,1.4,2.3Z"/>
+                    <path class="st0" d="M18.6,58.7c.1-.4.4-2.3.7-2.3h2.3c.1,0,.2.1.2.3,0,.4-.4,1.6-.6,2h-2.6Z"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
                 <g id="_x37_6zXH7.tif">
@@ -106,7 +127,7 @@
       </div>
 
       <div class="MesProjetsProContenue Orange">
-        <Carousel :images="carouselImages1"/>
+        <Carousel :images="carouselNexusGathering"/>
         <div class="MesProjetsProTexte">
           <h2>#2</h2>
           <h3>Nexus Gathering</h3>
@@ -187,7 +208,7 @@
         </div>
       </div>
       <div class="MesProjetsProContenue">
-        <Carousel :images="carouselImages1"/>
+        <Carousel :images="carouselProvae"/>
         <div class="MesProjetsProTexte">
           <h2>#3</h2>
           <h3>Provaé</h3>
@@ -239,6 +260,27 @@
             <div class="LogoBreak"></div>
 
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
+              <rect class="st1" y="0" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
+              <g class="st2">
+                <g>
+                  <g>
+                    <path class="st0" d="M60,41.1c-4.5,9.7-16.6,12-25.4,6.7s-14.3-18.8-5.8-27.3c-.3,1-.7,2-.9,3-1.5,8.9,4.3,17.4,12.3,20.8s15,2.2,19.9-3.3Z"/>
+                    <path class="st0" d="M60.9,31.8c-1.4,3.6-4.8,6.2-8.7,6.8s-6.7.2-9.7-1.6c-7-4-10.3-13.4-4.3-19.8-4.9,12.8,13.1,25,22.7,14.5Z"/>
+                    <path class="st0" d="M59.5,25.3c0,.1-.2.5-.3.6-3.9,5.2-12.3,2.4-14.4-3.2s-.6-5.2,1.1-7.5c.2,0,0,.3,0,.4,0,.4-.3.9-.3,1.3-.6,6.9,8.1,12.6,13.9,8.4Z"/>
+                  </g>
+                  <g>
+                    <path class="st0" d="M14.2,69.5l.6-1.9c.2-.3,1,0,1.4-.3s.6-.8.7-1c.8-2,.7-4.9,1.7-6.9h2.6c-.6,2.3-.9,4.8-1.6,7.2s-2.1,3.7-5.3,3.2v-.3Z"/>
+                    <path class="st0" d="M32.2,63.6h1.3c0,0-.4,2.4-.8,2.4-2.6-.3-7.8.9-9.7-1.3s-.4-7.7,1.7-9.5,8-2,8.9,1.9c.5,2.2-.8,4.4-1.4,6.4ZM27.8,56.4c-2,.3-2.8,2.9-2.9,4.6-.2,3.2,2.3,2.4,4.5,2.5.2,0,.2-.2.2-.3.2-.5,1-3.4,1.1-4,.3-2.1-.8-3.2-2.9-2.8Z"/>
+                    <path class="st0" d="M46.7,62.1c-.1.4-.2.9.1,1.2s1.1.4,1.2.4h4.1s.1-.2.3,0l-.6,2.2c-2.1-.3-6.9.9-7.8-1.8s.4-5.4,1.7-6.6,4.6-1.8,6.3-.9,1.4,3.8.7,5.4h-6.1ZM47.3,60.2h3.2c.5-.5.1-1.2-.4-1.5-1.1-.5-2.6,0-2.9,1.2l.2.3Z"/>
+                    <path class="st0" d="M44.1,56.5l-1.9,9.4c-1.7-.1-3.7.2-5.4,0s-2.2-1.4-2.2-2.7c0-2,1-4.7,1.3-6.7,0,0,.3-.2.3-.2h2l.2.3c-.2,1.8-1.1,4-1.1,5.8s0,.9.4,1.1,2.3.2,2.5,0l1.7-7h2.4Z"/>
+                    <path class="st0" d="M71.2,55.1l-6.4,8.5c-.3.4-.4,2.5-1,2.5h-2.3c-.5,0,.3-2.1.3-2.5,0-1.2-1.1-2.9-1.1-4.2h2.8c.1.4.2.9.3,1.3s0,.4.2.2l4-5.8h3.1Z"/>
+                    <path class="st0" d="M63.5,58.8h-5.7c0,0-.3.2-.3.4l-1.5,6.8h-2.2s0,.2-.2,0v-.2c-.1,0,1.9-9.2,1.9-9.2h6.5c1.1.3,1.2,1.3,1.4,2.3Z"/>
+                    <path class="st0" d="M18.6,58.7c.1-.4.4-2.3.7-2.3h2.3c.1,0,.2.1.2.3,0,.4-.4,1.6-.6,2h-2.6Z"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
                 <g id="_x37_6zXH7.tif">
@@ -255,7 +297,7 @@
         </div>
       </div>
       <div class="MesProjetsProContenue Orange">
-        <Carousel :images="carouselImages1"/>
+        <Carousel :images="carouselActual"/>
         <div class="MesProjetsProTexte">
           <h2>#4</h2>
           <h3>Actual Agence Web</h3>
@@ -330,6 +372,27 @@
               </g>
             </svg>
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
+              <rect class="st1" y="0" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
+              <g class="st2">
+                <g>
+                  <g>
+                    <path class="st0" d="M60,41.1c-4.5,9.7-16.6,12-25.4,6.7s-14.3-18.8-5.8-27.3c-.3,1-.7,2-.9,3-1.5,8.9,4.3,17.4,12.3,20.8s15,2.2,19.9-3.3Z"/>
+                    <path class="st0" d="M60.9,31.8c-1.4,3.6-4.8,6.2-8.7,6.8s-6.7.2-9.7-1.6c-7-4-10.3-13.4-4.3-19.8-4.9,12.8,13.1,25,22.7,14.5Z"/>
+                    <path class="st0" d="M59.5,25.3c0,.1-.2.5-.3.6-3.9,5.2-12.3,2.4-14.4-3.2s-.6-5.2,1.1-7.5c.2,0,0,.3,0,.4,0,.4-.3.9-.3,1.3-.6,6.9,8.1,12.6,13.9,8.4Z"/>
+                  </g>
+                  <g>
+                    <path class="st0" d="M14.2,69.5l.6-1.9c.2-.3,1,0,1.4-.3s.6-.8.7-1c.8-2,.7-4.9,1.7-6.9h2.6c-.6,2.3-.9,4.8-1.6,7.2s-2.1,3.7-5.3,3.2v-.3Z"/>
+                    <path class="st0" d="M32.2,63.6h1.3c0,0-.4,2.4-.8,2.4-2.6-.3-7.8.9-9.7-1.3s-.4-7.7,1.7-9.5,8-2,8.9,1.9c.5,2.2-.8,4.4-1.4,6.4ZM27.8,56.4c-2,.3-2.8,2.9-2.9,4.6-.2,3.2,2.3,2.4,4.5,2.5.2,0,.2-.2.2-.3.2-.5,1-3.4,1.1-4,.3-2.1-.8-3.2-2.9-2.8Z"/>
+                    <path class="st0" d="M46.7,62.1c-.1.4-.2.9.1,1.2s1.1.4,1.2.4h4.1s.1-.2.3,0l-.6,2.2c-2.1-.3-6.9.9-7.8-1.8s.4-5.4,1.7-6.6,4.6-1.8,6.3-.9,1.4,3.8.7,5.4h-6.1ZM47.3,60.2h3.2c.5-.5.1-1.2-.4-1.5-1.1-.5-2.6,0-2.9,1.2l.2.3Z"/>
+                    <path class="st0" d="M44.1,56.5l-1.9,9.4c-1.7-.1-3.7.2-5.4,0s-2.2-1.4-2.2-2.7c0-2,1-4.7,1.3-6.7,0,0,.3-.2.3-.2h2l.2.3c-.2,1.8-1.1,4-1.1,5.8s0,.9.4,1.1,2.3.2,2.5,0l1.7-7h2.4Z"/>
+                    <path class="st0" d="M71.2,55.1l-6.4,8.5c-.3.4-.4,2.5-1,2.5h-2.3c-.5,0,.3-2.1.3-2.5,0-1.2-1.1-2.9-1.1-4.2h2.8c.1.4.2.9.3,1.3s0,.4.2.2l4-5.8h3.1Z"/>
+                    <path class="st0" d="M63.5,58.8h-5.7c0,0-.3.2-.3.4l-1.5,6.8h-2.2s0,.2-.2,0v-.2c-.1,0,1.9-9.2,1.9-9.2h6.5c1.1.3,1.2,1.3,1.4,2.3Z"/>
+                    <path class="st0" d="M18.6,58.7c.1-.4.4-2.3.7-2.3h2.3c.1,0,.2.1.2.3,0,.4-.4,1.6-.6,2h-2.6Z"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
                 <g id="_x37_6zXH7.tif">
@@ -346,7 +409,7 @@
         </div>
       </div>
       <div class="MesProjetsProContenue">
-        <Carousel :images="carouselImages1"/>
+        <Carousel :images="carouselLucasLegendre"/>
         <div class="MesProjetsProTexte">
           <h2>#5</h2>
           <h3>Portfolio Lucas Legendre</h3>
@@ -440,7 +503,7 @@
   <Footer />
   </template>
 <script>
-import {ImagesRando, carouselImages} from '@/data/images';
+import {ImagesPortfolio, carouselPortfolioTPLC, carouselPortfolioActual, carouselPortfolioNexusGathering, carouselPortfolioProvae, carouselPortfolioLucasLegendre} from '@/data/images';
 
 import Footer from '@/components/FooterGlobal.vue';
 import Carousel from "@/components/CarouselGlobal.vue";
@@ -453,8 +516,12 @@ export default {
   },
   data() {
     return {
-      ImagesRando,
-      carouselImages1: carouselImages.slice(0, 5),
+      ImagesPortfolio,
+      carouselTPLC: carouselPortfolioTPLC.slice(0, 4),
+      carouselActual: carouselPortfolioActual.slice(0, 5),
+      carouselNexusGathering: carouselPortfolioNexusGathering.slice(0, 5),
+      carouselProvae: carouselPortfolioProvae.slice(0, 3),
+      carouselLucasLegendre: carouselPortfolioLucasLegendre.slice(0, 4),
     };
   }
 };
