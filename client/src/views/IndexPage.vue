@@ -53,19 +53,21 @@
         <h2>Contact</h2>
         <p>Vous souhaitez échanger et en savoir plus sur mon parcours ? </p>
       </div>
-        <div class="Formulaire">
-          <form id="contact-form" method="POST" action="/send-mail">
-            <div class="InputForm">
-              <div class="InputInfo">
-                <input type="text" label="nom" placeholder="Nom" required>
-                <input type="text" label="prenom" placeholder="Prénom" required>
-                <input type="text" label="mail" placeholder="Mail" required>
-              </div>
-              <textarea  label="message" placeholder="Message" required></textarea>
+      <div class="Formulaire">
+        <form @submit.prevent="sendMail">
+          <div class="InputForm">
+            <div class="InputInfo">
+              <input type="text" v-model="form.nom" placeholder="Nom" required>
+              <input type="text" v-model="form.prenom" placeholder="Prénom" required>
+              <input type="email" v-model="form.mail" placeholder="Mail" required>
             </div>
-            <button type="submit" class="Bouton">Envoyé</button>
-          </form>
-        </div>
+            <textarea class="Message" v-model="form.message" placeholder="Message" required></textarea>
+          </div>
+          <p class="ReponseMail" v-if="responseMessage">{{ responseMessage }}</p>
+          <button type="submit" class="Bouton">Envoyer</button>
+        </form>
+        <!-- Affichage d'un message de confirmation ou d'erreur -->
+      </div>
     </section>
     <footer id="FooterAccueil">
       <div class="LogoNavFooterAccueil">
@@ -154,6 +156,13 @@ export default {
           title: 'Le joueur'
         },
       ],
+      form: {
+        nom: '',
+        prenom: '',
+        mail: '',
+        message: ''
+      },
+      responseMessage: ''
     };
   },
   computed: {
@@ -336,6 +345,31 @@ export default {
           this.isAnimating = false;
         }
       });
+    },
+    async sendMail() {
+      try {
+        // Appel fetch pour envoyer une requête POST vers votre backend
+        const response = await fetch('http://localhost:3000/send-mail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.form)
+        });
+
+        // Vérifier si la réponse est correcte (status HTTP 200-299)
+        if (!response.ok) {
+          throw new Error(`Erreur: ${response.statusText}`);
+        }
+
+        // Convertir la réponse en JSON
+        const data = await response.json();
+        // Afficher le message renvoyé par le serveur
+        this.responseMessage = data.message;
+      } catch (error) {
+        console.error('Erreur lors de l’envoi:', error);
+        this.responseMessage = 'Une erreur est survenue lors de l’envoi du message.';
+      }
     }
   }
 };

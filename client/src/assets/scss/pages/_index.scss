@@ -181,6 +181,15 @@
   padding: $space-xs $space-s;
 }
 
+.ContactAccueil .Message{
+  height: 100%;
+  padding: $space-s $space-m;
+}
+
+.ContactAccueil .ReponseMail{
+  margin-bottom: $space-s;
+}
+
 #FooterAccueil{
   @include flex($direction: row,  $align: center, $justify: space-around);
   height: 30vh;
@@ -528,8 +537,9 @@
     margin-bottom: $space-m;
   }
 
-  .ContactAccueil .InputForm textarea[label=message] {
+  .ContactAccueil .InputForm .Message {
     min-height: 15vh;
+    width: 100%;
   }
 
   .BaseOverlayPrenomFooter{

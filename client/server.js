@@ -1,8 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
+
+app.use(cors({
+  origin: "http://localhost:8080" // Remplacez par l'origine souhaitée en production si nécessaire
+}));
 
 app.use(express.json());
 
@@ -47,6 +52,7 @@ app.post('/send-mail', mailLimiter, [
     .escape()
     .notEmpty().withMessage('Le message est requis.')
 ], (req, res) => {
+  console.log('Requête reçue sur /send-mail');
   // Vérification des erreurs de validation
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -62,15 +68,15 @@ app.post('/send-mail', mailLimiter, [
     port: 465,          // Port sécurisé pour SSL
     secure: true,       // Utilise SSL
     auth: {
-      user: 'lucas.lucasleg@gmail.com',           // Remplacez par votre adresse Gmail
-      pass: 'gcgriwotiagseumj'   // Remplacez par le mot de passe d'application généré
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
     }
   });
 
   // Configuration de l'email à envoyer
   let mailOptions = {
-    from: `Mon portfolio <lucas.lucasleg@gmail.com>`, // L'expéditeur est celui qui remplit le formulaire
-    to: 'lucas.lucasleg@gmail.com',         // Remplacez par l'adresse où vous souhaitez recevoir les messages
+    from: `Mon portfolio <lucas.lucasleg@gmail.com>`,
+    to: 'lucas.lucasleg@gmail.com',
     subject: 'Nouveau message via le formulaire de contact',
     text: message,
     html: `<p> ${nom} <br> ${prenom} <br> ${mail} <br> ${message}</p>`

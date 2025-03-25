@@ -34,10 +34,10 @@
       </svg>
     </div>
       <ul id="LienNav" :class="{ Active: isMenuOpen }">
-        <li><router-link to="/Portfolio">Portfolio</router-link></li>
-        <li><router-link to="/Parcours">Parcours</router-link></li>
-        <li><router-link to="/#MesPassions">Passions</router-link></li>
-        <li><a @click.prevent="scrollToContact">Contact</a></li>
+        <li><router-link to="/Portfolio" @click="ToggleMenu">Portfolio</router-link></li>
+        <li><router-link to="/Parcours" @click="ToggleMenu">Parcours</router-link></li>
+        <li><router-link to="/#MesPassions" @click="ToggleMenu">Passions</router-link></li>
+        <li><a @click.prevent="scrollToContact" @click="ToggleMenu">Contact</a></li>
       </ul>
     </nav>
 </template>
