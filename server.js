@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:8080" // Remplacez par l'origine souhaitée en production si nécessaire
+  origin: "http://lucas-legendre.com" // Remplacez par l'origine souhaitée en production si nécessaire
 }));
 
 app.use(express.json());

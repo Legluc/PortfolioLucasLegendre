@@ -111,7 +111,7 @@ export default {
     async sendMail() {
       try {
         // Appel fetch pour envoyer une requête POST vers votre backend
-        const response = await fetch('http://localhost:3000/send-mail', {
+        const response = await fetch('/send-mail', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
