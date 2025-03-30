@@ -34,7 +34,7 @@
       </svg>
     </div>
       <ul id="LienNav" :class="{ Active: isMenuOpen }">
-        <li><router-link to="/Portfolio" @click="ToggleMenu">Portfolio</router-link></li>
+        <li><router-link to="/Portfolio" @click="ToggleMenu">Projets</router-link></li>
         <li><router-link to="/Parcours" @click="ToggleMenu">Parcours</router-link></li>
         <li><router-link to="/#MesPassions" @click="ToggleMenu">Passions</router-link></li>
         <li><a @click.prevent="scrollToContact" @click="ToggleMenu">Contact</a></li>

@@ -60,11 +60,16 @@
     #EnteteJeuxVideo {
         background-position-x: 20%;
         padding: 200px $space-xl 0 $space-xl;
+        margin-bottom: $space-xl;
     }
 
     #EnteteJeuxVideo .CarteVerte{
         width: 70%;
         background-color: rgba($vert, 0.6);
+    }
+
+    #AventureVirtuel{
+        margin-bottom: $space-xl;
     }
 
 }

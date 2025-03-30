@@ -3,7 +3,7 @@
 
 @mixin carte-style($margin, $bg-color, $text-color) {
   @include flex($direction: column, $align: center, $justify: space-around);
-  padding: $space-l;
+  padding: 3rem;
   margin: $margin;
   border-radius: 35px;
   background-color: $bg-color;

@@ -9,6 +9,7 @@ $font-size-h1: 100px;
 $font-size-h2: 32px;
 $font-size-h3: 24px;
 $font-size-nav: 18px;
+$font-size-btn: 16px;
 $font-size-base: 14px;
 
 
@@ -29,7 +30,7 @@ $font-size-base: 14px;
   color: $color;
 }
 
-@mixin button-style($size:$font-size-base, $weight:600, $line-height:1.5, $color:$vert) {
+@mixin button-style($size:$font-size-btn, $weight:600, $line-height:1.5, $color:$vert) {
   font-family: $font-body;
   font-weight: $weight;
   font-size: $size;

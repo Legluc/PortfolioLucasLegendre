@@ -85,16 +85,25 @@
   transform: translate(0%, -500%);
 }
 
+// .TextePassion p{
+//   @include title-style($size:$font-size-base, $weight:400, $line-height:1, $color:$creme);
+//   text-transform: uppercase;
+//   letter-spacing: 0.03em;
+//   padding: $space-xs $space-m;
+// }
+
+// .ImagePassion:hover p{
+//   color: $vert;
+//   background-color: $lime;
+//   border-radius: 35px;
+// }
+
 .TextePassion p{
-  @include title-style($size:$font-size-base, $weight:400, $line-height:1, $color:$creme);
+  @include button-style;
+  background-color: $lime;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   padding: $space-xs $space-m;
-}
-
-.ImagePassion:hover p{
-  color: $vert;
-  background-color: $lime;
   border-radius: 35px;
 }
 
@@ -204,7 +213,7 @@
 }
 
 #LogoFooter{
-  height: 200px;
+  height: 110px;
 }
 
 #LogoFooter .st0{
@@ -245,7 +254,7 @@
 
 .ReseauFooter .LienLogoReseau{
   margin: 0 $space-xs;
-  width: 80px;
+  width: 60px;
 }
 
 #LogoGithub .st0{
@@ -287,32 +296,34 @@
 .CallToActionFooter{
   @include title-style($size:$font-size-h2, $weight:400, $line-height:1.2, $color:$creme);
   margin-bottom: auto;
+  text-transform: uppercase;
 }
 
 .BaseOverlayPrenomFooter{
-  @include flex($direction: column,  $align: center, $justify: end);
-  position: relative;
-  width: 50%;
-  height: 100%;
-}
-
-.OverlayPrenomFooter{
-  position: absolute;
-  overflow: hidden;
-  width: 98vw;
-  height: 30%;
-}
-
-.NomFooter, .PrenomFooter{
-  @include title-style(140px, $weight:400, $line-height:1.2);
-  color: rgba($creme, 0.2);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.PrenomFooter{
   display: none;
+  // @include flex($direction: column,  $align: center, $justify: end);
+  // position: relative;
+  // width: 50%;
+  // height: 100%;
 }
+
+// .OverlayPrenomFooter{
+//   position: absolute;
+//   overflow: hidden;
+//   width: 98vw;
+//   height: 30%;
+// }
+
+// .NomFooter, .PrenomFooter{
+//   @include title-style(140px, $weight:400, $line-height:1.2);
+//   color: rgba($creme, 0.2);
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .PrenomFooter{
+//   display: none;
+// }
 
 
 // --- MEDIA QUERIES --
@@ -331,9 +342,9 @@
     justify-content: center;
   }
 
-  .BaseOverlayPrenomFooter{
-    width: 40%;
-  }
+  // .BaseOverlayPrenomFooter{
+  //   width: 40%;
+  // }
 }
 
 @media (max-width: 1700px){
@@ -368,13 +379,13 @@
     width: 30%;
   }
 
-  .BaseOverlayPrenomFooter{
-    width: 30%;
-  }
+  // .BaseOverlayPrenomFooter{
+  //   width: 30%;
+  // }
 
-  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
-    margin-top: unset;
-  }
+  // #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
+  //   margin-top: unset;
+  // }
 
 }
 
@@ -392,14 +403,14 @@
     width: 38%;
   }
 
-  .BaseOverlayPrenomFooter{
-    width: 24%;
-  }
+//   .BaseOverlayPrenomFooter{
+//     width: 24%;
+//   }
 
-  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter {
-    font-size: 75px;
-    margin-top: 25vh;
-}
+//   #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter {
+//     font-size: 75px;
+//     margin-top: 25vh;
+// }
 
 }
 
@@ -470,27 +481,27 @@
     margin-bottom: $space-xl;
   }
 
-  .BaseOverlayPrenomFooter{
-    height: 200px;
-    width: 100%;
-    order: 1;
-    margin-bottom: $space-l;
-  }
+  // .BaseOverlayPrenomFooter{
+  //   height: 200px;
+  //   width: 100%;
+  //   order: 1;
+  //   margin-bottom: $space-l;
+  // }
 
-  .OverlayPrenomFooter{
-    width: 100%;
-    height: 100%;
-  }
+  // .OverlayPrenomFooter{
+  //   width: 100%;
+  //   height: 100%;
+  // }
 
-  #FooterAccueil .NomFooter{
-    display: none;
-  }
+  // #FooterAccueil .NomFooter{
+  //   display: none;
+  // }
 
-  #FooterAccueil .PrenomFooter {
-    display: block;
-    margin: unset;
-    font-size: 140px;
-  }
+  // #FooterAccueil .PrenomFooter {
+  //   display: block;
+  //   margin: unset;
+  //   font-size: 140px;
+  // }
 
 
 
@@ -506,6 +517,10 @@
   #LucasLegendre h1, #ProjetsPro h2{
     font-size: 48px;
   }
+
+  .MesPassionsCarousel .CarouselContainer{
+    height: 100vh;
+}
 
   .ImagePassion p{
     color: $vert;
@@ -542,10 +557,10 @@
     width: 100%;
   }
 
-  .BaseOverlayPrenomFooter{
-    height: 340px;
-    margin-bottom: $space-xl;
-  }
+  // .BaseOverlayPrenomFooter{
+  //   height: 340px;
+  //   margin-bottom: $space-xl;
+  // }
 
   .MentionsFooter{
     width: 70%;
@@ -583,13 +598,13 @@
     padding: 0 $space-l;
   }
 
-  .BaseOverlayPrenomFooter {
-    height: 240px;
-  }
+  // .BaseOverlayPrenomFooter {
+  //   height: 240px;
+  // }
 
-  #FooterAccueil .PrenomFooter{
-    font-size: 100px;
-  }
+  // #FooterAccueil .PrenomFooter{
+  //   font-size: 100px;
+  // }
 
 }
 

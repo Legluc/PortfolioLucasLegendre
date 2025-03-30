@@ -64,19 +64,19 @@
     width: 100%;
 }
 
-#FooterGlobal .BaseOverlayPrenomFooter{
-    height: 100px;
-    width: 100%;
-}
+// #FooterGlobal .BaseOverlayPrenomFooter{
+//     height: 100px;
+//     width: 100%;
+// }
 
-#FooterGlobal .OverlayPrenomFooter{
-    width: 100%;
-    height: 100%;
-}
+// #FooterGlobal .OverlayPrenomFooter{
+//     width: 100%;
+//     height: 100%;
+// }
 
-#FooterGlobal .NomFooter, #FooterGlobal .PrenomFooter {
-     margin-top: unset;
-}
+// #FooterGlobal .NomFooter, #FooterGlobal .PrenomFooter {
+//      margin-top: unset;
+// }
 
 @media (max-width: 1700px){
 
@@ -92,10 +92,10 @@
         margin-bottom: unset;
     }
 
-    #FooterGlobal .NomFooter {
-        font-size: 100px;
-        margin-top: 3vh;
-    }
+    // #FooterGlobal .NomFooter {
+    //     font-size: 100px;
+    //     margin-top: 3vh;
+    // }
 
 }
 
@@ -147,27 +147,27 @@
         bottom: 0;
     }
 
-    #FooterGlobal .BaseOverlayPrenomFooter{
-        margin: $space-xl 0 $space-xxl 0;
-    }
+    // #FooterGlobal .BaseOverlayPrenomFooter{
+    //     margin: $space-xl 0 $space-xxl 0;
+    // }
 
-    #FooterGlobal .OverlayPrenomFooter{
-        @include flex-center;
-    }
+    // #FooterGlobal .OverlayPrenomFooter{
+    //     @include flex-center;
+    // }
 
-    #FooterGlobal .NomFooter {
-        margin-top: unset;
-    }
-
-}
-
-@media (max-width: 1200px){
-
-    #FooterGlobal .NomFooter {
-        font-size: 75px;
-    }
+    // #FooterGlobal .NomFooter {
+    //     margin-top: unset;
+    // }
 
 }
+
+// @media (max-width: 1200px){
+
+//     #FooterGlobal .NomFooter {
+//         font-size: 75px;
+//     }
+
+// }
 
 @media (max-width: 1024px){
 
@@ -183,19 +183,19 @@
         width: 50%;
     }
 
-    #FooterGlobal .BaseOverlayPrenomFooter{
-        height: 180px;
-    }
+    // #FooterGlobal .BaseOverlayPrenomFooter{
+    //     height: 180px;
+    // }
 
-    #FooterGlobal .NomFooter{
-        display: none;
-      }
+    // #FooterGlobal .NomFooter{
+    //     display: none;
+    //   }
     
-    #FooterGlobal .PrenomFooter {
-        display: block;
-        margin: unset;
-        font-size: 140px;
-    }
+    // #FooterGlobal .PrenomFooter {
+    //     display: block;
+    //     margin: unset;
+    //     font-size: 140px;
+    // }
 
 }
 
@@ -237,10 +237,10 @@
         width: 100%;
       }
 
-    #FooterGlobal .BaseOverlayPrenomFooter{
-        height: 340px;
-        margin-bottom: $space-xl;
-    }
+    // #FooterGlobal .BaseOverlayPrenomFooter{
+    //     height: 340px;
+    //     margin-bottom: $space-xl;
+    // }
 }  
 
 @media (max-width: 500px){
@@ -262,13 +262,13 @@
         padding: 0 $space-l;
     }
   
-    #FooterGlobal .BaseOverlayPrenomFooter {
-      height: 240px;
-    }
+    // #FooterGlobal .BaseOverlayPrenomFooter {
+    //   height: 240px;
+    // }
   
-    #FooterGlobal .PrenomFooter{
-      font-size: 100px;
-    }
+    // #FooterGlobal .PrenomFooter{
+    //   font-size: 100px;
+    // }
   
   }
   

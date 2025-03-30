@@ -35,16 +35,15 @@
 }
 
 #LienNav li{
-  @include body-style($size: $font-size-nav, $weight:600, $line-height:1.5, $color: $vert);
+  @include body-style($size: $font-size-base, $weight:600, $line-height:1.5, $color: $creme);
   text-decoration: none;
-  background-color: $creme;
+  background-color: $orange;
   border-radius: 35px;
   padding: $space-xs $space-s;
   margin: 0 $space-s;
 }
 
 #LienNav li:hover{
-  color: $creme;
   background-color: $vert;
   cursor: pointer;
 }
@@ -73,6 +72,7 @@
 #LogoBurger{
   display: none;
   width: 60px;
+  margin-bottom: $space-s;
 }
 
 .st01 {
@@ -99,13 +99,17 @@
 
 @media (max-width: 768px){
 
+  #Nav.NavAcceuil{
+    position: absolute;
+  }
+
   #Nav.Active{
-    height: 100vh;
+    height: 110vh;
     flex-direction: column;
     align-items: center;
     justify-content: start;    
     padding-top: $space-m;
-    background-color: rgba($orange, 0.7);
+    background-color: rgba($orange, 0.9);
   }
 
   .LogosNav{
@@ -137,7 +141,10 @@
 
   #LienNav li{
     margin: $space-xs $space-m ;
+    background-color: $creme;
+    color: $vert;
   }
+  
 
 
 }

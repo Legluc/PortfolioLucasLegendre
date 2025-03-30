@@ -56,20 +56,20 @@
 .CorpsCartesParcours{
     @include flex($direction: column,  $align: start, $justify: center);
     color: $creme;
-    padding: $space-l $space-l 0 $space-l;
+    padding: 3rem;
     width: auto;
     border-radius: 35px;
 }
 
 .CorpsCartesParcours h3{
     @include title-style($size:$font-size-h2, $weight:400, $color:$creme);
-    margin-bottom: $space-l;
 }
 
 .DatesCartesParcours{
     @include flex($direction: row,  $align: start, $justify: space-between);
-    @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+    @include body-style($size:$font-size-base, $weight:600, $color:$creme);
     width: 100%;
+    margin-top: $space-l;
 }
 
 .DatesCartesParcours p{
@@ -82,10 +82,15 @@
 }
 
 
+.TexteCartesParcours h4{
+    font-size: $font-size-h3;
+    margin-bottom: $space-s;
+}
+
 .TexteCartesParcours p{
     @include body-style($size:$font-size-base, $color:$creme);
     width: 100%;
-    margin: $space-l 0;
+    margin-right: unset;
 }
 
 @media (max-width: 1440px){
@@ -133,8 +138,13 @@
         margin: 0 $space-l;
     }
 
+    #MesCompetences{
+        margin-bottom: $space-xxl;
+    }
+
     #MesCompetences h1{
         font-size: 48px;
+        margin-bottom: $space-l;
     }
 
     #SectionParcours{

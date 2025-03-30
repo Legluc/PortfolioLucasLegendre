@@ -46,16 +46,20 @@
     margin: unset;       
 }
 
+#MesProjetsPro .Indicators{
+    margin-bottom: $space-s;
+}
+
 .MesProjetsProContenue{
     @include flex($direction: row,  $align: center, $justify: space-evenly);
-    height: 80vh;
+    height: auto;
     width: 100%;
     margin-bottom: $space-xxxl;
     background-color: $vert;
 }
 
 .MesProjetsProTexte{
-    @include flex($direction: column,  $align: start, $justify: space-between);
+    @include flex($direction: column,  $align: start, $justify: start);
     height: 100%;
     width: 40%;
     color: $creme;
@@ -68,6 +72,11 @@
 
 .MesProjetsProTexte h3{
     @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
+    margin: $space-l 0;
+}
+
+.MesProjetsProTexte a{
+    margin-top: $space-xl;
 }
 
 
@@ -75,7 +84,7 @@
     @include flex($direction: row,  $align: center, $justify: space-between);
     height: 100px;
     width: 70%;
-    margin-bottom: $space-l;
+    margin: $space-xl 0;
 }
 
 .LogoTechno{
@@ -159,7 +168,7 @@
 
     .MonPotfolioIllustrations{
         height: unset;
-        width: 50%;
+        width: 80%;
     }
 
     .CartoucheLogo{
@@ -174,10 +183,11 @@
         flex-direction: column;
         align-items: center;
         height: auto;
+        margin-bottom: unset;
     }
 
     #MesProjetsPro .Carousel{
-        margin: $space-xl 0;
+        margin: $space-xxl 0;
         max-width: 80%;
         max-height: none;
     }
@@ -191,16 +201,19 @@
     }
 
     .MesProjetsProTexte h2 {
-        margin: $space-l 0;
+        margin: unset;
     }
 
     .MesProjetsProTexte p {
-        margin: $space-l 0;
         width: 100%;
     }
 
+    .MesProjetsProTexte a {
+        margin-top: $space-xl;
+    }
+
     .CartoucheLogo{
-        margin: $space-xl 0;
+        margin:  $space-xl 0$space-xxl 0;
         width: 65%;
     }
 
@@ -246,12 +259,12 @@
 @media (max-width: 500px){
 
     .MesProjetsProTexte {
-        width: 90%;
+        width: 80%;
         align-items: center;
     }
 
     .CartoucheLogo {
-        width: 70%;
+        width: 100%;
         flex-wrap: wrap;
     }
 
