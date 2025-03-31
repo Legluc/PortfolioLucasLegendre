@@ -46,11 +46,23 @@
     margin-top: $space-xxl;
 }
 
-.CartesParcours img{
+.IllustrationParcours{
     min-width: 250px;
     height: 250px;
     border-radius: 35px;
     margin-right: $space-xl;
+}
+
+.IllustrationParcours .st1{
+    fill: $creme;
+}
+
+.IllustrationParcours.Orange .st0{
+    fill: $orange;
+}
+
+.IllustrationParcours.Vert .st0{
+    fill: $vert;
 }
 
 .CorpsCartesParcours{
@@ -113,7 +125,7 @@
         height: auto;
     }
 
-    .CartesParcours img{
+    .IllustrationParcours{
         margin-right: $space-l;
     }
 
@@ -160,7 +172,7 @@
         align-items: center;
     }
 
-    .CartesParcours img{
+    .IllustrationParcours{
         margin-right: unset;
         margin-bottom: $space-xl;
         min-width: 50vw;
@@ -180,7 +192,7 @@
         font-size: 36px;
     }
 
-    .CartesParcours img{
+    .IllustrationParcours{
         min-width: 80vw;
         height: 80vw;
     }

@@ -41,17 +41,19 @@
 }
 
 #MonParcours{
+  @include flex($direction: column,  $align: center, $justify: end);
   height: 100vh;
   width: 100%;
   margin-top: 84vh; 
-  // a revoir avec du js pour décalé la hauteur de la nav
-  @include flex($direction: column,  $align: center, $justify: center);
+  background-image: url('@/assets/image/PAGE_ACCUEIL/illustration_parcours.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#MonParcours img{
-  width: 580px;
-  height: 580px
+#MonParcours .Bouton{
+  margin-bottom: $space-xl;
 }
+
 
 #MesPassions{
   height: 100vh;
@@ -395,6 +397,9 @@
       width: 55%;
   }
 
+  #MonParcours{
+    background-position-x: 50%;
+  }
   #FooterAccueil{
     padding: 0 $space-l;
   }
@@ -512,10 +517,17 @@
   #LucasLegendre{
     height: auto;
     padding-bottom: $space-xl;
+    position: unset;
   }
 
   #LucasLegendre h1, #ProjetsPro h2{
     font-size: 48px;
+  }
+
+  #MonParcours{
+    background-image: url('@/assets/image/PAGE_ACCUEIL/illustration_parcours_mobile.svg');
+    background-position-y: 50%;
+    margin-top: unset;
   }
 
   .MesPassionsCarousel .CarouselContainer{
@@ -592,6 +604,10 @@
 
   #LucasLegendre{
     padding: 200px $space-l $space-xl $space-l;
+  }
+
+  #MonParcours{
+    height: 75vh;
   }
 
   .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{

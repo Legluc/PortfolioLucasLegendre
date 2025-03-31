@@ -8,7 +8,6 @@
       </div>
     </section>
     <section id="MonParcours">
-      <img src="" alt="illustation parcours">
       <button class="Bouton">Mon parcours</button>
     </section>
     <section id="MesPassions">
