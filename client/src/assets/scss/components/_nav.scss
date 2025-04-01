@@ -28,6 +28,31 @@
   position: sticky;
 }
 
+.NavOverProjet #LienNav li{
+  background-color: $creme;
+  color: $vert;
+}
+
+.NavOverProjet #LienNav li:hover{
+  color: $creme;
+}
+
+.NavOverProjet #NavPassion:has(#LienPassion:hover) {
+  background-color: $creme;
+  color: $vert;
+}
+
+
+.NavOverProjet #LienPassion li{
+  background-color: $lime;
+  color: $vert;
+}
+
+#Nav.NavOverFooter{
+  opacity: 0; 
+  pointer-events: none;
+}
+
 
 #LienNav{
   @include flex($direction: row, $align: center, $justify: space-around);
@@ -40,13 +65,44 @@
   background-color: $orange;
   border-radius: 35px;
   padding: $space-xs $space-s;
-  margin: 0 $space-s;
+  margin: 0 $space-xs;
 }
 
 #LienNav li:hover{
   background-color: $vert;
   cursor: pointer;
 }
+
+#LienPassion{
+  position: absolute;
+  display: none;
+  transform: translate(-40%, 5%);
+  padding-top: $space-xxs;
+}
+
+#NavPassion:hover #LienPassion{
+  @include flex($direction: column, $align: end, $justify: space-between);
+}
+
+#LienPassion:hover{
+  @include flex($direction: column, $align: end, $justify: space-between);
+}
+
+#NavPassion:has(#LienPassion:hover) {
+  background-color: $orange;
+}
+
+
+#LienPassion li{
+  background-color: $lime;
+  color: $vert;
+  margin: $space-xs 0;
+}
+
+#LienPassion li:hover{
+  color: $creme;
+}
+
 
 #LogoNav{
   height: 110px;
@@ -143,6 +199,23 @@
     margin: $space-xs $space-m ;
     background-color: $creme;
     color: $vert;
+  }
+
+  #LienNav #NavPassion{
+    margin: unset;
+    background-color: unset;
+    padding: unset;
+  }
+
+  #NavPassion p{
+    display: none;
+  }
+
+  #LienPassion{
+    @include flex($direction: column, $align: center, $justify: space-between);
+    position: unset;
+    transform: unset;
+    padding-top: unset;
   }
   
 

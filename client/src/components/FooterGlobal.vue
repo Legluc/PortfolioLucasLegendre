@@ -13,15 +13,16 @@
             </svg>
           </router-link>
           <ul class="NavFooter">
-            <li><router-link to="/Portfolio">Portfolio</router-link></li>
+            <li><router-link to="/Portfolio">Projets</router-link></li>
             <li><router-link to="/Parcours">Parcours</router-link></li>
-            <li><router-link to="/#MesPassions">Passions</router-link></li>
+            <li><router-link to="/PassionRando">La randonnée</router-link></li>
+            <li><router-link to="/PassionJeuxVideo">Les jeux vidéo</router-link></li>
+            <li><router-link to="/PassionVoyage">Le voyage</router-link></li>
             <li>Mentions Légales</li>
           </ul>
         </div>
       
       <div class="Contact">
-        <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
         <div class="ContactTitre">
           <h2>Contact</h2>
           <p>Vous souhaitez échanger et en savoir plus sur mon parcours ? </p>
@@ -41,10 +42,10 @@
           </form>
           <!-- Affichage d'un message de confirmation ou d'erreur -->
         </div>
+        <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
       </div>
       
       <div class="ReseauFooter">
-        <p class="CallToActionFooter">Follow me on my network !</p>
         <div class="LogoReseau">
           <a href="https://github.com/Legluc" class="LienLogoReseau"> 
             <svg id="LogoGithub" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
@@ -63,6 +64,7 @@
             </svg>
           </a>
         </div>
+        <p class="CallToActionFooter">Follow me <br> on my network !</p>
       </div>
     </div>
       

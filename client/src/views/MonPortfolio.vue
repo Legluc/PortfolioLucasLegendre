@@ -4,8 +4,8 @@
       <div class="MonPotfolioContenue">
         <h1>Mes <br>Projets</h1>
         <div class="CarteVerte CartePassion">
-          <h3>Mes projets</h3>
-          <p>Découvrez une sélection de projets variés auxquels j'ai contribué, que ce soit lors de ma formation ou en milieu professionnel. <br><br>Vous trouverez également mes réalisations personnelles, conçues pour approfondir mes compétences et explorer de nouvelles technologies.</p>        
+          <h3>Découvrez mon portfolio</h3>
+          <p>Les projets auxquels j'ai contribué, lors de ma formation ou en milieu professionnel. <br><br>Vous trouverez mes réalisations personnelles, conçues pour approfondir mes compétences et explorer de nouvelles technologies.</p>        
         </div>
       </div>
       <div class="MonPotfolioIllustrations">
@@ -62,9 +62,6 @@
                 </g>
               </g>
             </svg>
-
-            <div class="LogoBreak"></div>
-
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -77,6 +74,9 @@
                 </g>
               </g>
             </svg>
+
+            <div class="LogoBreak"></div>
+
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -172,15 +172,15 @@
                 </g>
               </g>
             </svg>
-
-            <div class="LogoBreak"></div>
-
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
                 <path class="st0" d="M42.7,26.6c-7.1,0-11.6,3.6-13.4,10.7,2.7-3.6,5.8-4.9,9.4-4,2,.5,3.5,2,5.1,3.6,2.6,2.7,5.7,5.8,12.3,5.8s11.6-3.6,13.4-10.7c-2.7,3.6-5.8,4.9-9.4,4-2-.5-3.5-2-5.1-3.6-2.6-2.7-5.7-5.8-12.3-5.8ZM29.3,42.7c-7.1,0-11.6,3.6-13.4,10.7,2.7-3.6,5.8-4.9,9.4-4,2,.5,3.5,2,5.1,3.6,2.6,2.7,5.7,5.8,12.3,5.8s11.6-3.6,13.4-10.7c-2.7,3.6-5.8,4.9-9.4,4-2-.5-3.5-2-5.1-3.6-2.6-2.7-5.7-5.8-12.3-5.8Z"/>
               </g>
             </svg>
+
+            <div class="LogoBreak"></div>
+
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -256,9 +256,6 @@
                 </g>
               </g>
             </svg>
-
-            <div class="LogoBreak"></div>
-
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" y="0" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -280,6 +277,9 @@
                 </g>
               </g>
             </svg>
+
+            <div class="LogoBreak"></div>
+
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -345,9 +345,6 @@
                 </g>
               </g>
             </svg>
-
-            <div class="LogoBreak"></div>
-
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -360,6 +357,9 @@
                 </g>
               </g>
             </svg>
+
+            <div class="LogoBreak"></div>
+
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -450,9 +450,6 @@
                 </g>
               </g>
             </svg>
-
-            <div class="LogoBreak"></div>
-
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">
@@ -466,6 +463,9 @@
                 </g>
               </g>
             </svg>
+
+            <div class="LogoBreak"></div>
+
             <svg class="LogoTechno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 85.5 85.5">
               <rect class="st1" width="85.5" height="85.5" rx="15.7" ry="15.7"/>
               <g class="st2">

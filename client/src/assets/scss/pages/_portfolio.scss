@@ -81,14 +81,16 @@
 
 
 .CartoucheLogo{
-    @include flex($direction: row,  $align: center, $justify: space-between);
+    @include flex($direction: row,  $align: center, $justify: start);
     height: 100px;
-    width: 70%;
+    width: 100%;
     margin: $space-xl 0;
 }
 
 .LogoTechno{
-    height: 70%;
+    height: 70px;
+    min-width: 70px;
+    margin-right: $space-s;
 }
 
 .LogoTechno .st1{
@@ -103,13 +105,7 @@
     display: none;
 }
 
-@media (max-width: 2100px){
 
-    .CartoucheLogo{
-        width: 100%;
-    }
-
-}
 
 @media (max-width: 1700px){
 
@@ -139,9 +135,21 @@
 
     .CartoucheLogo{
         height: 80px;
-        width: 90%;
     }
 
+    .LogoTechno{
+        height: 60px;
+        min-width: 60px;
+    }
+
+}
+
+@media (max-width: 1300px){
+
+    .LogoTechno{
+        height: 50px;
+        min-width: 50px;
+    }
 }
 
 @media (max-width: 1200px){
@@ -171,8 +179,8 @@
         width: 80%;
     }
 
-    .CartoucheLogo{
-        width: 100%;
+    .LogoTechno{
+        margin-right: $space-xs;
     }
 
 }
@@ -211,21 +219,24 @@
     .MesProjetsProTexte a {
         margin-top: $space-xl;
     }
-
-    .CartoucheLogo{
+    .CartoucheLogo {
+        height: 156px;
+        flex-wrap: wrap;  
         margin:  $space-xl 0$space-xxl 0;
-        width: 65%;
     }
 
-}
-
-@media (max-width: 850px){
-    
     .CartoucheLogo{
-        width: 75%;
     }
-    
+
+    .LogoTechno{
+        height: 70px;
+        min-width: 70px;
+        margin-right: $space-s;
+        margin-bottom: $space-s;
+    }
+
 }
+
 
 @media (max-width: 768px){
 
@@ -241,18 +252,28 @@
         width: 80%;
     }
 
-    .CartoucheLogo{
-        width: 85%;
-    }
+    // .LogoTechno{
+    //     height: 55px;
+    //     min-width: 55px;
+    // }
 
-    
 }
 
 @media (max-width: 600px){
 
-    .CartoucheLogo{
-        width: 100%;
-    }
+
+
+    // .LogoBreak{
+    //     display: block;
+    //     flex: 0 0 100%;
+    //     margin: $space-xs 0;
+    // }
+
+    // .LogoTechno{
+    //     height: 65px;
+    //     min-width: 65px;
+    //     margin-right: $space-s;
+    // }
 
 }
 
@@ -263,16 +284,18 @@
         align-items: center;
     }
 
-    .CartoucheLogo {
-        width: 100%;
-        flex-wrap: wrap;
+    .CartoucheLogo{
+        height: 126px;
+        margin: $space-xl 0;
     }
 
-    .LogoBreak{
-        display: block;
-        flex: 0 0 100%;
-        margin: $space-xs 0;
+    .LogoTechno{
+        height: 55px;
+        min-width: 55px;
+        margin-right: $space-s;
     }
+
+
 }
 
 @media (max-width: 425px){
@@ -292,11 +315,16 @@
         margin-top: unset;
     }
 
+    .CartoucheLogo{
+        margin: $space-xl 0 0 0;
+    }
 }
 
 @media (max-width: 375px){
 
-    .CartoucheLogo {
-        width: 80%;
+    .LogoTechno{
+        height: 50px;
+        min-width: 50px;
     }
+
 }

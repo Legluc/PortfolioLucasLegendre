@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar />
-    <router-view />
+    <NavBar :overSection="navOverSection" :overFooter="navOverFooter"/>
+    <router-view @section-intersect="handleSectionIntersect" @footer-intersect="handleFooterIntersect"/>
   </div>
 </template>
 
@@ -15,5 +15,25 @@ export default {
   components: {
     NavBar,
   },
+  data() {
+    return {
+      navOverSection: false,
+      navOverFooter: false,
+    }
+  },
+  methods: {
+    handleSectionIntersect(isIntersecting) {
+      this.navOverSection = isIntersecting
+    },
+    handleFooterIntersect(isIntersecting) {
+      this.navOverFooter = isIntersecting
+    },
+  },
+  watch: {
+    $route() {
+      this.navOverFooter = false;
+      this.navOverSection = false;
+    }
+  }
 };
 </script>

@@ -3,7 +3,7 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 .Contact{
-    @include flex($direction: column,  $align: center, $justify: space-evenly);
+    @include flex($direction: column,  $align: center, $justify: space-between);
 }
   
 .ContactTitre h2{

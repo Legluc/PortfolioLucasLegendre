@@ -1,6 +1,8 @@
 <template>
     <nav id="Nav" :class="{ NavAcceuil: $route.name === 'IndexPage',
-      Active: isMenuOpen
+      Active: isMenuOpen,
+      'NavOverProjet': overSection,
+      'NavOverFooter': overFooter
     }">
     <div class="LogosNav">
       <router-link to="/">
@@ -36,7 +38,14 @@
       <ul id="LienNav" :class="{ Active: isMenuOpen }">
         <li><router-link to="/Portfolio" @click="ToggleMenu">Projets</router-link></li>
         <li><router-link to="/Parcours" @click="ToggleMenu">Parcours</router-link></li>
-        <li><router-link to="/#MesPassions" @click="ToggleMenu">Passions</router-link></li>
+        <li id="NavPassion">
+          <p>Passions</p>
+          <ul id="LienPassion">
+            <li><router-link to="/PassionRando" @click="ToggleMenu">La randonnée</router-link></li>
+            <li><router-link to="/PassionJeuxVideo" @click="ToggleMenu">Les jeux vidéo</router-link></li>
+            <li><router-link to="/PassionVoyage" @click="ToggleMenu">Le voyage</router-link></li>
+          </ul>
+        </li>
         <li><a @click.prevent="scrollToContact" @click="ToggleMenu">Contact</a></li>
       </ul>
     </nav>
@@ -48,6 +57,16 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 gsap.registerPlugin(ScrollToPlugin)
 export default {
   name: 'NavBar',
+  props: {
+    overSection: {
+      type: Boolean,
+      default: false,
+    },
+    overFooter: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       isMenuOpen: false,
@@ -77,7 +96,7 @@ export default {
 
     // Fonction pour scroller jusqu'au contact
     const scrollToContact = () => {
-      const selector = route.name === 'IndexPage' ? '.ContactAccueil' : '.Contact';
+      const selector = route.name === 'IndexPage' ? '#ContactAccueil' : '.Contact';
       const target = document.querySelector(selector);
       if (target) {
         gsap.to(window, {
@@ -87,6 +106,17 @@ export default {
         });
       }
     };
+
+
+    // const scrollToBottom = () => {
+    //   const bottomPosition = document.documentElement.scrollHeight - window.innerHeight;
+    //   gsap.to(window, {
+    //     duration: 1,
+    //     scrollTo: { y: bottomPosition, autoKill: true },
+    //     ease: "power2.out"
+    //   });
+    // };
+
     return { goToMesPassions, scrollToContact };
   }
 };

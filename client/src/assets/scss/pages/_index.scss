@@ -156,16 +156,21 @@
 }
 
 #ProjetsPro p{
-  @include body-style($size:$font-size-h3, $weight:600, $line-height:1, $color:$creme);
+  @include body-style($size:$font-size-base, $weight:400, $line-height:1, $color:$creme);
 }
 
-#MesProjets .CarteVerte,#MesProjets .CarteOrange{
+#ProjetsPro a{
+  align-self: center;
+}
+
+#MesProjets .CarteVerte{
+  align-items: self-start;
   width: 560px;
   height: 315px;
   margin: $space-xl;
 }
 
-.CarteVerte h3 , .CarteOrange h3{
+.CarteVerte h3{
   @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
 }
 
@@ -174,17 +179,17 @@
   width: 50%;
 }
 
-.ContactAccueil{
+#ContactAccueil{
   @include flex($direction: column,  $align: center, $justify: space-evenly);
   height: 70vh;
 }
 
-.ContactAccueil form{
+#ContactAccueil form{
   @include flex($direction: column,  $align: center, $justify: center);
   
 }
 
-.ContactAccueil form input, .ContactAccueil form textarea{
+#ContactAccueil form input, #ContactAccueil form textarea{
   @include body-style($size:$font-size-base, $weight:500, $line-height:1, $color:$creme);
   background-color: $orange;
   border-radius: 35px;
@@ -192,12 +197,12 @@
   padding: $space-xs $space-s;
 }
 
-.ContactAccueil .Message{
+#ContactAccueil .Message{
   height: 100%;
   padding: $space-s $space-m;
 }
 
-.ContactAccueil .ReponseMail{
+#ContactAccueil .ReponseMail{
   margin-bottom: $space-s;
 }
 
@@ -209,8 +214,8 @@
 }
 
 .LogoNavFooterAccueil{
-  @include flex($direction: row,  $align: center, $justify: space-between);
-  width: 20%;
+  @include flex-center;
+  width: 10%;
   height: 100%;
 }
 
@@ -236,8 +241,10 @@
 
 
 .NavFooter{
-  @include flex($direction: column,  $align: start, $justify: space-evenly);
-  height: 50%;
+  @include flex($direction: column,  $align: start, $justify: space-between);
+  height: 100%;
+  margin-left: 5%;
+  padding: $space-l 0;
 }
 
 .NavFooter li{
@@ -250,8 +257,21 @@
 }
 
 .ReseauFooter{
-  @include flex($direction: row,  $align: center, $justify: start);
-  width: 20%;
+  @include flex($direction: column,  $align: center, $justify: center);
+  width: 30%;
+  height: 100%;
+}
+
+.BoxLienReseau{
+  @include flex($direction: row,  $align: center, $justify: center);
+  width: 100%;
+  margin-top: auto;
+}
+
+.CreditFooter{
+  opacity: 0.2;
+  margin-top: auto;
+  margin-bottom: $space-l;
 }
 
 .ReseauFooter .LienLogoReseau{
@@ -285,14 +305,8 @@
 
 .MentionsFooter{
   @include flex($direction: column,  $align: center, $justify: center);
-  width: 50%;
+  width: 30%;
   height: 30%;
-  position: absolute;
-}
-
-.CreditFooter{
-  opacity: 0.2;
-  margin: $space-s 0 $space-l 0;
 }
 
 .CallToActionFooter{
@@ -331,18 +345,11 @@
 // --- MEDIA QUERIES --
 
 @media (max-width: 1800px){
-  #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
-    font-size: 100px;
-    margin-top: 3vh;
-  }
-
-  .LogoNavFooterAccueil, .ReseauFooter{
-    width: 25%;
-  }
-
-  #FooterAccueil .ReseauFooter{
-    justify-content: center;
-  }
+   
+  // #FooterAccueil .NomFooter, #FooterAccueil .PrenomFooter{
+  //   font-size: 100px;
+  //   margin-top: 3vh;
+  // }
 
   // .BaseOverlayPrenomFooter{
   //   width: 40%;
@@ -353,11 +360,6 @@
 
   #LucasLegendre .CarteVerte{
     width: 40%;
-  }
-
-  .MentionsFooter{
-    width: 30%;
-    text-align: center;
   }
 
 }
@@ -373,13 +375,10 @@
     width: 45%;
   }
 
-  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+  #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
     width: 40%;
   }
 
-  .LogoNavFooterAccueil, #FooterAccueil .ReseauFooter{
-    width: 30%;
-  }
 
   // .BaseOverlayPrenomFooter{
   //   width: 30%;
@@ -399,13 +398,6 @@
 
   #MonParcours{
     background-position-x: 50%;
-  }
-  #FooterAccueil{
-    padding: 0 $space-l;
-  }
-
-  .LogoNavFooterAccueil, #FooterAccueil .ReseauFooter{
-    width: 38%;
   }
 
 //   .BaseOverlayPrenomFooter{
@@ -433,7 +425,7 @@
     background-color: rgba($vert, 0.6);
   }
 
-  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+  #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
     width: 60%;
   }
 
@@ -449,12 +441,11 @@
     width: 100%;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: $space-xl;
   }
 
   #FooterAccueil .LogoNavFooterAccueil #LogoFooter{
     position: absolute;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -140%);
   }
 
   #FooterAccueil #LogoFooter .st1 {
@@ -463,7 +454,8 @@
 
   #FooterAccueil .NavFooter{
     align-items: center;
-    margin-top: $space-l;
+    margin: unset;
+    padding: unset;
   }
 
   #FooterAccueil .NavFooter li{
@@ -471,19 +463,21 @@
   }
 
   .MentionsFooter{
+    order: 1;
     position: unset;
     width: 50%;
-    margin-bottom: $space-l;
+    margin: $space-l 0;
   }
-
+  
   #FooterAccueil .CreditFooter{
     position: absolute;
     bottom: 0;
   }
-
+  
   #FooterAccueil .ReseauFooter{
+    order: 2;
     width: 100%;
-    margin-bottom: $space-xl;
+    margin-bottom: $space-xxl;
   }
 
   // .BaseOverlayPrenomFooter{
@@ -540,31 +534,31 @@
     border-radius: 35px;
   }
 
-  .ContactAccueil{
+  #ContactAccueil{
     height: auto;
     padding: $space-xl 0;
   }
 
-  .ContactAccueil .ContactTitre{
+  #ContactAccueil .ContactTitre{
     margin-bottom: $space-l;
   }
 
-  .ContactAccueil .ContactTitre h2{
+  #ContactAccueil .ContactTitre h2{
     font-size: 48px;
   }
 
-  .ContactAccueil .Formulaire .InputForm{
+  #ContactAccueil .Formulaire .InputForm{
     flex-direction: column;
     height: auto;
     margin-bottom: $space-m;
   }
 
-  .ContactAccueil form input{
+  #ContactAccueil form input{
     width: 100%;
     margin-bottom: $space-m;
   }
 
-  .ContactAccueil .InputForm .Message {
+  #ContactAccueil .InputForm .Message {
     min-height: 15vh;
     width: 100%;
   }
@@ -589,7 +583,7 @@
     width: 100%;
   }
 
-  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+  #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
     width: 100%;
     padding: 0 $space-xl;
   }
@@ -610,7 +604,7 @@
     height: 75vh;
   }
 
-  .ContactAccueil .ContactTitre, .ContactAccueil .Formulaire{
+  #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
     padding: 0 $space-l;
   }
 
@@ -630,11 +624,11 @@
     font-size: 36px;
   }
 
-  .ContactAccueil .ContactTitre h2{
+  #ContactAccueil .ContactTitre h2{
     font-size: 36px;
   }
 
-  .ContactAccueil .ContactTitre p{
+  #ContactAccueil .ContactTitre p{
     font-size: 18px;
   }
 

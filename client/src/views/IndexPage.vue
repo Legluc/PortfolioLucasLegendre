@@ -3,12 +3,12 @@
     <section id="LucasLegendre">
       <h1>Lucas <br>Legendre</h1>
       <div class="CarteVerte">
-        <h2>Développeur web en alternance</h2>
-        <p>Moi c'est Lucas, j’ai 27 ans et je suis développeur web, randonneurs, voyageur et un joueur. Je suis un développeur web passionné de création numérique, d’exploration et d’aventures. Curieux et toujours en quête de nouveaux défis, je mêle savoir-faire et esprit créatif. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes autres passions. Bienvenue dans mon univers !</p>
+        <h2>Développeur web et web mobile</h2>
+        <p>Moi c'est Lucas, j’ai 27 ans et je suis développeur web, randonneurs, voyageur et un joueur.<br><br> Je suis un passionné de création numérique, d’exploration et d’aventures. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes passions.</p>
       </div>
     </section>
     <section id="MonParcours">
-      <button class="Bouton">Mon parcours</button>
+      <router-link to="/Parcours"><button class="Bouton">Mon parcours</button></router-link>
     </section>
     <section id="MesPassions">
 
@@ -35,19 +35,20 @@
       </div>
 
     </section>
-    <section id="MesProjets">
+    <section id="MesProjets" ref="targetSection">
       <div id="ProjetsPro">
         <h2>Mes <br>projets</h2>
         <div class="CarteVerte">
-          <h3>Découvrez ici mes projet professionnel</h3>
-          <button class="Bouton">Découvrir</button>
+          <h3>Découvrez ici mon portfolio</h3>
+          <p>Découvrez mes projets web, entre créations professionnelles et explorations personnelles : plongez dans mon portfolio.</p>
+          <router-link to="/Portfolio"><button class="Bouton">Découvrir</button></router-link>
         </div>
       </div>
       <div class="MockupProjetAccueil">
 
       </div>
     </section>
-    <section class="ContactAccueil">
+    <section id="ContactAccueil" ref="targetFooter">
       <div class="ContactTitre">
         <h2>Contact</h2>
         <p>Vous souhaitez échanger et en savoir plus sur mon parcours ? </p>
@@ -80,32 +81,24 @@
             </g>
           </svg>
         </router-link>
-        
-        <ul class="NavFooter">
-          <li><router-link to="/Portfolio">Portfolio</router-link></li>
-          <li><router-link to="/Parcours">Parcours</router-link></li>
-          <li><router-link to="/#MesPassions" @click="handleClickMesPassions">Passions</router-link></li>
-          <li>Mentions Légales</li>
-        </ul>
       </div>
-      <div class="MentionsFooter">
-        <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
-        <p class="CallToActionFooter">Follow me on my network !</p>
-      </div>
-      <div class="BaseOverlayPrenomFooter">
-        <div class="OverlayPrenomFooter">
-          <p class="NomFooter">Lucas Legendre</p>
-          <p class="PrenomFooter">Lu<span v-if="showBreak"><br></span>cas</p>
-        </div>
-      </div>
+      <ul class="NavFooter">
+        <li><router-link to="/Portfolio">Projets</router-link></li>
+        <li><router-link to="/Parcours">Parcours</router-link></li>
+        <li><router-link to="/PassionRando">La randonnée</router-link></li>
+        <li><router-link to="/PassionJeuxVideo">Les jeux vidéo</router-link></li>
+        <li><router-link to="/PassionVoyage">Le voyage</router-link></li>
+        <li>Mentions Légales</li>
+      </ul>
       <div class="ReseauFooter">
-        <a href="https://github.com/Legluc" class="LienLogoReseau"> 
-          <svg id="LogoGithub" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
-            <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
-            <path class="st0" d="M52,104.7c-.4,1.3-2.3,1.3-3.4,1.1-8.7-1.6-20.1-12.3-24.4-19.9C2.5,47.9,43.3,6.4,82.4,24.4c35,16.1,33.5,67.4-2.4,80.6-2,.7-5.5,2.2-5.9-1.1-.8-6.6,2.1-14.9-2.8-20.3,11.1-.9,18.8-6.1,20.1-17.6s.1-9.3-2.5-13.6-1.8-2.1-1.8-2.3c0-.5.6-2.1.7-2.8.3-2.9,0-5.9-1.1-8.6-4.4-1-8.8,2.2-12.5,4.3-7.2-1.9-15-2-22.2,0-3.7-2.1-7.9-5-12.3-4.4-1.2.8-1.7,6.2-1.5,7.7s.9,3.2.8,3.9-1.4,1.9-1.9,2.6c-5.3,9-2.6,23.2,7,28.2,3.4,1.7,6.5,2.1,10.1,2.8s.6,0,.4.4-1.3,1.4-1.7,2.2-.6,2.3-1.1,3.4c-2.5,1.2-5.9,1.4-8.5.4-4.7-1.9-5.3-8.5-11.3-8.7-5.2-.1.9,3.4,1.8,4.4,2.3,2.4,2.7,5.8,5,8.1,3.6,3.5,8.3,3.3,12.9,2.7-.4,2.1.5,6.4,0,8.3Z"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/lucas-legendre-42a95b203/" class="LienLogoReseau">
+        <div class="BoxLienReseau">
+          <a href="https://github.com/Legluc" class="LienLogoReseau"> 
+            <svg id="LogoGithub" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
+              <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
+              <path class="st0" d="M52,104.7c-.4,1.3-2.3,1.3-3.4,1.1-8.7-1.6-20.1-12.3-24.4-19.9C2.5,47.9,43.3,6.4,82.4,24.4c35,16.1,33.5,67.4-2.4,80.6-2,.7-5.5,2.2-5.9-1.1-.8-6.6,2.1-14.9-2.8-20.3,11.1-.9,18.8-6.1,20.1-17.6s.1-9.3-2.5-13.6-1.8-2.1-1.8-2.3c0-.5.6-2.1.7-2.8.3-2.9,0-5.9-1.1-8.6-4.4-1-8.8,2.2-12.5,4.3-7.2-1.9-15-2-22.2,0-3.7-2.1-7.9-5-12.3-4.4-1.2.8-1.7,6.2-1.5,7.7s.9,3.2.8,3.9-1.4,1.9-1.9,2.6c-5.3,9-2.6,23.2,7,28.2,3.4,1.7,6.5,2.1,10.1,2.8s.6,0,.4.4-1.3,1.4-1.7,2.2-.6,2.3-1.1,3.4c-2.5,1.2-5.9,1.4-8.5.4-4.7-1.9-5.3-8.5-11.3-8.7-5.2-.1.9,3.4,1.8,4.4,2.3,2.4,2.7,5.8,5,8.1,3.6,3.5,8.3,3.3,12.9,2.7-.4,2.1.5,6.4,0,8.3Z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/lucas-legendre-42a95b203/" class="LienLogoReseau">
             <svg id="LogoLinkedin" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 126 126">
               <rect class="st1" x="4.9" y="4.9" width="116.3" height="116.3" rx="28.6" ry="28.6"/>
               <g>
@@ -115,6 +108,11 @@
               </g>
             </svg>
           </a>
+        </div>
+        <p class="CreditFooter">Lucas Legendre X Studio Aosagi 2025</p>
+      </div>
+      <div class="MentionsFooter">
+        <p class="CallToActionFooter">Follow me on <br> my network !</p>
       </div>
     </footer>
   </div>
@@ -161,7 +159,11 @@ export default {
         mail: '',
         message: ''
       },
-      responseMessage: ''
+      responseMessage: '',
+
+       // CHANGEMENT : on initialise currentSectionIndex.
+      currentSectionIndex: 0,
+      isAnimating: false,
     };
   },
   computed: {
@@ -173,15 +175,40 @@ export default {
     },
   },
   mounted() {
+    const observerSection = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // On émet un événement personnalisé vers le parent avec l'état de l'intersection
+          this.$emit('section-intersect', entry.isIntersecting)
+        })
+      },
+      {
+        root: null,      // Utilise le viewport comme conteneur
+        threshold: 0.3,  // Se déclenche dès que 10% de la section est visible
+      }
+    )
+    observerSection.observe(this.$refs.targetSection)
+
+    const observerFooter = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // On émet un événement personnalisé vers le parent avec l'état de l'intersection
+          this.$emit('footer-intersect', entry.isIntersecting)
+        })
+      },
+      {
+        root: null,      // Utilise le viewport comme conteneur
+        threshold: 1,  // Se déclenche dès que 10% de la section est visible
+      }
+    )
+    observerFooter.observe(this.$refs.targetFooter)
+
     window.addEventListener('resize', this.updateScreenWidth);
     if (this.screenWidth >= 768) {
       this.initScrollSnap();
     }
     if (this.$route.hash) {
       this.scrollToHash();
-    }
-    if (this.$route.hash) {
-      this.scrollToHash(this.$route.hash);
     }
 
     const images = this.$el.querySelectorAll('.ImagePassion');
@@ -262,19 +289,6 @@ export default {
         }
       });
     },
-
-    /**
-     * Scrolle doucement vers l’élément correspondant à l’ancre
-     */
-    //  scrollToHash(hash) {
-    //   this.$nextTick(() => {
-    //     const targetId = hash.replace('#', '');
-    //     const target = document.getElementById(targetId);
-    //     if (target) {
-    //       target.scrollIntoView({ behavior: 'smooth' });
-    //     }
-    //   });
-    // },
     updateScreenWidth() {
       clearTimeout(this.resizeTimer);
       this.resizeTimer = setTimeout(() => {
@@ -285,8 +299,8 @@ export default {
       // Initialisation de l'index courant
       this.currentSectionIndex = 0;
       // Création des versions throttle des gestionnaires
-      this.throttledScrollHandler = this.throttle(this.handleScroll, 600);
-      this.throttledKeyHandler = this.throttle(this.handleKey, 600);
+      this.throttledScrollHandler = this.throttle(this.handleScroll, 200);
+      this.throttledKeyHandler = this.throttle(this.handleKey, 200);
       window.addEventListener('wheel', this.throttledScrollHandler, { passive: false });
       window.addEventListener('keydown', this.throttledKeyHandler);
     },
