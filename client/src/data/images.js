@@ -3,6 +3,8 @@ export const ImagesIndex = {
     Randonneur: require('@/assets/image/PAGE_ACCUEIL/accueil_le_randonneur.webp'),
     Geek: require('@/assets/image/PAGE_ACCUEIL/accueil_le_geek.webp'),
     BandeauAccueil: require('@/assets/image/PAGE_ACCUEIL/bandeau_accueil.webp'),
+    MockupProjet: require('@/assets/image/PAGE_ACCUEIL/LucasLegendre_mock01.webp'),
+
 };
 
 export const ImagesParcours = {
@@ -12,7 +14,7 @@ export const ImagesParcours = {
 };
 
 export const ImagesPortfolio = {
-    MockupMobile: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre_mock01.webp'),
+    MockupMobile: require('@/assets/image/PAGE_PORTFOLIO/LucasLegendre_mock11.webp'),
 };
 
 export const ImagesPortfolioTPLC = {

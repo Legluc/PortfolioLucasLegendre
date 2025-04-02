@@ -137,17 +137,20 @@
 }
 
 #MesProjets{
-  @include flex($direction: row,  $align: center, $justify: space-evenly);
+  @include flex($direction: row,  $align: end, $justify: space-between);
   height: 100vh;
   width: 100%;
+  padding: 0 $space-xxl;
   background-color: $orange;
 }
 
 
 #ProjetsPro{
-  @include flex($direction: column,  $align: center, $justify: end);
+  @include flex($direction: column,  $align: start, $justify: space-between);
   width: 50%;
-  height: 100%;
+  height: 65%;
+  margin-bottom: $space-xl;
+
 }
 
 #ProjetsPro h2{
@@ -155,28 +158,35 @@
   text-transform: uppercase;
 }
 
-#ProjetsPro p{
-  @include body-style($size:$font-size-base, $weight:400, $line-height:1, $color:$creme);
-}
 
 #ProjetsPro a{
   align-self: center;
 }
 
-#MesProjets .CarteVerte{
+#ProjetsPro .CarteVerte{
   align-items: self-start;
-  width: 560px;
-  height: 315px;
-  margin: $space-xl;
+  min-width: 500px;
+  width: 60%;
+  height: auto;
 }
 
 .CarteVerte h3{
   @include body-style($size:$font-size-h3, $weight:600, $color:$creme);
 }
 
+#ProjetsPro .CarteVerte p{
+  margin: $space-l 0;
+}
+
 .MockupProjetAccueil{
-  @include flex($direction: row,  $align: end, $justify: center);
+  height: 65%;
   width: 50%;
+  border-radius: 35px;
+  margin-bottom: $space-xl;
+  background-image: url('@/assets/image/PAGE_ACCUEIL/LucasLegendre_mock01.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
 }
 
 #ContactAccueil{
@@ -375,6 +385,11 @@
     width: 45%;
   }
 
+  #MesProjets{
+    padding: 0 $space-l;
+  }
+
+
   #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
     width: 40%;
   }
@@ -400,6 +415,29 @@
     background-position-x: 50%;
   }
 
+  // #MesProjets{
+  //   padding: unset;
+  // }
+
+  #MesProjets h2{
+    font-size: 72px;
+  }
+
+  #ProjetsPro{
+    margin-right: $space-m;
+  }
+
+  #ProjetsPro .CarteVerte{
+    width: 100%;
+  }
+
+  .MockupProjetAccueil{
+    margin-left: $space-m;
+  }
+
+
+
+
 //   .BaseOverlayPrenomFooter{
 //     width: 24%;
 //   }
@@ -423,6 +461,19 @@
   #LucasLegendre .CarteVerte{
     width: 70%;
     background-color: rgba($vert, 0.6);
+  }
+
+  #ProjetsPro{
+    height: 70%;
+  }
+
+  #ProjetsPro .CarteVerte{
+    min-width: unset;
+    width: 100%;
+  }
+
+  .MockupProjetAccueil{
+    height: 50%;  
   }
 
   #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{
@@ -534,6 +585,32 @@
     border-radius: 35px;
   }
 
+  #MesProjets{
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+    padding: $space-xl;
+  }
+
+  #ProjetsPro{
+    width: 100%;
+    margin-bottom: unset;
+  }
+
+  #ProjetsPro .CarteVerte{
+    width: 100%;
+    margin: $space-xl 0;
+    align-self: center;
+  }
+
+  .MockupProjetAccueil{
+    align-self: center;
+    height: 40vh;
+    width: 100%;
+    background-position-y: 50%;
+    margin: unset;
+  }
+
   #ContactAccueil{
     height: auto;
     padding: $space-xl 0;
@@ -602,6 +679,10 @@
 
   #MonParcours{
     height: 75vh;
+  }
+
+  #MesProjets{
+    padding: $space-xl $space-l;
   }
 
   #ContactAccueil .ContactTitre, #ContactAccueil .Formulaire{

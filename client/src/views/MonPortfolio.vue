@@ -508,11 +508,13 @@ import {ImagesPortfolio, carouselPortfolioTPLC, carouselPortfolioActual, carouse
 import Footer from '@/components/FooterGlobal.vue';
 import Carousel from "@/components/CarouselGlobal.vue";
 
+
 export default {
   name: "MonPortfolio",
   components: {
     Footer,
     Carousel,
+
   },
   data() {
     return {
