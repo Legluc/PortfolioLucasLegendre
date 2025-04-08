@@ -80,7 +80,7 @@
 
 .RoadMapContenue{
     background-color: $orange;
-    @include flex($direction: row, $align: center, $justify: center);
+    @include flex($direction: row, $align: center, $justify: end);
     height: auto;
     width: 100%;
     padding: 0 $space-xxl;
@@ -89,7 +89,7 @@
 
 #RoadMapSvg{
     width: 40%;
-    margin: $space-l 0 $space-l $space-xxxl;
+    margin: $space-l $space-xxxl $space-l 0;
 }
 
 #RoadMapSvg .st1{
@@ -140,7 +140,6 @@
 }
 
 .BichecoAventureContenue .CartePassion button{
-    align-self: flex-end;
     margin-top: $space-m;
 }
 
@@ -217,9 +216,13 @@
         width: 100%;
     }
 
+    .RoadMapContenue{
+        justify-content: center;
+    }
+
     #RoadMapSvg{
         width: 60%;
-        margin-left: 30%;
+        margin: $space-l 0 $space-l 30%;
     }
 
     .RoadMapContenueTexte{
@@ -237,6 +240,10 @@
 
     #Brick{
         justify-content: center;
+    }
+
+    #RoadMapSvg{
+        margin-left: 35%;
     }
 
     .ContenueVoyage{
@@ -302,12 +309,13 @@
         background-color: $orange;
     }
     .RoadMapContenue{
+        height: 75vh;
         justify-content: end;
         padding: 0 $space-m;
     }
 
     #RoadMapSvg{
-        width: 70%;
+        width: 65%;
         margin-left: unset;
     }
 
@@ -369,6 +377,7 @@
     }
 
     .RoadMapContenue{
+        height: auto;
         flex-direction: column-reverse;
     }
 

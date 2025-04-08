@@ -1,12 +1,22 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const nodemailer = require('nodemailer');
+const rateLimit = require('express-rate-limit');
+const { body, validationResult } = require('express-validator');
+const sanitizeHtml = require('sanitize-html');
+
+require('dotenv').config({ path: __dirname + '/.env' });
+
 
 dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://lucas-legendre.com" // Remplacez par l'origine souhaitée en production si nécessaire
+  origin: [
+    'https://lucas-legendre.com',
+    'https://www.lucas-legendre.com'
+  ]
 }));
 
 app.use(express.json());
@@ -14,11 +24,6 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("API en ligne !");
 });
-
-
-const nodemailer = require('nodemailer');
-const rateLimit = require('express-rate-limit');
-const { body, validationResult } = require('express-validator');
 
 
 // Middleware pour parser le body (formulaires et JSON)
@@ -38,21 +43,25 @@ app.post('/send-mail', mailLimiter, [
   body('nom')
     .trim()
     .escape()
+    .isLength({ max: 500 })
     .notEmpty().withMessage('Le nom est requis.'),
   body('prenom')
     .trim()
     .escape()
+    .isLength({ max: 500 })
     .notEmpty().withMessage('Le prénom est requis.'),
   body('mail')
     .trim()
+    .isLength({ max: 500 })
     .isEmail().withMessage('L’email n’est pas valide.')
     .normalizeEmail(),
   body('message')
     .trim()
     .escape()
+    .isLength({ max: 600 })
     .notEmpty().withMessage('Le message est requis.')
 ], (req, res) => {
-  console.log('Requête reçue sur /send-mail');
+  console.log('Requête reçue sur /send-mail', req.body);
   // Vérification des erreurs de validation
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -61,6 +70,12 @@ app.post('/send-mail', mailLimiter, [
 
   // Extraction des données validées
   const { nom, prenom, mail, message } = req.body;
+
+  // Sanitisation supplémentaire avec sanitize-html
+  nom = sanitizeHtml(nom, { allowedTags: [] });
+  prenom = sanitizeHtml(prenom, { allowedTags: [] });
+  mail = sanitizeHtml(mail, { allowedTags: [] });
+  message = sanitizeHtml(message, { allowedTags: [] });
 
   // Configuration du transporteur Nodemailer pour Gmail
   let transporter = nodemailer.createTransport({
@@ -75,7 +90,7 @@ app.post('/send-mail', mailLimiter, [
 
   // Configuration de l'email à envoyer
   let mailOptions = {
-    from: `Mon portfolio <lucas.lucasleg@gmail.com>`,
+    from: `Mon portfolio <${process.env.SMTP_USER}>`,
     to: 'lucas.lucasleg@gmail.com',
     subject: 'Nouveau message via le formulaire de contact',
     text: message,
@@ -85,8 +100,8 @@ app.post('/send-mail', mailLimiter, [
   // Envoi de l'email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error("Erreur lors de l'envoi:", error);
-      return res.status(500).json({ message: "Erreur lors de l'envoi du mail." });
+      console.error("Erreur lors de l'envoi:", error.toString());
+      return res.status(500).json({ message: "Erreur lors de l'envoi du mail." , error: error.toString() });
     }
     res.json({ message: "Email envoyé avec succès !" });
   });

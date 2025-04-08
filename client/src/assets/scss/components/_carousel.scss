@@ -22,7 +22,7 @@
 .CarouselContainer {
     display: flex;           // Permet l'affichage des slides côte à côte
     width: 100%;        // S'adapte à la largeur de son conteneur
-    height: 100%;
+    height: 80vh;
 }
   
 .CarouselSlide {
@@ -30,6 +30,7 @@
     flex: 0 0 100%;          // Chaque slide occupe 100% de la largeur du carousel
     box-sizing: border-box;  // Inclut les marges/paddings dans les dimensions
     height: 100%;
+    overflow: hidden;
 }
   
 .CarouselSlide img {

@@ -4,7 +4,7 @@
       <h1>Lucas <br>Legendre</h1>
       <div class="CarteVerte">
         <h2>Développeur web et web mobile</h2>
-        <p>Moi c'est Lucas, j’ai 27 ans et je suis développeur web, randonneurs, voyageur et un joueur de jeux vidéo.<br><br> Je suis un passionné de création numérique, d’exploration et d’aventures. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes passions.</p>
+        <p>Moi c'est Lucas, j’ai 27 ans et je suis développeur web, randonneur, voyageur et un joueur de jeux vidéo.<br><br> Je suis un passionné de création numérique, d’exploration et d’aventures. Explorez mon site pour découvrir mes projets, mon parcours, ainsi que mes passions.</p>
       </div>
     </section>
     <section id="MonParcours">
